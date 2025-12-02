@@ -22,8 +22,7 @@ bash ./run_test2.sh
 
 ### Explanation of Functions
 
-**1. prince_seg_preprocess.py**
-
+**1. prince_seg_preprocess.py**<br />
 simplified mesh and label을 가지고 edge label, soft edge label을 계산하는 프로그램이다
 
 **2. prince_seg_preprocess_disconnected.py**

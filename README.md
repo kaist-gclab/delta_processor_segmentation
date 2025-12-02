@@ -23,14 +23,17 @@ bash ./run_test2.sh
 ### Explanation of Functions
 
 **1. prince_seg_preprocess.py**
+
 simplified mesh and label을 가지고 edge label, soft edge label을 계산하는 프로그램이다
 
 **2. prince_seg_preprocess_disconnected.py**
+
 simplified mesh에서 모든 face가 disconnected인 경우
 
 다시 face를 계산 후 저장해줌 + edge label, soft edge label을 계산 및 저장해줌
 
 **3. simp_visualize.py (DEBUG)**
+
 simplified 된 mesh의 visualization 결과를 보여줍니다.
 
 하나의 모델 당 여러 사람이 분류한 segmentation gt가 존재합니다.
@@ -52,6 +55,7 @@ simp_seg_label 파일에 txt파일로 각 클래스별 segmentation division이 
 해당되는 클래스의 list를 복사하여 dictionary부분에 복사하면 됩니다.
 
 **4. simp_save_seg.py (DEBUG)**
+
 mesh의 label을 재배치 (레이블 숫자만 바꿔줌, gt segmentation은 바꾸지 않는다)
 
 현재는 debug 모드로 돌리게 되어있으며 visu.vis_face_seg(points, faces, new_seg) (L98)을 주석처리하면 명령어로 돌릴 수 있다.
@@ -62,33 +66,23 @@ simp_seg_label 파일에 txt파일로 각 클래스별 segmentation division이 
 
 해당되는 클래스의 dictionary를 복사하여 dictionary부분에 복사하면 됩니다.
 
-+ L42 Loop 범위 정하기
+**4.1. L42 Loop 범위 정하기**
 
 아래 Class에 해당되는 두 숫자를 range안에 적어주면 됩니다.
-
+```
 class1: 0,20
-
 class2: 20,40
-
 class3: 40,60
-
 class4: 60,80
-
 class5: 80,100
-
 ...
-
 class13: 240-260 (241-260)
-
------ (20개 빠져있음) -----
-
+(20개 빠져있음)
 class14: 260,280 (281-300)
-
 ...
-
 class19: 360,380 (381-400)
-
-+ 생성된 seg, sseg 결과 옮기기
+```
+**4.2. 생성된 seg, sseg 결과 옮기기**
   
 prince_simp_1000파일 내부에 seg, sseg파일이 생성됩니다.
 
@@ -97,9 +91,7 @@ prince_simp_1000파일 내부에 seg, sseg파일이 생성됩니다.
 
 ### Explanation of Indirect Functions
 1. pre_util.py: 파일 불러오기 및 저장 관련 함수들
-
 2. edge_label.py: eseg, seseg 계산 및 weld vertex, weld faces 계산해주는 함수들
-
 3. visualize.py: mesh visualization 관련 함수들
 
 ### Create Noise to Dataset

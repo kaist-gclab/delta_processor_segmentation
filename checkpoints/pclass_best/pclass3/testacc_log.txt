@@ -1,0 +1,552 @@
+================ Testing Acc (Tue Nov 25 05:21:38 2025) ================
+epoch: 1, TEST ACC: [75.644 %]
+
+epoch: 1, TEST F1: [64.996 %]
+
+================ Testing Acc (Tue Nov 25 05:21:43 2025) ================
+epoch: 2, TEST ACC: [89.28 %]
+
+epoch: 2, TEST F1: [83.437 %]
+
+================ Testing Acc (Tue Nov 25 05:21:48 2025) ================
+epoch: 3, TEST ACC: [91.041 %]
+
+epoch: 3, TEST F1: [86.421 %]
+
+================ Testing Acc (Tue Nov 25 05:21:52 2025) ================
+epoch: 4, TEST ACC: [97.574 %]
+
+epoch: 4, TEST F1: [96.489 %]
+
+================ Testing Acc (Tue Nov 25 05:21:57 2025) ================
+epoch: 5, TEST ACC: [97.217 %]
+
+epoch: 5, TEST F1: [95.331 %]
+
+================ Testing Acc (Tue Nov 25 05:22:02 2025) ================
+epoch: 6, TEST ACC: [97.508 %]
+
+epoch: 6, TEST F1: [96.728 %]
+
+================ Testing Acc (Tue Nov 25 05:22:06 2025) ================
+epoch: 7, TEST ACC: [97.923 %]
+
+epoch: 7, TEST F1: [95.551 %]
+
+================ Testing Acc (Tue Nov 25 05:22:11 2025) ================
+epoch: 8, TEST ACC: [98.679 %]
+
+epoch: 8, TEST F1: [96.67 %]
+
+================ Testing Acc (Tue Nov 25 05:22:15 2025) ================
+epoch: 9, TEST ACC: [99.031 %]
+
+epoch: 9, TEST F1: [97.867 %]
+
+================ Testing Acc (Tue Nov 25 05:22:20 2025) ================
+epoch: 10, TEST ACC: [99.061 %]
+
+epoch: 10, TEST F1: [97.59 %]
+
+================ Testing Acc (Tue Nov 25 05:22:24 2025) ================
+epoch: 11, TEST ACC: [98.988 %]
+
+epoch: 11, TEST F1: [97.124 %]
+
+================ Testing Acc (Tue Nov 25 05:22:29 2025) ================
+epoch: 12, TEST ACC: [99.456 %]
+
+epoch: 12, TEST F1: [98.11 %]
+
+================ Testing Acc (Tue Nov 25 05:22:33 2025) ================
+epoch: 13, TEST ACC: [99.546 %]
+
+epoch: 13, TEST F1: [98.33 %]
+
+================ Testing Acc (Tue Nov 25 05:22:38 2025) ================
+epoch: 14, TEST ACC: [99.411 %]
+
+epoch: 14, TEST F1: [97.978 %]
+
+================ Testing Acc (Tue Nov 25 05:22:42 2025) ================
+epoch: 15, TEST ACC: [99.497 %]
+
+epoch: 15, TEST F1: [98.497 %]
+
+================ Testing Acc (Tue Nov 25 05:22:47 2025) ================
+epoch: 16, TEST ACC: [99.393 %]
+
+epoch: 16, TEST F1: [97.894 %]
+
+================ Testing Acc (Tue Nov 25 05:22:51 2025) ================
+epoch: 17, TEST ACC: [99.436 %]
+
+epoch: 17, TEST F1: [98.079 %]
+
+================ Testing Acc (Tue Nov 25 05:22:55 2025) ================
+epoch: 18, TEST ACC: [99.266 %]
+
+epoch: 18, TEST F1: [97.81 %]
+
+================ Testing Acc (Tue Nov 25 05:22:59 2025) ================
+epoch: 19, TEST ACC: [99.466 %]
+
+epoch: 19, TEST F1: [98.313 %]
+
+================ Testing Acc (Tue Nov 25 05:23:04 2025) ================
+epoch: 20, TEST ACC: [99.404 %]
+
+epoch: 20, TEST F1: [97.978 %]
+
+================ Testing Acc (Tue Nov 25 05:23:08 2025) ================
+epoch: 21, TEST ACC: [99.523 %]
+
+epoch: 21, TEST F1: [98.531 %]
+
+================ Testing Acc (Tue Nov 25 05:23:12 2025) ================
+epoch: 22, TEST ACC: [99.445 %]
+
+epoch: 22, TEST F1: [98.547 %]
+
+================ Testing Acc (Tue Nov 25 05:23:16 2025) ================
+epoch: 23, TEST ACC: [99.436 %]
+
+epoch: 23, TEST F1: [98.563 %]
+
+================ Testing Acc (Tue Nov 25 05:23:21 2025) ================
+epoch: 24, TEST ACC: [99.457 %]
+
+epoch: 24, TEST F1: [98.731 %]
+
+================ Testing Acc (Tue Nov 25 05:23:25 2025) ================
+epoch: 25, TEST ACC: [99.61 %]
+
+epoch: 25, TEST F1: [98.817 %]
+
+================ Testing Acc (Tue Nov 25 05:23:29 2025) ================
+epoch: 26, TEST ACC: [99.602 %]
+
+epoch: 26, TEST F1: [98.431 %]
+
+================ Testing Acc (Tue Nov 25 05:23:34 2025) ================
+epoch: 27, TEST ACC: [99.574 %]
+
+epoch: 27, TEST F1: [98.665 %]
+
+================ Testing Acc (Tue Nov 25 05:23:38 2025) ================
+epoch: 28, TEST ACC: [99.592 %]
+
+epoch: 28, TEST F1: [98.665 %]
+
+================ Testing Acc (Tue Nov 25 05:23:42 2025) ================
+epoch: 29, TEST ACC: [99.44 %]
+
+epoch: 29, TEST F1: [98.296 %]
+
+================ Testing Acc (Tue Nov 25 05:23:46 2025) ================
+epoch: 30, TEST ACC: [99.534 %]
+
+epoch: 30, TEST F1: [98.548 %]
+
+================ Testing Acc (Tue Nov 25 05:23:50 2025) ================
+epoch: 31, TEST ACC: [99.345 %]
+
+epoch: 31, TEST F1: [98.112 %]
+
+================ Testing Acc (Tue Nov 25 05:23:55 2025) ================
+epoch: 32, TEST ACC: [99.345 %]
+
+epoch: 32, TEST F1: [98.144 %]
+
+================ Testing Acc (Tue Nov 25 05:23:59 2025) ================
+epoch: 33, TEST ACC: [99.304 %]
+
+epoch: 33, TEST F1: [97.928 %]
+
+================ Testing Acc (Tue Nov 25 05:24:01 2025) ================
+epoch: -1, TEST ACC: [99.258 %]
+
+epoch: -1, TEST F1: [94.803 %]
+
+================ Testing Acc (Tue Nov 25 05:24:03 2025) ================
+epoch: 34, TEST ACC: [99.538 %]
+
+epoch: 34, TEST F1: [98.547 %]
+
+================ Testing Acc (Tue Nov 25 05:24:07 2025) ================
+epoch: 35, TEST ACC: [99.124 %]
+
+epoch: 35, TEST F1: [98.306 %]
+
+================ Testing Acc (Tue Nov 25 05:24:12 2025) ================
+epoch: 36, TEST ACC: [99.4 %]
+
+epoch: 36, TEST F1: [98.078 %]
+
+================ Testing Acc (Tue Nov 25 05:24:16 2025) ================
+epoch: 37, TEST ACC: [98.841 %]
+
+epoch: 37, TEST F1: [97.715 %]
+
+================ Testing Acc (Tue Nov 25 05:24:20 2025) ================
+epoch: 38, TEST ACC: [99.318 %]
+
+epoch: 38, TEST F1: [97.876 %]
+
+================ Testing Acc (Tue Nov 25 05:24:24 2025) ================
+epoch: 39, TEST ACC: [99.323 %]
+
+epoch: 39, TEST F1: [97.892 %]
+
+================ Testing Acc (Tue Nov 25 05:24:29 2025) ================
+epoch: 40, TEST ACC: [99.348 %]
+
+epoch: 40, TEST F1: [98.176 %]
+
+================ Testing Acc (Tue Nov 25 05:24:33 2025) ================
+epoch: 41, TEST ACC: [99.291 %]
+
+epoch: 41, TEST F1: [98.294 %]
+
+================ Testing Acc (Tue Nov 25 05:24:37 2025) ================
+epoch: 42, TEST ACC: [99.299 %]
+
+epoch: 42, TEST F1: [98.445 %]
+
+================ Testing Acc (Tue Nov 25 05:24:41 2025) ================
+epoch: 43, TEST ACC: [99.522 %]
+
+epoch: 43, TEST F1: [98.396 %]
+
+================ Testing Acc (Tue Nov 25 05:24:45 2025) ================
+epoch: 44, TEST ACC: [99.183 %]
+
+epoch: 44, TEST F1: [98.158 %]
+
+================ Testing Acc (Tue Nov 25 05:24:49 2025) ================
+epoch: 45, TEST ACC: [98.965 %]
+
+epoch: 45, TEST F1: [97.686 %]
+
+================ Testing Acc (Tue Nov 25 05:24:53 2025) ================
+epoch: 46, TEST ACC: [99.414 %]
+
+epoch: 46, TEST F1: [98.294 %]
+
+================ Testing Acc (Tue Nov 25 05:24:57 2025) ================
+epoch: 47, TEST ACC: [99.482 %]
+
+epoch: 47, TEST F1: [98.378 %]
+
+================ Testing Acc (Tue Nov 25 05:25:02 2025) ================
+epoch: 48, TEST ACC: [99.504 %]
+
+epoch: 48, TEST F1: [98.145 %]
+
+================ Testing Acc (Tue Nov 25 05:25:06 2025) ================
+epoch: 49, TEST ACC: [99.586 %]
+
+epoch: 49, TEST F1: [98.481 %]
+
+================ Testing Acc (Tue Nov 25 05:25:10 2025) ================
+epoch: 50, TEST ACC: [99.175 %]
+
+epoch: 50, TEST F1: [97.89 %]
+
+================ Testing Acc (Tue Nov 25 05:25:14 2025) ================
+epoch: 51, TEST ACC: [99.39 %]
+
+epoch: 51, TEST F1: [98.194 %]
+
+================ Testing Acc (Tue Nov 25 05:25:18 2025) ================
+epoch: 52, TEST ACC: [98.812 %]
+
+epoch: 52, TEST F1: [97.764 %]
+
+================ Testing Acc (Tue Nov 25 05:25:22 2025) ================
+epoch: 53, TEST ACC: [99.064 %]
+
+epoch: 53, TEST F1: [97.807 %]
+
+================ Testing Acc (Tue Nov 25 05:25:26 2025) ================
+epoch: 54, TEST ACC: [99.48 %]
+
+epoch: 54, TEST F1: [98.43 %]
+
+================ Testing Acc (Tue Nov 25 05:25:30 2025) ================
+epoch: 55, TEST ACC: [98.685 %]
+
+epoch: 55, TEST F1: [97.731 %]
+
+================ Testing Acc (Tue Nov 25 05:25:34 2025) ================
+epoch: 56, TEST ACC: [99.529 %]
+
+epoch: 56, TEST F1: [98.247 %]
+
+================ Testing Acc (Tue Nov 25 05:25:38 2025) ================
+epoch: 57, TEST ACC: [97.457 %]
+
+epoch: 57, TEST F1: [97.01 %]
+
+================ Testing Acc (Tue Nov 25 05:25:42 2025) ================
+epoch: 58, TEST ACC: [93.428 %]
+
+epoch: 58, TEST F1: [93.514 %]
+
+================ Testing Acc (Tue Nov 25 05:25:46 2025) ================
+epoch: 59, TEST ACC: [97.865 %]
+
+epoch: 59, TEST F1: [96.427 %]
+
+================ Testing Acc (Tue Nov 25 05:25:51 2025) ================
+epoch: 60, TEST ACC: [99.109 %]
+
+epoch: 60, TEST F1: [97.809 %]
+
+================ Testing Acc (Tue Nov 25 05:25:55 2025) ================
+epoch: 61, TEST ACC: [99.328 %]
+
+epoch: 61, TEST F1: [98.294 %]
+
+================ Testing Acc (Tue Nov 25 05:25:59 2025) ================
+epoch: 62, TEST ACC: [99.398 %]
+
+epoch: 62, TEST F1: [98.195 %]
+
+================ Testing Acc (Tue Nov 25 05:26:03 2025) ================
+epoch: 63, TEST ACC: [99.443 %]
+
+epoch: 63, TEST F1: [98.463 %]
+
+================ Testing Acc (Tue Nov 25 05:26:07 2025) ================
+epoch: 64, TEST ACC: [99.59 %]
+
+epoch: 64, TEST F1: [98.666 %]
+
+================ Testing Acc (Tue Nov 25 05:26:11 2025) ================
+epoch: 65, TEST ACC: [99.692 %]
+
+epoch: 65, TEST F1: [98.802 %]
+
+================ Testing Acc (Tue Nov 25 05:26:15 2025) ================
+epoch: 66, TEST ACC: [99.495 %]
+
+epoch: 66, TEST F1: [98.513 %]
+
+================ Testing Acc (Tue Nov 25 05:26:19 2025) ================
+epoch: 67, TEST ACC: [99.462 %]
+
+epoch: 67, TEST F1: [98.464 %]
+
+================ Testing Acc (Tue Nov 25 05:26:24 2025) ================
+epoch: 68, TEST ACC: [99.467 %]
+
+epoch: 68, TEST F1: [98.43 %]
+
+================ Testing Acc (Tue Nov 25 05:26:28 2025) ================
+epoch: 69, TEST ACC: [99.366 %]
+
+epoch: 69, TEST F1: [98.394 %]
+
+================ Testing Acc (Tue Nov 25 05:26:32 2025) ================
+epoch: 70, TEST ACC: [99.463 %]
+
+epoch: 70, TEST F1: [98.447 %]
+
+================ Testing Acc (Tue Nov 25 05:26:36 2025) ================
+epoch: 71, TEST ACC: [99.381 %]
+
+epoch: 71, TEST F1: [98.462 %]
+
+================ Testing Acc (Tue Nov 25 05:26:40 2025) ================
+epoch: 72, TEST ACC: [99.428 %]
+
+epoch: 72, TEST F1: [98.462 %]
+
+================ Testing Acc (Tue Nov 25 05:26:44 2025) ================
+epoch: 73, TEST ACC: [99.345 %]
+
+epoch: 73, TEST F1: [98.395 %]
+
+================ Testing Acc (Tue Nov 25 05:26:48 2025) ================
+epoch: 74, TEST ACC: [99.319 %]
+
+epoch: 74, TEST F1: [98.293 %]
+
+================ Testing Acc (Tue Nov 25 05:26:52 2025) ================
+epoch: 75, TEST ACC: [99.304 %]
+
+epoch: 75, TEST F1: [98.278 %]
+
+================ Testing Acc (Tue Nov 25 05:26:56 2025) ================
+epoch: 76, TEST ACC: [99.352 %]
+
+epoch: 76, TEST F1: [98.395 %]
+
+================ Testing Acc (Tue Nov 25 05:27:00 2025) ================
+epoch: 77, TEST ACC: [99.321 %]
+
+epoch: 77, TEST F1: [98.294 %]
+
+================ Testing Acc (Tue Nov 25 05:27:04 2025) ================
+epoch: 78, TEST ACC: [99.297 %]
+
+epoch: 78, TEST F1: [98.211 %]
+
+================ Testing Acc (Tue Nov 25 05:27:09 2025) ================
+epoch: 79, TEST ACC: [99.331 %]
+
+epoch: 79, TEST F1: [98.211 %]
+
+================ Testing Acc (Tue Nov 25 05:27:13 2025) ================
+epoch: 80, TEST ACC: [99.393 %]
+
+epoch: 80, TEST F1: [98.43 %]
+
+================ Testing Acc (Tue Nov 25 05:27:17 2025) ================
+epoch: 81, TEST ACC: [99.374 %]
+
+epoch: 81, TEST F1: [98.312 %]
+
+================ Testing Acc (Tue Nov 25 05:27:21 2025) ================
+epoch: 82, TEST ACC: [99.434 %]
+
+epoch: 82, TEST F1: [98.395 %]
+
+================ Testing Acc (Tue Nov 25 05:27:25 2025) ================
+epoch: 83, TEST ACC: [99.426 %]
+
+epoch: 83, TEST F1: [98.412 %]
+
+================ Testing Acc (Tue Nov 25 05:27:29 2025) ================
+epoch: 84, TEST ACC: [99.347 %]
+
+epoch: 84, TEST F1: [98.26 %]
+
+================ Testing Acc (Tue Nov 25 05:27:33 2025) ================
+epoch: 85, TEST ACC: [99.407 %]
+
+epoch: 85, TEST F1: [98.328 %]
+
+================ Testing Acc (Tue Nov 25 05:27:37 2025) ================
+epoch: 86, TEST ACC: [99.426 %]
+
+epoch: 86, TEST F1: [98.43 %]
+
+================ Testing Acc (Tue Nov 25 05:27:41 2025) ================
+epoch: 87, TEST ACC: [99.468 %]
+
+epoch: 87, TEST F1: [98.581 %]
+
+================ Testing Acc (Tue Nov 25 05:27:45 2025) ================
+epoch: 88, TEST ACC: [99.5 %]
+
+epoch: 88, TEST F1: [98.531 %]
+
+================ Testing Acc (Tue Nov 25 05:27:49 2025) ================
+epoch: 89, TEST ACC: [99.371 %]
+
+epoch: 89, TEST F1: [98.461 %]
+
+================ Testing Acc (Tue Nov 25 05:27:54 2025) ================
+epoch: 90, TEST ACC: [99.433 %]
+
+epoch: 90, TEST F1: [98.546 %]
+
+================ Testing Acc (Tue Nov 25 05:27:58 2025) ================
+epoch: 91, TEST ACC: [98.594 %]
+
+epoch: 91, TEST F1: [97.504 %]
+
+================ Testing Acc (Tue Nov 25 05:28:02 2025) ================
+epoch: 92, TEST ACC: [97.681 %]
+
+epoch: 92, TEST F1: [96.163 %]
+
+================ Testing Acc (Tue Nov 25 05:28:06 2025) ================
+epoch: 93, TEST ACC: [99.242 %]
+
+epoch: 93, TEST F1: [98.122 %]
+
+================ Testing Acc (Tue Nov 25 05:28:10 2025) ================
+epoch: 94, TEST ACC: [99.319 %]
+
+epoch: 94, TEST F1: [98.058 %]
+
+================ Testing Acc (Tue Nov 25 05:28:14 2025) ================
+epoch: 95, TEST ACC: [99.325 %]
+
+epoch: 95, TEST F1: [97.745 %]
+
+================ Testing Acc (Tue Nov 25 05:28:18 2025) ================
+epoch: 96, TEST ACC: [99.458 %]
+
+epoch: 96, TEST F1: [98.08 %]
+
+================ Testing Acc (Tue Nov 25 05:28:22 2025) ================
+epoch: 97, TEST ACC: [99.539 %]
+
+epoch: 97, TEST F1: [98.43 %]
+
+================ Testing Acc (Tue Nov 25 05:28:26 2025) ================
+epoch: 98, TEST ACC: [99.49 %]
+
+epoch: 98, TEST F1: [98.229 %]
+
+================ Testing Acc (Tue Nov 25 05:28:30 2025) ================
+epoch: 99, TEST ACC: [99.489 %]
+
+epoch: 99, TEST F1: [98.197 %]
+
+================ Testing Acc (Tue Nov 25 05:28:34 2025) ================
+epoch: 100, TEST ACC: [99.465 %]
+
+epoch: 100, TEST F1: [98.313 %]
+
+================ Testing Acc (Tue Nov 25 05:29:34 2025) ================
+epoch: -1, TEST ACC: [99.618 %]
+
+epoch: -1, TEST F1: [95.813 %]
+
+================ Testing Acc (Tue Nov 25 05:30:26 2025) ================
+epoch: -1, TEST ACC: [99.61 %]
+
+epoch: -1, TEST F1: [98.817 %]
+
+================ Testing Acc (Tue Nov 25 07:25:14 2025) ================
+epoch: -1, TEST ACC: [99.61 %]
+
+epoch: -1, TEST F1: [98.817 %]
+
+================ Testing Acc (Tue Nov 25 07:27:15 2025) ================
+epoch: -1, TEST ACC: [99.61 %]
+
+epoch: -1, TEST F1: [98.817 %]
+
+================ Testing Acc (Tue Nov 25 07:43:17 2025) ================
+TEST ACC: [99.61 %]
+TEST F1: [98.817 %]
+================ Testing Acc (Tue Nov 25 21:16:36 2025) ================
+TEST ACC: [99.61 %]
+TEST F1: [98.817 %]
+================ Testing Acc (Tue Nov 25 21:18:55 2025) ================
+TEST ACC: [99.61 %]
+TEST F1: [98.817 %]
+================ Testing Acc (Tue Nov 25 21:23:54 2025) ================
+TEST ACC: [99.61 %]
+TEST F1: [98.817 %]
+================ Testing Acc (Tue Nov 25 21:26:59 2025) ================
+TEST ACC: [99.618 %]
+TEST F1: [95.813 %]
+================ Testing Acc (Tue Nov 25 21:28:21 2025) ================
+TEST ACC: [99.618 %]
+TEST F1: [95.813 %]
+================ Testing Acc (Tue Nov 25 21:29:37 2025) ================
+TEST ACC: [99.618 %]
+TEST F1: [95.813 %]
+================ Testing Acc (Wed Nov 26 01:39:39 2025) ================
+TEST ACC: [99.61 %]
+TEST F1: [98.817 %]
+================ Testing Acc (Thu Nov 27 06:09:50 2025) ================
+TEST ACC: [99.61 %]
+TEST F1: [98.817 %]

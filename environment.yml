@@ -1,0 +1,13 @@
+name: mcnenv
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.12.2
+  - cython=3.0.8
+  - pytorch=2.5.1
+  - numpy=2.1.3
+  - pip 
+  - pip:
+    - git+https://github.com/lanpa/tensorboardX.git
+    - pytest==8.3.5

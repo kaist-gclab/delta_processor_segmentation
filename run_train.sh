@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+bash ./scripts/class1_seg/train.sh
+bash ./scripts/class2_seg/train.sh
+bash ./scripts/class3_seg/train.sh
+bash ./scripts/class4_seg/train.sh
+bash ./scripts/class5_seg/train.sh
+bash ./scripts/class6_seg/train.sh
+bash ./scripts/class7_seg/train.sh
+bash ./scripts/class8_seg/train.sh
+bash ./scripts/class9_seg/train.sh
+bash ./scripts/class10_seg/train.sh
+bash ./scripts/class11_seg/train.sh
+bash ./scripts/class12_seg/train.sh
+bash ./scripts/class13_seg/train.sh
+bash ./scripts/class14_seg/train.sh
+bash ./scripts/class15_seg/train.sh
+bash ./scripts/class16_seg/train.sh
+bash ./scripts/class17_seg/train.sh
+bash ./scripts/class18_seg/train.sh
+bash ./scripts/class19_seg/train.sh

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+## run the test and export collapses
+python test.py \
+--dataroot datasets/noise_pclass10 \
+--name pclass_best/pclass10 \
+--arch meshunet \
+--dataset_mode segmentation \
+--ncf 32 64 128 256 \
+--ninput_edges 1500 \
+--pool_res 1050 600 300 \
+--resblocks 3 \
+--batch_size 4 \
+--export_folder meshes \

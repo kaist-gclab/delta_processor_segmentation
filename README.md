@@ -97,13 +97,8 @@ prince_simp_1000파일 내부에 seg, sseg파일이 생성됩니다.
 ### Create Noise to Dataset
 이름은 noise_pclass{번호}로 통일됩니다.
 1. 기존 dataset의 동일 pclass 내부에서 가져와야하는 파일들
-
-+ classes.txt, mean_std_cache.p 파일 생성
-
-classes.txt 및 mean_std_cache.p는 run_train을 돌리면 생성되며 복사해서 옮겨주시면 됩니다.
-
-+ test 폴더
-
-test mesh가 들어있는 test폴더도 복사해주시면 됩니다.
-
+1.1. classes.txt, mean_std_cache.p 파일 생성
+   classes.txt 및 mean_std_cache.p는 run_train을 돌리면 생성되며 복사해서 옮겨주시면 됩니다.
+1.2. test 폴더
+   test mesh가 들어있는 test폴더도 복사해주시면 됩니다.
 2. seg, sseg는 add_noise_to_label.py를 실행해주면 현재 동일 pclass의 seg, sseg로부터 3%의 noise가 추가된 segmentation이 생성됩니다.

@@ -46,7 +46,7 @@ bash ./run_test2.sh
 이중 균일한 gt를 사용해야하기 때문에 확인용으로 만들어두었습니다.
 
 + 모든 Segmentation 확인하기<br />
-L52-26을 돌리면 각 class의 mesh별 모든 segmentation을 볼 수 있습니다.<br />
+L52-56을 돌리면 각 class의 mesh별 모든 segmentation을 볼 수 있습니다.<br />
 Segmentation이 21개 이하인 경우만 볼 수 있고 더 많은 경우에는 스킵하도록 설정되어있습니다.
 
 + List를 기반으로 균일한 Segmentation 확인하기<br />

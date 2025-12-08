@@ -7,8 +7,7 @@ conda activate mcnenv
 ```
 
 ### Download Princeton Segmentation Benchmark Dataset for Model 📦️
-```
-```
+[Download Dataset](https://drive.google.com/file/d/1-ONm3XcOQawvkIlS_XXmtZj32-AjGGap/view?usp=drive_link) 링크를 눌러 다운 받으신 후 해당 repository의 가장 상위 폴더에 datasets가 위치하게 압축 해제 해두시면 됩니다.
 
 ### Create Noise to Dataset 💥
 이름은 noise_pclass{번호}로 통일됩니다.

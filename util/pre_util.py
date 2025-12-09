@@ -319,3 +319,38 @@ def get_label_number(lst_dict):
     seg_num = max_val+1
 
     return seg_num
+
+
+# added for visualization
+def read_mesh_alp(dir_path, only_pref=False, ext=(".off", ".ply", ".obj")):
+    """_summary_: reads the mesh in alphabetical order
+
+    Args:
+        dir_path (str): directory path where meshes are
+        supporting mesh file extensions: .obj, .stl, .ply, .off
+
+    Returns:
+        list of meshes (trimesh.Trimesh): list of meshes
+        Trimesh
+        ├── vertices [n, 3]
+        ├── faces [m, 3]
+        ├── vertex_normals [n, 3]
+        ├── face_normals [m, 3]
+        ├── edges / edges_unique
+        ├── is_watertight
+        ├── volume / area / centroid
+        ├── methods: show(), export(), fill_holes(), split()
+    """
+    fnames = [f for f in os.listdir(dir_path) if f.endswith(ext)]
+    # count = len(os.listdir(dir_path))
+    # fnames = ["{}.off".format(f) for f in range(1, count+1)]
+    # _key = [int(f.split(".")[0]) for f in fnames]
+    # sfnames = sorted(fnames, key=lambda f: int(f.split(".")[0]))
+    meshes = []
+    for f in fnames:
+        fpath = os.path.join(dir_path, f)
+        print(fpath)
+        mesh = trimesh.load(fpath)
+        meshes.append(mesh)
+
+    return meshes, fnames

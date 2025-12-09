@@ -287,3 +287,51 @@ def noise_seg(seg, sseg, idx, class_num):
     #     print("Before: {}, After: {}".format(sseg[elem], new_soft_label[elem]))
     
     return seg, sseg
+
+
+# Convert edge label back to face label
+def build_flabel_from_edges(etof, edge_labels, mode="majority", fill_value=-1):
+    """
+    Build face labels from per-edge hard labels.
+
+    Args:
+        etof (list of list[int]): for each edge, list of incident face ids.
+        edge_labels (array-like): integer label per edge, shape (num_edges,).
+        mode (str): "majority", "min", or "max" to aggregate edge labels.
+        fill_value (int): label used for faces that have no incident edges.
+
+    Returns:
+        flabels (ndarray[int]): label per face, shape (num_faces,).
+    """
+    edge_labels = np.asarray(edge_labels)
+    # infer number of faces from etof
+    max_fid = -1
+    for flist in etof:
+        if flist:
+            max_fid = max(max_fid, max(flist))
+    num_faces = max_fid + 1
+
+    # build face -> incident edges mapping
+    ftoe = [[] for _ in range(num_faces)]
+    for e, flist in enumerate(etof):
+        for f in flist:
+            ftoe[f].append(e)
+
+    flabels = np.full(num_faces, fill_value, dtype=int)
+
+    for f, edges in enumerate(ftoe):
+        if not edges:
+            continue  # isolated face, stays fill_value
+        labs = edge_labels[edges]
+
+        if mode == "majority":
+            vals, counts = np.unique(labs, return_counts=True)
+            flabels[f] = vals[np.argmax(counts)]
+        elif mode == "min":
+            flabels[f] = int(labs.min())
+        elif mode == "max":
+            flabels[f] = int(labs.max())
+        else:
+            raise ValueError(f"Unknown aggregation mode: {mode}")
+
+    return flabels

@@ -11,4 +11,5 @@ python test.py \
 --pool_res 1050 600 300 \
 --resblocks 3 \
 --batch_size 4 \
+--num_threads 0 \
 --export_folder meshes \

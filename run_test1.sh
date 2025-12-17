@@ -26,7 +26,7 @@ for cls in {1..19}; do
     echo "Class $((count+1)) F1  = $f1"
 
     sum_acc=$(echo "$sum_acc + $acc" | bc -l)
-    sum_f1=$(echo "$sum_f1 + $acc" | bc -l)
+    sum_f1=$(echo "$sum_f1 + $f1" | bc -l)
     count=$((count + 1))
 done
 

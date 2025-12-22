@@ -1,6 +1,7 @@
 /checkpoints/prev_train4
 /datasets/
 /datasets/need_to_be_processed
+/logs/
 /.vscode
 */__pycache__i/
 */testacc_log.txt

@@ -95,12 +95,18 @@ mkdir ./scripts/dataprep/data
 4. Unzip the downloaded benchmark
 5. Place the directory 'gt', 'seg' inside /data
 6. Download [blender](https://www.blender.org/download/) from official site.
-7. Run script<br />
+7. Install related library for code: blender_process_with_label.py<br />
+   Currently, I did not add required libraries in current environment.yml, as some needs to be installed through pip<br />
+   **You do not need to download bmesh**
+   ```
+   conda install -c conda-forge blender-mathutils
+   pip install bpy
+   ```
+8. Run script<br />
    ```
    bash ./scripts/dataprep/simplify_prince_with_label.sh
    ```
-   (install related library if not installed)
-8. The processed object file(.obj) and label files(.npz) are created in 'gt_simp' directory.<br />
+9. The processed object file(.obj) and label files(.npz) are created in 'gt_simp' directory.<br />
 If you want to separate these two files in separate folder, use below command<br />
    ```
    mkdir -p prince_simp_vertnum/seg_simp

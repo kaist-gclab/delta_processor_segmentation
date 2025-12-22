@@ -39,7 +39,7 @@ if args.data_dir == "prince_ben":
 elif args.data_dir == "prince_simp_1000" or args.data_dir == "prince_simp_5000":
     point_seg, eseg_name, seseg_name = pre_util.read_seg_res(seg_res_path, layer=0)
 
-for i in range(40,60): # len(meshes)
+for i in range(0,280): # len(meshes)
     mesh = meshes[i]
     name = names[i]
     points = pre_util.get_vertex(mesh)
@@ -48,6 +48,8 @@ for i in range(40,60): # len(meshes)
     # visu.vis_face_seg(points, faces, cur_seg[10])
     edges, etof, ftoe = el.build_edge_order(faces)
     # selected number of segmentation (from cur_seg)
+    # Get num_lst and lst_dict from
+    # simp_seg_label >> class#_###.txt
     num_lst = [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 4, 0, 2, 0, 2, 0, 1, 0, 0, 0]
     lst_dict = [
         {0:0, 2:0, 3:1, 1:1},

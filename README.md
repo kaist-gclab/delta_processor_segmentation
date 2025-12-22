@@ -95,4 +95,14 @@ mkdir ./scripts/dataprep/data
 4. Unzip the downloaded benchmark
 5. Place the directory 'gt', 'seg' inside /data
 6. Download [blender](https://www.blender.org/download/) from official site.
-7. I
+7. Run script
+```
+bash ./scripts/dataprep/simplify_prince_with_label.sh
+```
+(install related library if not installed)
+8. The .obj file ane .npz(label) files are created in 'gt_simp' directory<br />
+If you want to separate these two files in separate folder use below command<br />
+```
+mkdir -p prince_simp_vertnum/seg_simp
+mv -n gt_simp/*.npz prince_simp_vertnum/seg_simp
+```

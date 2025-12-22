@@ -39,7 +39,7 @@ if args.data_dir == "prince_ben":
 elif args.data_dir == "prince_simp_1000" or args.data_dir == "prince_simp_5000":
     point_seg, eseg_name, seseg_name = pre_util.read_seg_res(seg_res_path, layer=0)
 
-for i in range(0,280): # len(meshes)
+for i in range(0,380): # len(meshes)
     mesh = meshes[i]
     name = names[i]
     points = pre_util.get_vertex(mesh)

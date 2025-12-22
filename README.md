@@ -94,4 +94,5 @@ mkdir ./scripts/dataprep/data
 3. Download [Princeton Benchmark](https://segeval.cs.princeton.edu/)
 4. Unzip the downloaded benchmark
 5. Place the directory 'gt', 'seg' inside /data
-6. Download [blender](https://www.blender.org/) from official site.
+6. Download [blender](https://www.blender.org/download/) from official site.
+7. I

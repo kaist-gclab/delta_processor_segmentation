@@ -23,11 +23,15 @@ conda activate mcnenv
 bash ./run_train.sh
 ```
 
-
 ### Test Mesh Segmentation Model using PSB 🧪
 ```
 bash ./run_test1.sh
 bash ./run_test2.sh
+```
+만일 로그를 저장하고 싶다면
+```
+bash ./run_test1.sh | tee -a "test1.log"
+bash ./run_test2.sh | tee -a "test2.log"
 ```
 
 ### Explanation of Direct Functions 💡

@@ -88,5 +88,10 @@ prince_simp_1000파일 내부에 seg, sseg파일이 생성됩니다.<br />
 ## Additional Code for Data Preprocessing<br />
 ### Steps to Maintain Consistent Number of Points, Edge, Face<br />
 1. Create /data folder inside dataprep
-2. Download [Princeton Benchmark](https://segeval.cs.princeton.edu/)
-3. Unzip the downloaded benchmark
+```
+mkdir ./scripts/dataprep/data
+```
+3. Download [Princeton Benchmark](https://segeval.cs.princeton.edu/)
+4. Unzip the downloaded benchmark
+5. Place the directory 'gt', 'seg' inside /data
+6. Download [blender](https://www.blender.org/) from official site.

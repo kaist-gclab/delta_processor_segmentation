@@ -2,4 +2,4 @@
 /datasets/
 /datasets/need_to_be_processed
 /.vscode
-/__pycache__
+*/__pycache__/

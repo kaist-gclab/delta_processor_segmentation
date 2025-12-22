@@ -99,7 +99,7 @@ mkdir ./scripts/dataprep/data
 ```
 bash ./scripts/dataprep/simplify_prince_with_label.sh
 ```
-(install related library if not installed)
+(install related library if not installed)<br />
 8. The .obj file ane .npz(label) files are created in 'gt_simp' directory<br />
 If you want to separate these two files in separate folder use below command<br />
 ```

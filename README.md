@@ -84,3 +84,9 @@ prince_simp_1000파일 내부에 seg, sseg파일이 생성됩니다.<br />
 1. pre_util.py: 파일 불러오기 및 저장 관련 함수들
 2. edge_label.py: eseg, seseg 계산 및 weld vertex, weld faces 계산해주는 함수들
 3. visualize.py: mesh visualization 관련 함수들
+
+## Additional Code for Data Preprocessing<br />
+### Steps to Maintain Consistent Number of Points, Edge, Face<br />
+1. Create /data folder inside dataprep
+2. Download [Princeton Benchmark](https://segeval.cs.princeton.edu/)
+3. Unzip the downloaded benchmark

@@ -5,9 +5,10 @@ import torch.nn.functional as F
 class MeshConv(nn.Module):
     """ Computes convolution between edges and 4 incident (1-ring) edge neighbors
     in the forward pass takes:
-    x: edge features (Batch x Features x Edges)
-    mesh: list of mesh data-structure (len(mesh) == Batch)
-    and applies convolution
+
+    Args:
+        x: edge features (Batch x Features x Edges)
+        mesh: list of mesh data-structure (len(mesh) == Batch) and applies convolution
     """
     def __init__(self, in_channels, out_channels, k=5, bias=True):
         super(MeshConv, self).__init__()
@@ -40,7 +41,9 @@ class MeshConv(nn.Module):
         """ gathers the edge features (x) with from the 1-ring indices (Gi)
         applys symmetric functions to handle order invariance
         returns a 'fake image' which can use 2d convolution on
-        output dimensions: Batch x Channels x Edges x 5
+        
+        Returns:
+            output dimensions: Batch x Channels x Edges x 5
         """
         Gishape = Gi.shape
         # pad the first row of  every sample in batch with zeros

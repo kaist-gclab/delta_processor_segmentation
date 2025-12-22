@@ -3,3 +3,4 @@
 /datasets/need_to_be_processed
 /.vscode
 */__pycache__/
+/checkpoints/pclass_best/pclass*/testacc_log.txt

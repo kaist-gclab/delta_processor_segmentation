@@ -81,7 +81,7 @@ for i in range(0,20): # len(meshes)
     assert faces.shape[0] == cur_seg[elem].shape[0], "len vertices and len labels not same"
     cur_dict = lst_dict[i%20]
     new_seg = pre_util.create_new_label(seg, cur_dict)# convert seg using dictionary
-    if i == 377:
+    if i == 377: # merged ear label to fourleg obj of i=377
         seg2 = cur_seg[3]
         cur_dict2 = {7:2, 6:2, 10:100, 9:100, 8:100, 0:100, 3:100, 1:100, 14:100, 2:100, 4:100, 13:100, 12:100, 11:100, 5:100}
         new_seg2 = pre_util.create_new_label(seg2, cur_dict2)

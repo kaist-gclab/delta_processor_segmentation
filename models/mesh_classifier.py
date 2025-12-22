@@ -129,46 +129,39 @@ class ClassifierModel:
                 mesh.export_segments(pred_seg[meshi, :])
 
     def calculate_f1(self, pred_labels, gt_labels):
-        mesh_f1s = []
+        all_mesh_f1s = []
 
         for pred, gt in zip(pred_labels, gt_labels):
-            # pred = pred_label.view(-1)
-            # gt   = gt_label.view(-1)
+            # If batched: (B, E) -> iterate meshes
+            if pred.dim() == 2:
+                preds = [pred[i].view(-1) for i in range(pred.size(0))]
+                gts   = [gt[i].view(-1)   for i in range(gt.size(0))]
+            else:
+                preds = [pred.view(-1)]
+                gts   = [gt.view(-1)]
 
-            classes = torch.unique(gt)
-            f1s = []
+            for p, g in zip(preds, gts):
+                classes = torch.unique(g)
+                f1s = []
 
-            for c in classes:
-                tp = torch.sum((pred == c) & (gt == c)).float()
-                fp = torch.sum((pred == c) & (gt != c)).float()
-                fn = torch.sum((pred != c) & (gt == c)).float()
+                for c in classes:
+                    tp = ((p == c) & (g == c)).sum().float()
+                    fp = ((p == c) & (g != c)).sum().float()
+                    fn = ((p != c) & (g == c)).sum().float()
 
-                if tp + fp + fn == 0:
-                    continue
+                    denom_prec = tp + fp
+                    denom_recl = tp + fn
+                    if denom_prec == 0 or denom_recl == 0:
+                        continue
 
-                precision = tp / (tp + fp + 1e-8)
-                recall    = tp / (tp + fn + 1e-8)
-                f1        = 2 * precision * recall / (precision + recall + 1e-8)
-                f1s.append(f1)
+                    precision = tp / (denom_prec + 1e-8)
+                    recall    = tp / (denom_recl + 1e-8)
+                    f1        = 2 * precision * recall / (precision + recall + 1e-8)
+                    f1s.append(f1)
 
-            mesh_f1 = torch.mean(torch.stack(f1s))
-            mesh_f1s.append(mesh_f1)
+                if len(f1s) == 0:
+                    all_mesh_f1s.append(torch.tensor(0.0, device=p.device))
+                else:
+                    all_mesh_f1s.append(torch.stack(f1s).mean())
 
-        return torch.mean(torch.stack(mesh_f1s))
-
-    # def calculate_f1(self, pred_labels, gt_labels):
-    #     pred_label = torch.cat(pred_labels)
-    #     gt_label = torch.cat(gt_labels)
-    #     classes = torch.unique(gt_label)
-    #     f1s = []
-    #     for c in classes:
-    #         tp = torch.sum((pred_label == c) & (gt_label == c))
-    #         fp = torch.sum((pred_label == c) & (gt_label != c))
-    #         fn = torch.sum((pred_label != c) & (gt_label == c))
-            
-    #         precision = tp / (tp + fp + 1e-8)
-    #         recall    = tp / (tp + fn + 1e-8)
-    #         f1        = 2 * precision * recall / (precision + recall + 1e-8)
-    #         f1s.append(f1)
-        
-    #     return sum(f1s)/len(f1s)
+        return torch.stack(all_mesh_f1s).mean()

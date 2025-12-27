@@ -75,6 +75,16 @@ def print_network(net):
     print('-----------------------------------------------')
 
 def get_heatmap_color(value, minimum=0, maximum=1):
+    """_summary_
+
+    Args:
+        value (int): current value
+        minimum (int, optional): _description_. Defaults to 0.
+        maximum (int, optional): _description_. Defaults to 1.
+
+    Returns:
+        r, g, b: heatmap color of int val
+    """
     minimum, maximum = float(minimum), float(maximum)
     ratio = 2 * (value-minimum) / (maximum - minimum)
     b = int(max(0, 255*(1 - ratio)))

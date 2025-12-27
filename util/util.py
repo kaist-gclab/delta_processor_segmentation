@@ -13,6 +13,7 @@ MESH_EXTENSIONS = [
 ]
 
 def is_mesh_file(filename):
+    # checks if the filename extension is mesh file
     return any(filename.endswith(extension) for extension in MESH_EXTENSIONS)
 
 def pad(input_arr, target_length, val=0, dim=1):

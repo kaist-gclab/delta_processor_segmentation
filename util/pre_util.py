@@ -41,6 +41,7 @@ def read_mesh(dir_path, only_pref=False, ext=(".off", ".ply", ".obj")):
     return meshes, sfnames
 
 
+# Read face segmentation
 def read_seg_res(dir_path, layer=0):
     """Read segmentation result and seg(eseg)/sseg(seseg) file names
     Args:

@@ -288,7 +288,7 @@ def save_eseg(dirpath, fname, labels):
 
     Args:
         dirpath (str): directory path to be saved
-        fname (str): _description_
+        fname (str): file name
         labels (ndarray): _description_
     """
     fpath = os.path.join(dirpath, fname)

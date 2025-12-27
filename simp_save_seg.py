@@ -36,7 +36,7 @@ os.makedirs(sseg_path, exist_ok=True)
 meshes, names = pre_util.read_mesh(gt_path) # read all meshes / sorted
 if args.data_dir == "prince_ben":
     point_seg, eseg_name, seseg_name = pre_util.read_seg_res(seg_res_path, layer=1)
-elif args.data_dir == "prince_simp_1000" or args.data_dir == "prince_simp_5000":
+else:
     point_seg, eseg_name, seseg_name = pre_util.read_seg_res(seg_res_path, layer=0)
 
 for i in range(0,20): # len(meshes)

@@ -235,20 +235,20 @@ def get_face(mesh, library="trimesh"):
         return np.asarray(mesh.triangles)
     
 
-def get_vnorm(mesh, library="trimesh"):
-    """_summary_: get vertex normals from mesh (read through different library)
+# def get_vnorm(mesh, library="trimesh"):
+#     """_summary_: get vertex normals from mesh (read through different library)
 
-    Args:
-        mesh (_type_): original mesh
-        library (str, optional): imported library of mesh. Defaults to "trimesh".
+#     Args:
+#         mesh (_type_): original mesh
+#         library (str, optional): imported library of mesh. Defaults to "trimesh".
 
-    Returns:
-        vertex normal (ndarray): (n, 3) sized vertex normal
-    """
-    if library == "trimesh":
-        return mesh.vertex_normals
-    elif library == "o3d":
-        return np.asarray(mesh.vertex_normals)
+#     Returns:
+#         vertex normal (ndarray): (n, 3) sized vertex normal
+#     """
+#     if library == "trimesh":
+#         return mesh.vertex_normals
+#     elif library == "o3d":
+#         return np.asarray(mesh.vertex_normals)
     
 
 def get_fnorm(mesh, library="trimesh"):

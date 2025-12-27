@@ -289,7 +289,7 @@ def save_eseg(dirpath, fname, labels):
     Args:
         dirpath (str): directory path to be saved
         fname (str): file name
-        labels (ndarray): _description_
+        labels (ndarray): int label
     """
     fpath = os.path.join(dirpath, fname)
     np.savetxt(fpath, labels, fmt="%d", newline="\n")

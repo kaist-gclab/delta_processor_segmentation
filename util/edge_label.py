@@ -185,6 +185,7 @@ def build_bound_slabel(etof, face_prob, edges, seg_len):
     return padded_array # b
 
 
+# Not Used
 def edge_multiplicity(faces):
     """_summary_
     Args:

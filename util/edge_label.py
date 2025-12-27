@@ -316,7 +316,6 @@ def noise_seg(seg, sseg, idx, class_num):
     cols = np.asarray(new_labels, dtype=np.int64).ravel()
     sseg[rows, :] = 0.0 # convert all other lable to zero
     sseg[rows, cols] = 1.0 # change according soft label
-    
     # for elem in idx: # 이전 레이블과 비교
     #     print("Before: {}, After: {}".format(sseg[elem], new_soft_label[elem]))
     
@@ -358,12 +357,12 @@ def build_flabel_from_edges(etof, edge_labels, mode="majority", fill_value=-1):
             continue  # isolated face, stays fill_value
         labs = edge_labels[edges]
 
-        if mode == "majority":
+        if mode == "majority": # maps to maj count
             vals, counts = np.unique(labs, return_counts=True)
             flabels[f] = vals[np.argmax(counts)]
-        elif mode == "min":
+        elif mode == "min": # maps to minimum label
             flabels[f] = int(labs.min())
-        elif mode == "max":
+        elif mode == "max": # maps to maximum label
             flabels[f] = int(labs.max())
         else:
             raise ValueError(f"Unknown aggregation mode: {mode}")

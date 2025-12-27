@@ -146,6 +146,14 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
     
 
 def save_mesh(dir_path, point, face, name):
+    """_summary_: save mesh into dir_path with name
+
+    Args:
+        dir_path (_type_): _description_
+        point (_type_): _description_
+        face (_type_): _description_
+        name (_type_): _description_
+    """
     name_path = os.path.join(dir_path, name)
     cur_mesh = trimesh.Trimesh(vertices=point, faces=face)
     cur_mesh.export(name_path)

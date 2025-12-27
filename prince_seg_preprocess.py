@@ -47,7 +47,7 @@ for i in tqdm(range(len(meshes))):
         assert cur_face.shape[0] == cur_seg[j].shape[0], "len vertices and len labels not same"
         # calculate face prob to get soft edge label
         face_prob = el.get_face_probs(cur_seg[j])
-        seseg = el.build_bound_slabel(etof, face_prob, edges)
+        seseg = el.build_bound_slabel(etof, face_prob, edges) # soft edge prob
         eseg = seseg.argmax(axis=1)
         eseg_fname = eseg_name[i][j]
         seseg_fname = seseg_name[i][j]

@@ -149,10 +149,10 @@ def save_mesh(dir_path, point, face, name):
     """_summary_: save mesh into dir_path with name
 
     Args:
-        dir_path (_type_): _description_
-        point (_type_): _description_
-        face (_type_): _description_
-        name (_type_): _description_
+        dir_path (str): saving directory
+        point (ndarray): mesh point
+        face (ndarray): mesh face
+        name (str): name in str
     """
     name_path = os.path.join(dir_path, name)
     cur_mesh = trimesh.Trimesh(vertices=point, faces=face)

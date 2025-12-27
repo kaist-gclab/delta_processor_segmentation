@@ -384,7 +384,7 @@ def get_label_number(lst_dict):
         lst_dict (python dict): label-idx dict
 
     Returns:
-        seg_num (int): _description_
+        seg_num (int): number of segmentation
     """
     # calculates segmentation number
     max_val = 0

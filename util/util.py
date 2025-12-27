@@ -16,7 +16,7 @@ def is_mesh_file(filename):
     """_summary_: checks if the filename extension is mesh file
 
     Args:
-        filename (str): _description_
+        filename (str): names of the files
 
     Returns:
         bool: False if any ext is not mesh extension

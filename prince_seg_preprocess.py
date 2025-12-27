@@ -23,7 +23,7 @@ seg_res_path = ""
 if args.data_dir == "prince_ben":
     gt_path = os.path.join(data_path, "gt")
     seg_res_path = os.path.join(data_path, "seg_res")
-elif args.data_dir == "prince_simp_1000" or args.data_dir == "prince_simp_5000" or args.data_dir == "prince_simp_1000_disconn" or args.data_dir == "prince_simp_5000_disconn":
+else:
     gt_path = os.path.join(data_path, "gt_simp")
     seg_res_path = os.path.join(data_path, "seg_simp")
 

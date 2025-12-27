@@ -284,6 +284,13 @@ def read_eseg(dirpath, fname):
     
 
 def save_eseg(dirpath, fname, labels):
+    """_summary_: saves single soft label
+
+    Args:
+        dirpath (_type_): _description_
+        fname (_type_): _description_
+        labels (_type_): _description_
+    """
     fpath = os.path.join(dirpath, fname)
     np.savetxt(fpath, labels, fmt="%d", newline="\n")
 

@@ -16,8 +16,8 @@ args = parser.parse_args()
 # Path
 base_path = os.path.dirname(__file__)
 data_path = os.path.join(base_path, "datasets", args.data_dir) # dataset dir
-nmesh_path = os.path.join(data_path, "gt_conn")
-nseg_path = os.path.join(data_path, "seg_conn")
+nmesh_path = os.path.join(data_path, "gt_conn") # connected obj mesh
+nseg_path = os.path.join(data_path, "seg_conn") # connected label
 
 gt_path = ""
 seg_res_path = ""

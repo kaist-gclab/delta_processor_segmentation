@@ -4,6 +4,8 @@ from tqdm import tqdm
 from util import pre_util
 from util import edge_label as el
 
+## Connects disconnected face for simplified mesh ##
+## 기하적으로 연결되어있으니 각 face가 독립적으로 생성되는 문제를 고치기 위한 코드 ##
 
 # Parser
 parser = argparse.ArgumentParser()

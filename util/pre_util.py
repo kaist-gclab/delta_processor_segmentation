@@ -160,6 +160,14 @@ def save_mesh(dir_path, point, face, name):
 
 
 def save_mult_labels(dir_path, labels, name, name_key):
+    """_summary_
+
+    Args:
+        dir_path (_type_): _description_
+        labels (_type_): _description_
+        name (_type_): _description_
+        name_key (_type_): _description_
+    """
     name_path = os.path.join(dir_path, name)
     name_prefix = name.split("_")[0]
     payload = {}

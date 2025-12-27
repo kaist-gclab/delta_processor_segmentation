@@ -41,7 +41,7 @@ for i in tqdm(range(len(meshes))):
     cur_mesh = meshes[i]
     cur_face = pre_util.get_face(cur_mesh)
     cur_seg = point_seg[i] # list of segmentations
-    # e_u, counts, ftoe = el.edge_multiplicity(cur_face)
+    
     # cur_vert = pre_util.get_vertex(cur_mesh)
     edges, etof, ftoe = el.build_edge_order(cur_face)
     # edges, etof, ftoe = el.build_edge_order(cur_face)

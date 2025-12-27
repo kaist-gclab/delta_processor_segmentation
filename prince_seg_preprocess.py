@@ -4,7 +4,7 @@ from tqdm import tqdm
 from util import pre_util
 from util import edge_label as el
 
-## Created edge segmentation and soft edge segmentation ##
+## Creates edge segmentation and soft edge segmentation ##
 
 # Parser
 parser = argparse.ArgumentParser()

@@ -103,6 +103,7 @@ def get_face_probs(flabels, smoothing=0.0):
         return face_prob
 
 
+# Helper function for build_bound_slabel
 def build_slabel(etof, face_prob, mode="mean"):
     num_edge = len(etof)
     num_classes = face_prob.shape[1]

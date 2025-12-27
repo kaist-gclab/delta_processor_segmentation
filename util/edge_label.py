@@ -294,12 +294,23 @@ def create_dict(class_num):
 
 
 def noise_seg(seg, sseg, idx, class_num):
+    """_summary_
+
+    Args:
+        seg (_type_): _description_
+        sseg (_type_): _description_
+        idx (_type_): _description_
+        class_num (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     seed = datetime.now().year # get year
     np.random.seed(seed) # set seed
 
     cdict = create_dict(class_num)
-    new_labels = np.array([cdict[seg[i]] for i in idx]) # new label
-    seg[idx] = new_labels
+    new_labels = np.array([cdict[seg[i]] for i in idx]) # new label for picked idx
+    seg[idx] = new_labels # change picked idx to new label
     # sseg[idx[:, None], new_labels] = 1.0
 
     rows = np.asarray(idx, dtype=np.int64).ravel()

@@ -275,7 +275,7 @@ def read_eseg(dirpath, fname):
         fname (str): file name
 
     Returns:
-        eseg (ndarray): int label
+        eseg (ndarray): hard edge label in int
     """
     fpath = os.path.join(dirpath, fname)
     eseg = np.loadtxt(fpath, dtype=np.int64)
@@ -303,7 +303,7 @@ def read_seseg(dirpath, fname):
         fname (str): file name
 
     Returns:
-        seseg (ndarray): _description_
+        seseg (ndarray): soft edge label in float array (probab)
     """
     fpath = os.path.join(dirpath, fname)
     seseg = np.loadtxt(fpath, dtype=np.float32)

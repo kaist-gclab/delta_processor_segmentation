@@ -32,6 +32,7 @@ os.makedirs(seg_path, exist_ok=True)
 os.makedirs(sseg_path, exist_ok=True)
 
 meshes, names = pre_util.read_mesh(gt_path) # read all meshes
+# file structure differ (layer)
 if args.data_dir == "prince_ben":
     point_seg, eseg_name, seseg_name = pre_util.read_seg_res_with_eseg_fname(seg_res_path, layer=1)
 else:

@@ -362,11 +362,11 @@ def create_new_label(cur_label, map_dict):
     """_summary_: according to dictionary, changes current label to new label
 
     Args:
-        cur_label (_type_): _description_
-        map_dict (_type_): _description_
+        cur_label (ndarray): current segmentation label
+        map_dict (python dict): label mapping dictionary
 
     Returns:
-        _type_: _description_
+        new_label (ndarray): _description_
     """
     len_label = cur_label.shape[0] # get shape
     new_label = np.empty(len_label, dtype=np.int64)

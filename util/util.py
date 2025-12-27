@@ -94,6 +94,14 @@ def get_heatmap_color(value, minimum=0, maximum=1):
 
 
 def normalize_np_array(np_array):
+    """_summary_
+
+    Args:
+        np_array (ndarray)
+
+    Returns:
+        normalized array of value between 0 and 1
+    """
     min_value = np.min(np_array)
     max_value = np.max(np_array)
     return (np_array - min_value) / (max_value - min_value)

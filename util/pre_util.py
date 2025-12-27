@@ -345,6 +345,14 @@ def save_seseg(dirpath, fname, labels):
 
 
 def get_fnames(dir_path):
+    """_summary_
+
+    Args:
+        dir_path (str): directory path
+
+    Returns:
+        sfilenames: sorted file names
+    """
     filenames = [d for d in os.listdir(dir_path)]
     sfilenames = sorted(filenames, key=lambda d: int(d.split(".")[0].split("_")[0]))
 

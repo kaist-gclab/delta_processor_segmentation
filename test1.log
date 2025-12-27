@@ -1,0 +1,30 @@
+===========================
+Start Test 1: Accuracy Over 90%
+===========================
+===========================
+Start Test 1: Accuracy Over 90%
+===========================
+Class 1 F1  = 85.804
+Class 2 F1  = 97.643
+Class 3 F1  = 98.814
+Class 4 F1  = 92.386
+Class 5 F1  = 96.045
+Class 6 F1  = 75.731
+Class 7 F1  = 96.084
+Class 8 F1  = 95.628
+Class 9 F1  = 93.584
+Class 10 F1  = 93.985
+Class 11 F1  = 87.716
+Class 12 F1  = 84.501
+Class 13 F1  = 89.488
+Class 14 F1  = 91.838
+Class 15 F1  = 86.912
+Class 16 F1  = 94.848
+Class 17 F1  = 94.867
+Class 18 F1  = 85.626
+Class 19 F1  = 84.753
+===========================
+Overall Mean F1 Score : 90.855
+PASS: Mean F1 >= 90%
+End of Test 1
+===========================

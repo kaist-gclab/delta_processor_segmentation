@@ -111,13 +111,15 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
             face_seg = []
             seg_res = ["{}_{}.seg".format(d,i) for i in range(count)] # flabel
             eseg_name = ["{}_{}.eseg".format(d,i) for i in range(count)] # hlabel
-            eseg_dirs.append(eseg_name) #
+            eseg_dirs.append(eseg_name) # hard labels for all mesh (2D list)
             seseg_name = ["{}_{}.seseg".format(d,i) for i in range(count)] # slabel
-            seseg_dirs.append(seseg_name) #
-            for elem in seg_res:
-                fpath = os.path.join(seg_path, elem)
-                part_label = np.loadtxt(fname=fpath, dtype=int)
-                face_seg.append(part_label)
+            seseg_dirs.append(seseg_name) # soft labels for all mesh (2D list)
+            seg_name = [os.path.join(seg_path, elem) for elem in seg_path]
+            face_seg = [np.loadtxt(elem, dtype=int) for elem in seg_name]
+            # for elem in seg_res:
+            #     fpath = os.path.join(seg_path, elem)
+            #     part_label = np.loadtxt(fname=fpath, dtype=int)
+            #     face_seg.append(part_label)
             face_labels.append(face_seg)
 
         return face_labels, eseg_dirs, seseg_dirs

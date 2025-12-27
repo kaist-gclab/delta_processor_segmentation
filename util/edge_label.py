@@ -272,7 +272,16 @@ def select_idx(len_label, percent=0.03):
     return lidx
 
 
+# Helper function of noise_seg
 def create_dict(class_num):
+    """_summary_
+
+    Args:
+        class_num (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     cdict = dict()
     for i in range(class_num):
         if i == class_num-1:

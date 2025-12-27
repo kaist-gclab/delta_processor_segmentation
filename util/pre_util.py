@@ -139,8 +139,8 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
                 seseg_name = ["{}.seseg".format(f.split(".")[0]) for f in part_label_tag]
                 eseg_dirs.append(eseg_name)
                 seseg_dirs.append(seseg_name)
-                point_seg = [np.asarray(part_label[t]).reshape(-1) for t in part_label_tag]
-                face_labels.append(point_seg)
+                face_seg = [np.asarray(part_label[t]).reshape(-1) for t in part_label_tag]
+                face_labels.append(face_seg)
 
         return face_labels, eseg_dirs, seseg_dirs
     

@@ -381,7 +381,7 @@ def get_label_number(lst_dict):
     """_summary_
 
     Args:
-        lst_dict (python dict): _description_
+        lst_dict (python dict): label-idx dict
 
     Returns:
         seg_num (int): _description_

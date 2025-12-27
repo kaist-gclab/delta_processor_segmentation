@@ -30,7 +30,7 @@ def pad(input_arr, target_length, val=0, dim=1):
         input_arr (_type_): _description_
         target_length (_type_): _description_
         val (int, optional): padding value. Defaults to 0.
-        dim (int, optional): _description_. Defaults to 1.
+        dim (int, optional): padding dimension. Defaults to 1.
 
     Returns:
         _type_: _description_

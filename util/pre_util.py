@@ -287,7 +287,7 @@ def save_eseg(dirpath, fname, labels):
     """_summary_: saves single soft label
 
     Args:
-        dirpath (str): _description_
+        dirpath (str): directory path to be saved
         fname (str): _description_
         labels (ndarray): _description_
     """

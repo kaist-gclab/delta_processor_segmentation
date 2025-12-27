@@ -102,7 +102,7 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
     if layer == 1:
         dirnames = [d for d in os.listdir(dir_path)] # dir names - classs
         sdirnames = sorted(dirnames, key=lambda d: int(d.split(".")[0].split("_")[0])) # sorted in int size
-        face_labels = []
+        face_labels = [] # labels for face
         eseg_dirs = []
         seseg_dirs = []
         for d in sdirnames:

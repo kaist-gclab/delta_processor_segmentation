@@ -300,7 +300,7 @@ def read_seseg(dirpath, fname):
 
     Args:
         dirpath (str): directory path to be saved
-        fname (str): _description_
+        fname (str): file name
 
     Returns:
         seseg (ndarray): _description_

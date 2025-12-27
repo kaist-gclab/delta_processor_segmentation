@@ -47,7 +47,6 @@ for i in range(0,20): # len(meshes)
     points = pre_util.get_vertex(mesh)
     faces = pre_util.get_face(mesh)
     cur_seg = point_seg[i] # get related segmentation
-    # visu.vis_face_seg(points, faces, cur_seg[10])
     edges, etof, ftoe = el.build_edge_order(faces)
     # selected number of segmentation (from cur_seg)
     # Get num_lst and lst_dict from

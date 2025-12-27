@@ -24,6 +24,17 @@ def is_mesh_file(filename):
     return any(filename.endswith(extension) for extension in MESH_EXTENSIONS)
 
 def pad(input_arr, target_length, val=0, dim=1):
+    """_summary_
+
+    Args:
+        input_arr (_type_): _description_
+        target_length (_type_): _description_
+        val (int, optional): padding value. Defaults to 0.
+        dim (int, optional): _description_. Defaults to 1.
+
+    Returns:
+        _type_: _description_
+    """
     shp = input_arr.shape
     npad = [(0, 0) for _ in range(len(shp))]
     npad[dim] = (0, target_length - shp[dim])

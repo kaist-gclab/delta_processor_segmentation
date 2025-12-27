@@ -253,7 +253,17 @@ def weld_vertices_with_labels(vert, face, face_labels=None, eps=1e-8, drop_dupli
     return vert_w, face_w, labels_w, kept_face_idx, old_to_new_vidx
 
 
+# Used to select label idx for adding noise
 def select_idx(len_label, percent=0.03):
+    """_summary_
+
+    Args:
+        len_label (_type_): _description_
+        percent (float, optional): _description_. Defaults to 0.03.
+
+    Returns:
+        _type_: _description_
+    """
     seed = datetime.now().year # get year
     np.random.seed(seed) # set seed
     noise_size = int(np.ceil(len_label * percent)) # number of noise

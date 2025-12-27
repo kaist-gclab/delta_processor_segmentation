@@ -54,7 +54,7 @@ def read_seg_res(dir_path, layer=0):
     """
     if layer == 0:
         filenames = [d for d in os.listdir(dir_path)] # directory names
-        sfilenames = sorted(filenames, key=lambda d: int(d.split(".")[0].split("_")[0]))
+        sfilenames = sorted(filenames, key=lambda d: int(d.split(".")[0].split("_")[0])) # sorted in number
         seg_files = ["{}.npz".format(f.split(".")[0]) for f in sfilenames]
         point_labels = []
         seg_label_names = []

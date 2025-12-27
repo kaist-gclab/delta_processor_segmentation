@@ -46,14 +46,14 @@ def seg_accuracy(predicted, ssegs, meshes):
     Args:
         predicted (torch tensor): _description_
         ssegs (torch tensor): _description_
-        meshes (_type_): _description_
+        meshes (torch tensor): _description_
 
     Returns:
         correct (int): number of correct segmentation
     """
     correct = 0
     ssegs = ssegs.squeeze(-1) # (B, num_e, num_c, 1) -> (B, num_e, num_c)
-    correct_mat = ssegs.gather(2, predicted.cpu().unsqueeze(dim=2))
+    correct_mat = ssegs.gather(2, predicted.cpu().unsqueeze(dim=2)) # (B, num_e, 1)
     for mesh_id, mesh in enumerate(meshes):
         correct_vec = correct_mat[mesh_id, :mesh.edges_count, 0]
         edge_areas = torch.from_numpy(mesh.get_edge_areas())

@@ -299,7 +299,7 @@ def read_seseg(dirpath, fname):
     """_summary_: reads single soft label
 
     Args:
-        dirpath (str): _description_
+        dirpath (str): directory path to be saved
         fname (str): _description_
 
     Returns:

@@ -108,6 +108,14 @@ def normalize_np_array(np_array):
 
 
 def calculate_entropy(np_array):
+    """_summary_
+
+    Args:
+        np_array (ndarray)
+
+    Returns:
+        entropy: _description_
+    """
     entropy = 0
     np_array /= np.sum(np_array)
     for a in np_array:

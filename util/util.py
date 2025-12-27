@@ -61,9 +61,11 @@ def seg_accuracy(predicted, ssegs, meshes):
     return correct
 
 def print_network(net):
-    """Print the total number of parameters in the network
-    Parameters:
-        network
+    """_summary_: Print the total number of parameters in the network
+    
+    Args:
+        net: network with hyper parameters
+
     """
     print('---------- Network initialized -------------')
     num_params = 0

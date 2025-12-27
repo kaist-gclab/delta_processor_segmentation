@@ -299,11 +299,11 @@ def read_seseg(dirpath, fname):
     """_summary_: reads single soft label
 
     Args:
-        dirpath (_type_): _description_
-        fname (_type_): _description_
+        dirpath (str): _description_
+        fname (str): _description_
 
     Returns:
-        _type_: _description_
+        seseg (ndarray): _description_
     """
     fpath = os.path.join(dirpath, fname)
     seseg = np.loadtxt(fpath, dtype=np.float32)

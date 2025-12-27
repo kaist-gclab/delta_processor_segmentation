@@ -23,11 +23,15 @@ conda activate mcnenv
 bash ./run_train.sh
 ```
 
-
 ### Test Mesh Segmentation Model using PSB 🧪
 ```
 bash ./run_test1.sh
 bash ./run_test2.sh
+```
+만일 로그를 저장하고 싶다면
+```
+bash ./run_test1.sh | tee -a "test1.log"
+bash ./run_test2.sh | tee -a "test2.log"
 ```
 
 ### Explanation of Direct Functions 💡
@@ -84,3 +88,31 @@ prince_simp_1000파일 내부에 seg, sseg파일이 생성됩니다.<br />
 1. pre_util.py: 파일 불러오기 및 저장 관련 함수들
 2. edge_label.py: eseg, seseg 계산 및 weld vertex, weld faces 계산해주는 함수들
 3. visualize.py: mesh visualization 관련 함수들
+
+## (Optional) Additional Code for Data Preprocessing<br />
+### Steps to Maintain Consistent Number of Points, Edge, Face<br />
+1. Create /data folder inside dataprep
+```
+mkdir ./scripts/dataprep/data
+```
+3. Download [Princeton Benchmark](https://segeval.cs.princeton.edu/)
+4. Unzip the downloaded benchmark
+5. Place the directory 'gt', 'seg' inside /data
+6. Download [blender](https://www.blender.org/download/) from official site.
+7. Install related library for code: blender_process_with_label.py<br />
+   Currently, I did not add required libraries in current environment.yml, as some needs to be installed through pip<br />
+   **You do not need to download bmesh**
+   ```
+   conda install -c conda-forge blender-mathutils
+   pip install bpy
+   ```
+8. Run script<br />
+   ```
+   bash ./scripts/dataprep/simplify_prince_with_label.sh
+   ```
+9. The processed object file(.obj) and label files(.npz) are created in 'gt_simp' directory.<br />
+If you want to separate these two files in separate folder, use below command<br />
+   ```
+   mkdir -p prince_simp_vertnum/seg_simp
+   mv -n gt_simp/*.npz prince_simp_vertnum/seg_simp
+   ```

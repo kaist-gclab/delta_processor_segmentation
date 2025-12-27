@@ -8,7 +8,6 @@ from tqdm import tqdm
 
 
 class MeshPool(nn.Module):
-    
     def __init__(self, target, multi_thread=False):
         super(MeshPool, self).__init__()
         self.__out_target = target

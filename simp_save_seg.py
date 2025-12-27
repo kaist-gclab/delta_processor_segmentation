@@ -39,7 +39,9 @@ if args.data_dir == "prince_ben":
 elif args.data_dir == "prince_simp_1000" or args.data_dir == "prince_simp_5000":
     point_seg, eseg_name, seseg_name = pre_util.read_seg_res(seg_res_path, layer=0)
 
-for i in range(40,60): # len(meshes)
+for i in range(0,20): # len(meshes)
+    # Map inconsistent label to specific semantic part for all 19 classes
+    # 단위는 20씩 돌려주세요
     mesh = meshes[i]
     name = names[i]
     points = pre_util.get_vertex(mesh)
@@ -48,35 +50,38 @@ for i in range(40,60): # len(meshes)
     # visu.vis_face_seg(points, faces, cur_seg[10])
     edges, etof, ftoe = el.build_edge_order(faces)
     # selected number of segmentation (from cur_seg)
-    num_lst = [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 4, 0, 2, 0, 2, 0, 1, 0, 0, 0]
+    # Get num_lst and lst_dict from
+    # simp_seg_label >> class#_###.txt
+    # e.g. class 1
+    num_lst = [3, 3, 3, 6, 3, 7, 11, 1, 4, 8, 8, 6, 2, 0, 0, 5, 5, 6, 2, 5]
     lst_dict = [
-        {0:0, 2:0, 3:1, 1:1},
-        {3:0, 0:0, 2:1, 1:1},
-        {0:0, 2:0, 3:1, 1:1},
-        {3:0, 0:0, 2:1, 1:1},
-        {0:0, 2:0, 3:1, 1:1},
-        {0:0, 3:0, 2:1, 1:1},
-        {0:0, 2:0, 3:1, 1:1},
-        {0:0, 2:0, 3:1, 1:1},
-        {0:0, 2:0, 3:1, 1:1},
-        {3:0, 0:0, 2:1, 1:1},
-        {0:0, 3:0, 2:1, 1:1},
-        {3:0, 0:0, 1:1, 2:1},
-        {0:0, 2:0, 3:1, 1:1},
-        {0:0, 2:0, 3:1, 1:1},
-        {3:0, 0:0, 2:1, 1:1},
-        {1:0, 0:0, 2:1, 3:1},
-        {0:0, 2:0, 3:1, 1:1},
-        {0:0, 2:0, 3:1, 1:1},
-        {0:0, 2:0, 3:1, 1:1},
-        {3:0, 0:0, 2:1, 1:1},
+        {5:3, 0:0, 4:2, 3:2, 1:1, 2:1},
+        {1:3, 0:0, 2:2, 3:2, 4:1, 5:1},
+        {5:3, 0:0, 4:2, 3:2, 1:1, 2:1},
+        {1:3, 0:0, 3:2, 2:2, 5:1, 4:1},
+        {1:3, 0:0, 2:2, 3:2, 4:1, 5:1},
+        {1:3, 0:0, 3:2, 4:2, 5:1, 6:1, 2:3},
+        {1:3, 0:0, 3:2, 2:2, 4:1, 5:1},
+        {5:3, 0:0, 4:2, 3:2, 2:1, 1:1},
+        {5:3, 0:0, 3:2, 4:2, 2:1, 1:1},
+        {3:3, 0:0, 2:2, 1:2, 5:1, 4:1},
+        {5:3, 0:0, 4:2, 6:2, 2:1, 1:1, 3:1},
+        {6:3, 0:0, 4:2, 5:2, 2:1, 1:1, 3:1},
+        {5:3, 0:0, 4:2, 3:2, 1:1, 2:1},
+        {5:3, 0:0, 3:2, 4:2, 1:1, 2:1},
+        {3:3, 0:0, 2:2, 1:2, 5:1, 4:1},
+        {5:3, 0:0, 1:2, 2:2, 4:1, 3:1},
+        {3:3, 0:0, 1:2, 2:2, 5:1, 4:1},
+        {1:3, 0:0, 3:2, 2:2, 4:1, 5:1},
+        {5:3, 0:0, 3:2, 4:2, 1:1, 2:1},
+        {5:3, 0:0, 3:2, 4:2, 1:1, 2:1},
     ]
     elem = num_lst[i%20] # elem = idx of cur_seg
     seg = cur_seg[elem]
     assert faces.shape[0] == cur_seg[elem].shape[0], "len vertices and len labels not same"
     cur_dict = lst_dict[i%20]
     new_seg = pre_util.create_new_label(seg, cur_dict)# convert seg using dictionary
-    if i == 377:
+    if i == 377: # merged ear label to fourleg obj of i=377
         seg2 = cur_seg[3]
         cur_dict2 = {7:2, 6:2, 10:100, 9:100, 8:100, 0:100, 3:100, 1:100, 14:100, 2:100, 4:100, 13:100, 12:100, 11:100, 5:100}
         new_seg2 = pre_util.create_new_label(seg2, cur_dict2)

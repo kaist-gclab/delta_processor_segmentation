@@ -7,7 +7,6 @@ from util.writer import Writer
 def run_test(epoch=-1):
     print('Running Test')
     opt = TestOptions().parse()
-    # opt.export_folder = ''
     opt.serial_batches = True  # no shuffle
     dataset = DataLoader(opt)
     model = create_model(opt)

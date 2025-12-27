@@ -315,9 +315,9 @@ def save_seseg(dirpath, fname, labels):
     """_summary_: saves singe soft label
 
     Args:
-        dirpath (_type_): _description_
-        fname (_type_): _description_
-        labels (_type_): _description_
+        dirpath (str): _description_
+        fname (str): _description_
+        labels (ndarray): _description_
     """
     fpath = os.path.join(dirpath, fname)
     num_classes = labels.shape[1]

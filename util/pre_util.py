@@ -74,7 +74,7 @@ def read_seg_res(dir_path, layer=0):
         dirnames = [d for d in os.listdir(dir_path)]
         sdirnames = sorted(dirnames, key=lambda d: int(d.split(".")[0].split("_")[0]))
         point_labels = []
-        for d in sdirnames:
+        for d in sdirnames: # d is class directory
             seg_path = os.path.join(dir_path, d)
             count = len(os.listdir(seg_path))
             point_seg = []

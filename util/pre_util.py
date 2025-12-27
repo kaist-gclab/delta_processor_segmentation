@@ -344,19 +344,19 @@ def save_seseg(dirpath, fname, labels):
 #     return smeshes, snames
 
 
-def get_fnames(dir_path):
-    """_summary_
+# def get_fnames(dir_path):
+#     """_summary_
 
-    Args:
-        dir_path (str): directory path
+#     Args:
+#         dir_path (str): directory path
 
-    Returns:
-        sfilenames: sorted file names
-    """
-    filenames = [d for d in os.listdir(dir_path)]
-    sfilenames = sorted(filenames, key=lambda d: int(d.split(".")[0].split("_")[0]))
+#     Returns:
+#         sfilenames: sorted file names
+#     """
+#     filenames = [d for d in os.listdir(dir_path)]
+#     sfilenames = sorted(filenames, key=lambda d: int(d.split(".")[0].split("_")[0]))
 
-    return sfilenames
+#     return sfilenames
 
 def create_new_label(cur_label, map_dict):
     len_label = cur_label.shape[0] # get shape

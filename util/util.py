@@ -19,7 +19,7 @@ def is_mesh_file(filename):
         filename (str): _description_
 
     Returns:
-        _type_: _description_
+        bool: False if any ext is not mesh extension
     """
     return any(filename.endswith(extension) for extension in MESH_EXTENSIONS)
 

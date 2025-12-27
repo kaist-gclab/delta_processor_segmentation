@@ -106,7 +106,7 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
         eseg_dirs = [] # hard label dir
         seseg_dirs = [] # soft label dir
         for d in sdirnames:
-            seg_path = os.path.join(dir_path, d) #
+            seg_path = os.path.join(dir_path, d) # face label path
             count = len(os.listdir(seg_path))
             point_seg = []
             seg_res = ["{}_{}.seg".format(d,i) for i in range(count)]

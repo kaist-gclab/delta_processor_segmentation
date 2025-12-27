@@ -296,6 +296,15 @@ def save_eseg(dirpath, fname, labels):
 
 
 def read_seseg(dirpath, fname):
+    """_summary_: reads single soft label
+
+    Args:
+        dirpath (_type_): _description_
+        fname (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     fpath = os.path.join(dirpath, fname)
     seseg = np.loadtxt(fpath, dtype=np.float32)
 

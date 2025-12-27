@@ -61,7 +61,7 @@ def read_seg_res(dir_path, layer=0):
         for elem in seg_files:
             fpath = os.path.join(dir_path, elem)
             part_label = np.load(fpath)
-            part_label_tag = part_label.files
+            part_label_tag = part_label.files # single face label
             point_seg = []
             seg_label_names.append(part_label_tag)
             for plabel_name in part_label_tag:

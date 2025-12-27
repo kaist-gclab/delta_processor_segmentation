@@ -33,7 +33,7 @@ def pad(input_arr, target_length, val=0, dim=1):
         dim (int, optional): padding dimension. Defaults to 1.
 
     Returns:
-        _type_: _description_
+        padded array(ndarray): padded array with dim = dim, filling val = val
     """
     shp = input_arr.shape
     npad = [(0, 0) for _ in range(len(shp))]

@@ -3,6 +3,7 @@ import trimesh
 import open3d as o3d
 import numpy as np
 
+## Util related to io ##
 
 def read_mesh(dir_path, only_pref=False, ext=(".off", ".ply", ".obj")):
     """_summary_

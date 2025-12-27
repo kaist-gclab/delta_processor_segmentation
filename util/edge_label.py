@@ -185,7 +185,7 @@ def build_bound_slabel(etof, face_prob, edges, seg_len):
     return padded_array # b
 
 
-# Not Used
+# Not Used - Used for debug
 def edge_multiplicity(faces):
     """_summary_
     Args:
@@ -204,6 +204,7 @@ def edge_multiplicity(faces):
     return uniq_edge, counts, uniq_inv.reshape(-1,3)
 
 
+# Calculate New Face
 def weld_vertices_with_labels(vert, face, face_labels=None, eps=1e-8, drop_duplicates=True):
     """Remove duplicates and restore topology (in some cases faces are disconnected so connect them)
 

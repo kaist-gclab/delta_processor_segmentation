@@ -271,7 +271,7 @@ def read_eseg(dirpath, fname):
     """_summary_: reads single hard label
 
     Args:
-        dirpath (str): directory path to be saved
+        dirpath (str): directory path to load
         fname (str): file name
 
     Returns:
@@ -299,7 +299,7 @@ def read_seseg(dirpath, fname):
     """_summary_: reads single soft label
 
     Args:
-        dirpath (str): directory path to be saved
+        dirpath (str): directory path to load
         fname (str): file name
 
     Returns:
@@ -315,7 +315,7 @@ def save_seseg(dirpath, fname, labels):
     """_summary_: saves singe soft label
 
     Args:
-        dirpath (str): _description_
+        dirpath (str): directory path to be saved
         fname (str): _description_
         labels (ndarray): _description_
     """

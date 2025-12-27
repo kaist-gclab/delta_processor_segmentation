@@ -378,7 +378,7 @@ def create_new_label(cur_label, map_dict):
     return new_label
 
 def get_label_number(lst_dict):
-    """_summary_
+    """_summary_: calculates segmentation number
 
     Args:
         lst_dict (python dict): label-idx dict
@@ -386,7 +386,6 @@ def get_label_number(lst_dict):
     Returns:
         seg_num (int): number of segmentation
     """
-    # calculates segmentation number
     max_val = 0
     for _dict in lst_dict:
         _max = max(list(_dict.values()))

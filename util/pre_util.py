@@ -95,7 +95,7 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
         layer (int, optional): nested file layer number. Defaults to 0.
 
     Returns:
-        point_seg (python list): loaded segmentation in python list of lists. Inner component is ndarray
+        face_seg (python list): loaded segmentation in python list of lists. Inner component is ndarray
         eseg_dirs (python list): segmentation name list of .eseg extension in python list of lists.
         seseg_dirs (python list): segmentation name list of .seseg extension in python list of lists.
     """
@@ -107,8 +107,8 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
         seseg_dirs = [] # soft label dir
         for d in sdirnames:
             seg_path = os.path.join(dir_path, d) # face label path
-            count = len(os.listdir(seg_path))
-            point_seg = []
+            count = len(os.listdir(seg_path)) # num segmentation
+            face_seg = []
             seg_res = ["{}_{}.seg".format(d,i) for i in range(count)]
             eseg_name = ["{}_{}.eseg".format(d,i) for i in range(count)]
             eseg_dirs.append(eseg_name)
@@ -117,8 +117,8 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
             for elem in seg_res:
                 fpath = os.path.join(seg_path, elem)
                 part_label = np.loadtxt(fname=fpath, dtype=int)
-                point_seg.append(part_label)
-            face_labels.append(point_seg)
+                face_seg.append(part_label)
+            face_labels.append(face_seg)
 
         return face_labels, eseg_dirs, seseg_dirs
 

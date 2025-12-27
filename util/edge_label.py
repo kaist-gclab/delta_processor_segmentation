@@ -311,15 +311,10 @@ def noise_seg(seg, sseg, idx, class_num):
     cdict = create_dict(class_num)
     new_labels = np.array([cdict[seg[i]] for i in idx]) # new label for picked idx
     seg[idx] = new_labels # change picked idx to new label
-    # sseg[idx[:, None], new_labels] = 1.0
 
     rows = np.asarray(idx, dtype=np.int64).ravel()
     cols = np.asarray(new_labels, dtype=np.int64).ravel()
-    sseg[rows, cols] = 1.0
-    # new_soft_label = np.zeros((len(seg), class_num), dtype=np.float32)
-    # new_soft_label[rows, cols] = 1.0
-    # for elem in idx: # 이전 레이블과 비교
-    #     print("Before: {}, After: {}".format(sseg[elem], new_soft_label[elem]))
+    sseg[rows, cols] = 1.0 # change according soft label
     
     return seg, sseg
 

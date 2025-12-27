@@ -163,19 +163,18 @@ def save_mult_labels(dir_path, labels, name, name_key):
     """_summary_
 
     Args:
-        dir_path (_type_): _description_
-        labels (_type_): _description_
-        name (_type_): _description_
-        name_key (_type_): _description_
+        dir_path (str): _description_
+        labels (ndarray): _description_
+        name (ndarray): _description_
+        name_key (list): int list of name prefix
     """
-    name_path = os.path.join(dir_path, name)
-    name_prefix = name.split("_")[0]
+    name_path = os.path.join(dir_path, name) # path for each name
+    name_prefix = name.split("_")[0] # prefix for name (number)
     payload = {}
     for k, arr in zip(name_key, labels):
         k = str(k)
         a = np.asarray(arr).reshape(-1).astype(np.int32)
         payload[k] = a
-    # np.savez(name_path, **{str(name_key): labels})
     np.savez(name_path, **payload)
 
 # def save_meshes(dir_path, points, faces, names):

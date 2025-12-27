@@ -43,6 +43,7 @@ for i in tqdm(range(len(meshes))):
     cur_seg = point_seg[i] # list of segmentations
     edges, etof, ftoe = el.build_edge_order(cur_face)
     for j in range(len(cur_seg)):
+        # check if face number and label numbers are same
         assert cur_face.shape[0] == cur_seg[j].shape[0], "len vertices and len labels not same"
         face_prob = el.get_face_probs(cur_seg[j])
         seseg = el.build_bound_slabel(etof, face_prob, edges)

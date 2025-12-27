@@ -56,7 +56,7 @@ def read_seg_res(dir_path, layer=0):
         filenames = [d for d in os.listdir(dir_path)] # directory names
         sfilenames = sorted(filenames, key=lambda d: int(d.split(".")[0].split("_")[0])) # sorted in number
         seg_files = ["{}.npz".format(f.split(".")[0]) for f in sfilenames] # read face labels in for each directory
-        point_labels = []
+        face_labels = []
         seg_label_names = []
         for elem in seg_files:
             fpath = os.path.join(dir_path, elem) # mult seg for sing mesh
@@ -66,26 +66,26 @@ def read_seg_res(dir_path, layer=0):
             seg_label_names.append(part_label_tag) # add face label
             for plabel_name in part_label_tag:
                 point_seg.append(part_label[plabel_name])
-            point_labels.append(point_seg) # add to point labels
+            face_labels.append(point_seg) # add to point labels
 
-        return point_labels, sfilenames, seg_label_names
+        return face_labels, sfilenames, seg_label_names
     
     elif layer == 1:
-        dirnames = [d for d in os.listdir(dir_path)]
-        sdirnames = sorted(dirnames, key=lambda d: int(d.split(".")[0].split("_")[0]))
-        point_labels = []
+        dirnames = [d for d in os.listdir(dir_path)] # class dir names
+        sdirnames = sorted(dirnames, key=lambda d: int(d.split(".")[0].split("_")[0])) # sorted class
+        face_labels = []
         for d in sdirnames: # d is class directory
             seg_path = os.path.join(dir_path, d) # path name
-            count = len(os.listdir(seg_path))
+            count = len(os.listdir(seg_path)) # seg count for single mesh
             point_seg = []
             seg_res = ["{}_{}.seg".format(d,i) for i in range(count)] # single mesh - mult seg
             for elem in seg_res:
-                fpath = os.path.join(seg_path, elem)
-                part_label = np.loadtxt(fname=fpath, dtype=int)
-                point_seg.append(part_label)
-            point_labels.append(point_seg)
+                fpath = os.path.join(seg_path, elem) # single label path
+                part_label = np.loadtxt(fname=fpath, dtype=int) # load label
+                point_seg.append(part_label) # append to face seg
+            face_labels.append(point_seg)
 
-        return point_labels, sdirnames
+        return face_labels, sdirnames
 
 
 def read_seg_res_with_eseg_fname(dir_path, layer=0):
@@ -102,7 +102,7 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
     if layer == 1:
         dirnames = [d for d in os.listdir(dir_path)]
         sdirnames = sorted(dirnames, key=lambda d: int(d.split(".")[0].split("_")[0]))
-        point_labels = []
+        face_labels = []
         eseg_dirs = []
         seseg_dirs = []
         for d in sdirnames:
@@ -118,9 +118,9 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
                 fpath = os.path.join(seg_path, elem)
                 part_label = np.loadtxt(fname=fpath, dtype=int)
                 point_seg.append(part_label)
-            point_labels.append(point_seg)
+            face_labels.append(point_seg)
 
-        return point_labels, eseg_dirs, seseg_dirs
+        return face_labels, eseg_dirs, seseg_dirs
 
     elif layer == 0: # dir_path would be path to seg_simp
         filenames = [d for d in os.listdir(dir_path)]
@@ -128,7 +128,7 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
         seg_files = ["{}.npz".format(f.split(".")[0]) for f in sfilenames]
         eseg_dirs = []
         seseg_dirs = []
-        point_labels = []
+        face_labels = []
         for elem in seg_files:
             fpath = os.path.join(dir_path, elem)
             with np.load(fpath) as part_label:
@@ -138,9 +138,9 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
                 eseg_dirs.append(eseg_name)
                 seseg_dirs.append(seseg_name)
                 point_seg = [np.asarray(part_label[t]).reshape(-1) for t in part_label_tag]
-                point_labels.append(point_seg)
+                face_labels.append(point_seg)
 
-        return point_labels, eseg_dirs, seseg_dirs
+        return face_labels, eseg_dirs, seseg_dirs
     
 
 def save_mesh(dir_path, point, face, name):

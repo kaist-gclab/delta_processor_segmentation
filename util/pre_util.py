@@ -378,6 +378,14 @@ def create_new_label(cur_label, map_dict):
     return new_label
 
 def get_label_number(lst_dict):
+    """_summary_
+
+    Args:
+        lst_dict (python dict): _description_
+
+    Returns:
+        _type_: _description_
+    """
     # calculates segmentation number
     max_val = 0
     for _dict in lst_dict:

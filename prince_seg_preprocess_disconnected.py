@@ -45,10 +45,10 @@ for i in tqdm(range(len(meshes))):
     cur_face = pre_util.get_face(cur_mesh)
     cur_seg = point_seg[i] # list of segmentations
     
-    new_vert, new_face, _, label_index, _ = el.weld_vertices_with_labels(cur_vert, cur_face)
+    new_vert, new_face, _, label_index, _ = el.weld_vertices_with_labels(cur_vert, cur_face) # connects edge
     new_labels = []
     for j in range(len(point_seg[i])):
         new_label = point_seg[i][j][label_index]
         new_labels.append(new_label)
     pre_util.save_mesh(nmesh_path, new_vert, new_face, names[i])
-    pre_util.save_mult_labels(nseg_path, new_labels, segnames[i], seglabels[i])
+    pre_util.save_mult_labels(nseg_path, new_labels, segnames[i], seglabels[i]) # save as npz

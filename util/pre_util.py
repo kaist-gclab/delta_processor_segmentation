@@ -251,20 +251,20 @@ def get_face(mesh, library="trimesh"):
 #         return np.asarray(mesh.vertex_normals)
     
 
-def get_fnorm(mesh, library="trimesh"):
-    """_summary_: get face normals from mesh (read through different library)
+# def get_fnorm(mesh, library="trimesh"):
+#     """_summary_: get face normals from mesh (read through different library)
 
-    Args:
-        mesh (_type_): original mesh
-        library (str, optional): imported library of mesh. Defaults to "trimesh".
+#     Args:
+#         mesh (_type_): original mesh
+#         library (str, optional): imported library of mesh. Defaults to "trimesh".
 
-    Returns:
-        face normal (ndarray): (n, 3) sized face normal
-    """
-    if library == "trimesh":
-        return mesh.face_normals
-    elif library == "o3d":
-        return np.asarray(mesh.triangle_normals)
+#     Returns:
+#         face normal (ndarray): (n, 3) sized face normal
+#     """
+#     if library == "trimesh":
+#         return mesh.face_normals
+#     elif library == "o3d":
+#         return np.asarray(mesh.triangle_normals)
     
 
 def read_eseg(dirpath, fname):

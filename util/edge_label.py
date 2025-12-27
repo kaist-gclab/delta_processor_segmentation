@@ -255,11 +255,11 @@ def weld_vertices_with_labels(vert, face, face_labels=None, eps=1e-8, drop_dupli
 
 # Used to select label idx for adding noise
 def select_idx(len_label, percent=0.03):
-    """_summary_
+    """_summary_: select idx to add noise
 
     Args:
-        len_label (_type_): _description_
-        percent (float, optional): _description_. Defaults to 0.03.
+        len_label (int): label
+        percent (float, optional): noise percentage. Defaults to 0.03.
 
     Returns:
         _type_: _description_

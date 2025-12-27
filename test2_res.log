@@ -1,0 +1,27 @@
+===========================
+Start Test 2: F1 Score Over 80%
+===========================
+Class 1 F1 Score = 83.242
+Class 2 F1 Score = 92.668
+Class 3 F1 Score = 95.805
+Class 4 F1 Score = 89.911
+Class 5 F1 Score = 92.845
+Class 6 F1 Score = 74.852
+Class 7 F1 Score = 92.618
+Class 8 F1 Score = 92.689
+Class 9 F1 Score = 90.247
+Class 10 F1 Score = 91.173
+Class 11 F1 Score = 84.732
+Class 12 F1 Score = 81.131
+Class 13 F1 Score = 86.893
+Class 14 F1 Score = 75.294
+Class 15 F1 Score = 84.614
+Class 16 F1 Score = 92.017
+Class 17 F1 Score = 73.817
+Class 18 F1 Score = 64.106
+Class 19 F1 Score = 82.188
+===========================
+Overall Mean F1 Score : 85.307
+PASS: Mean F1 >= 80%
+End of Test 2
+===========================

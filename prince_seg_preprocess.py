@@ -16,7 +16,7 @@ args = parser.parse_args()
 base_path = os.path.dirname(__file__)
 data_path = os.path.join(base_path, "datasets", args.data_dir) # dataset dir
 seg_path = os.path.join(data_path, "seg") # hard edge label dir
-sseg_path = os.path.join(data_path, "sseg")
+sseg_path = os.path.join(data_path, "sseg") # soft edge label dir
 
 gt_path = ""
 seg_res_path = ""

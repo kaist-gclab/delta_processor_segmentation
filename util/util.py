@@ -27,13 +27,13 @@ def pad(input_arr, target_length, val=0, dim=1):
     """_summary_
 
     Args:
-        input_arr (_type_): _description_
+        input_arr (ndarray): shape can be any (3D usually)
         target_length (_type_): _description_
         val (int, optional): padding value. Defaults to 0.
-        dim (int, optional): current dimension. Defaults to 1.
+        dim (int, optional): padding axis. Defaults to 1.
 
     Returns:
-        padded array(ndarray): padded array with target_len-cur_len, filling val = val
+        padded array(ndarray): padded array with target_len-cur_len on dim=dim, filling val = val
     """
     shp = input_arr.shape
     npad = [(0, 0) for _ in range(len(shp))]
@@ -41,8 +41,18 @@ def pad(input_arr, target_length, val=0, dim=1):
     return np.pad(input_arr, pad_width=npad, mode='constant', constant_values=val)
 
 def seg_accuracy(predicted, ssegs, meshes):
+    """_summary_: weight edge by edge area when counting correct label
+
+    Args:
+        predicted (torch tensor): _description_
+        ssegs (torch tensor): _description_
+        meshes (_type_): _description_
+
+    Returns:
+        correct (int): number of correct segmentation
+    """
     correct = 0
-    ssegs = ssegs.squeeze(-1)
+    ssegs = ssegs.squeeze(-1) # (B, num_e, num_c, 1) -> (B, num_e, num_c)
     correct_mat = ssegs.gather(2, predicted.cpu().unsqueeze(dim=2))
     for mesh_id, mesh in enumerate(meshes):
         correct_vec = correct_mat[mesh_id, :mesh.edges_count, 0]

@@ -75,10 +75,10 @@ def read_seg_res(dir_path, layer=0):
         sdirnames = sorted(dirnames, key=lambda d: int(d.split(".")[0].split("_")[0]))
         point_labels = []
         for d in sdirnames: # d is class directory
-            seg_path = os.path.join(dir_path, d)
+            seg_path = os.path.join(dir_path, d) # path name
             count = len(os.listdir(seg_path))
             point_seg = []
-            seg_res = ["{}_{}.seg".format(d,i) for i in range(count)]
+            seg_res = ["{}_{}.seg".format(d,i) for i in range(count)] # single mesh - mult seg
             for elem in seg_res:
                 fpath = os.path.join(seg_path, elem)
                 part_label = np.loadtxt(fname=fpath, dtype=int)

@@ -55,7 +55,7 @@ def seg_accuracy(predicted, ssegs, meshes):
     ssegs = ssegs.squeeze(-1) # (B, num_e, num_c, 1) -> (B, num_e, num_c)
     correct_mat = ssegs.gather(2, predicted.cpu().unsqueeze(dim=2)) # (B, num_e, 1)
     for mesh_id, mesh in enumerate(meshes):
-        correct_vec = correct_mat[mesh_id, :mesh.edges_count, 0]
+        correct_vec = correct_mat[mesh_id, :mesh.edges_count, 0] # counts real edges
         edge_areas = torch.from_numpy(mesh.get_edge_areas())
         correct += (correct_vec.float() * edge_areas).sum()
     return correct

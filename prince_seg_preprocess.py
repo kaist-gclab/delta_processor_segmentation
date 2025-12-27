@@ -52,4 +52,4 @@ for i in tqdm(range(len(meshes))):
         eseg_fname = eseg_name[i][j] # create soft fname
         seseg_fname = seseg_name[i][j] # create hard fname
         pre_util.save_eseg(seg_path, eseg_fname, eseg) # save soft edge label
-        pre_util.save_seseg(sseg_path, seseg_fname, seseg)
+        pre_util.save_seseg(sseg_path, seseg_fname, seseg) # save hard edge label

@@ -268,6 +268,15 @@ def get_face(mesh, library="trimesh"):
     
 
 def read_eseg(dirpath, fname):
+    """_summary_: reads single hard label
+
+    Args:
+        dirpath (str): _description_
+        fname (str): _description_
+
+    Returns:
+        eseg (ndarray): int label
+    """
     fpath = os.path.join(dirpath, fname)
     eseg = np.loadtxt(fpath, dtype=np.int64)
 

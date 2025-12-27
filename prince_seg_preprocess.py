@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 # Path
 base_path = os.path.dirname(__file__)
-data_path = os.path.join(base_path, "datasets", args.data_dir)
+data_path = os.path.join(base_path, "datasets", args.data_dir) # dataset dir
 seg_path = os.path.join(data_path, "seg")
 sseg_path = os.path.join(data_path, "sseg")
 

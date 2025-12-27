@@ -102,18 +102,18 @@ def read_seg_res_with_eseg_fname(dir_path, layer=0):
     if layer == 1:
         dirnames = [d for d in os.listdir(dir_path)] # dir names - classs
         sdirnames = sorted(dirnames, key=lambda d: int(d.split(".")[0].split("_")[0])) # sorted in int size
-        face_labels = [] # labels for face
+        face_labels = [] # labels for face (for all class)
         eseg_dirs = [] # hard label dir
         seseg_dirs = [] # soft label dir
         for d in sdirnames:
             seg_path = os.path.join(dir_path, d) # face label path
             count = len(os.listdir(seg_path)) # num segmentation
             face_seg = []
-            seg_res = ["{}_{}.seg".format(d,i) for i in range(count)]
-            eseg_name = ["{}_{}.eseg".format(d,i) for i in range(count)]
-            eseg_dirs.append(eseg_name)
-            seseg_name = ["{}_{}.seseg".format(d,i) for i in range(count)]
-            seseg_dirs.append(seseg_name)
+            seg_res = ["{}_{}.seg".format(d,i) for i in range(count)] # flabel
+            eseg_name = ["{}_{}.eseg".format(d,i) for i in range(count)] # hlabel
+            eseg_dirs.append(eseg_name) #
+            seseg_name = ["{}_{}.seseg".format(d,i) for i in range(count)] # slabel
+            seseg_dirs.append(seseg_name) #
             for elem in seg_res:
                 fpath = os.path.join(seg_path, elem)
                 part_label = np.loadtxt(fname=fpath, dtype=int)

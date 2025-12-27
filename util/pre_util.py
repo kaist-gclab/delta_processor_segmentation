@@ -317,7 +317,7 @@ def save_seseg(dirpath, fname, labels):
     Args:
         dirpath (str): directory path to be saved
         fname (str): file name
-        labels (ndarray): _description_
+        labels (ndarray): soft edge label in float array (probab)
     """
     fpath = os.path.join(dirpath, fname)
     num_classes = labels.shape[1]

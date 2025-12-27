@@ -314,7 +314,11 @@ def noise_seg(seg, sseg, idx, class_num):
 
     rows = np.asarray(idx, dtype=np.int64).ravel()
     cols = np.asarray(new_labels, dtype=np.int64).ravel()
+    sseg[rows, :] = 0.0 # convert all other lable to zero
     sseg[rows, cols] = 1.0 # change according soft label
+    
+    # for elem in idx: # 이전 레이블과 비교
+    #     print("Before: {}, After: {}".format(sseg[elem], new_soft_label[elem]))
     
     return seg, sseg
 

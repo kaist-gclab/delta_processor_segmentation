@@ -160,7 +160,7 @@ def save_mesh(dir_path, point, face, name):
 
 
 def save_mult_labels(dir_path, labels, name, name_key):
-    """_summary_
+    """_summary_: used to save multiple face label
 
     Args:
         dir_path (str): _description_
@@ -170,12 +170,12 @@ def save_mult_labels(dir_path, labels, name, name_key):
     """
     name_path = os.path.join(dir_path, name) # path for each name
     name_prefix = name.split("_")[0] # prefix for name (number)
-    payload = {}
+    label_dict = {}
     for k, arr in zip(name_key, labels):
         k = str(k)
-        a = np.asarray(arr).reshape(-1).astype(np.int32)
-        payload[k] = a
-    np.savez(name_path, **payload)
+        nlabel = np.asarray(arr).reshape(-1).astype(np.int32)
+        label_dict[k] = nlabel
+    np.savez(name_path, **label_dict)
 
 # def save_meshes(dir_path, points, faces, names):
 #     for i in range(len(names)):

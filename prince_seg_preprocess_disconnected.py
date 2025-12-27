@@ -35,7 +35,7 @@ os.makedirs(nseg_path, exist_ok=True)
 meshes, names = pre_util.read_mesh(gt_path, only_pref=True) # read all meshes
 if args.data_dir == "prince_ben":
     point_seg, dirnames = pre_util.read_seg_res(seg_res_path, layer=1)
-elif args.data_dir == "prince_simp_1000" or args.data_dir == "prince_simp_1000_disconn" or args.data_dir == "prince_simp_5000" or args.data_dir == "prince_simp_5000_disconn":
+else:
     point_seg, segnames, seglabels = pre_util.read_seg_res(seg_res_path, layer=0)
 
 

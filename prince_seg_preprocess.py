@@ -49,7 +49,7 @@ for i in tqdm(range(len(meshes))):
         face_prob = el.get_face_probs(cur_seg[j])
         seseg = el.build_bound_slabel(etof, face_prob, edges) # soft edge prob
         eseg = seseg.argmax(axis=1) # hard label
-        eseg_fname = eseg_name[i][j]
+        eseg_fname = eseg_name[i][j] # create soft fname
         seseg_fname = seseg_name[i][j]
         pre_util.save_eseg(seg_path, eseg_fname, eseg)
         pre_util.save_seseg(sseg_path, seseg_fname, seseg)

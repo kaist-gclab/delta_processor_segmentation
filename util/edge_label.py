@@ -120,6 +120,7 @@ def build_slabel(etof, face_prob, mode="mean"):
     return out
 
 
+# Creates seseg
 def build_bound_slabel(etof, face_prob, edges, seg_len):
     b = build_slabel(etof, face_prob)
 

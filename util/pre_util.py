@@ -271,8 +271,8 @@ def read_eseg(dirpath, fname):
     """_summary_: reads single hard label
 
     Args:
-        dirpath (str): _description_
-        fname (str): _description_
+        dirpath (str): directory path to be saved
+        fname (str): file name
 
     Returns:
         eseg (ndarray): int label

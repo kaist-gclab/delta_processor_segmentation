@@ -59,7 +59,7 @@ def read_seg_res(dir_path, layer=0):
         point_labels = []
         seg_label_names = []
         for elem in seg_files:
-            fpath = os.path.join(dir_path, elem)
+            fpath = os.path.join(dir_path, elem) # mult seg for sing mesh
             part_label = np.load(fpath)
             part_label_tag = part_label.files # single face label
             point_seg = []

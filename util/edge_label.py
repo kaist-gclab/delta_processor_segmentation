@@ -274,13 +274,14 @@ def select_idx(len_label, percent=0.03):
 
 # Helper function of noise_seg
 def create_dict(class_num):
-    """_summary_
+    """_summary_: maps current label to label+1 (wrong label)
+    and last current label maps to 0
 
     Args:
-        class_num (_type_): _description_
+        class_num (int): label numbers
 
     Returns:
-        _type_: _description_
+        cdict (python dict): label mapping dictionary
     """
     cdict = dict()
     for i in range(class_num):

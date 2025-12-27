@@ -366,7 +366,7 @@ def create_new_label(cur_label, map_dict):
         map_dict (python dict): label mapping dictionary
 
     Returns:
-        new_label (ndarray): _description_
+        new_label (ndarray): newly mapped label
     """
     len_label = cur_label.shape[0] # get shape
     new_label = np.empty(len_label, dtype=np.int64)

@@ -6,7 +6,7 @@ from util import edge_label as el
 import visualize as visu
 from tqdm import tqdm
 
-## Visualize simplified mesh and corresponding segmentation result ##
+## Remap simplified mesh segmentation label ##
 
 # Parser
 parser = argparse.ArgumentParser()

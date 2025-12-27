@@ -325,23 +325,23 @@ def save_seseg(dirpath, fname, labels):
     np.savetxt(fpath, labels, fmt=_format, newline="\n")
 
 
-def sort_mesh_name(meshes, names):
-    """(Not Used) sorts name and meshes accordingly
+# def sort_mesh_name(meshes, names):
+#     """(Not Used) sorts name and meshes accordingly
 
-    Args:
-        meshes (python list): mesh in unsorted manner
-        names (python list): file name in unsorted manner
+#     Args:
+#         meshes (python list): mesh in unsorted manner
+#         names (python list): file name in unsorted manner
 
-    Returns:
-        smeshes: sorted mesh
-        smanes: sorted name (according to prefix integer number)
-    """
-    sort_key = np.char.partition(names, '_')[:, 0].astype(int)
-    sort_idx = np.argsort(sort_key, kind='stable')
-    smeshes = [meshes[i] for i in sort_idx]
-    snames = [names[i] for i in sort_idx]
+#     Returns:
+#         smeshes: sorted mesh
+#         smanes: sorted name (according to prefix integer number)
+#     """
+#     sort_key = np.char.partition(names, '_')[:, 0].astype(int)
+#     sort_idx = np.argsort(sort_key, kind='stable')
+#     smeshes = [meshes[i] for i in sort_idx]
+#     snames = [names[i] for i in sort_idx]
 
-    return smeshes, snames
+#     return smeshes, snames
 
 
 def get_fnames(dir_path):

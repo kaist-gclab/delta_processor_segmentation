@@ -543,14 +543,14 @@ def get_ratios(mesh, edge_points, side):
         side (0-3 int): similar to get opposite angles func
 
     Returns:
-        ratio (float): _description_
+        ratio (float): perpendicular distance from O to AB
     """
     edges_lengths = np.linalg.norm(mesh.vs[edge_points[:, side // 2]] - mesh.vs[edge_points[:, 1 - side // 2]],
                                    ord=2, axis=1)
     point_o = mesh.vs[edge_points[:, side // 2 + 2]]
     point_a = mesh.vs[edge_points[:, side // 2]]
     point_b = mesh.vs[edge_points[:, 1 - side // 2]]
-    line_ab = point_b - point_a # direction vector
+    line_ab = point_b - point_a # direction vector AB
     projection_length = np.sum(line_ab * (point_o - point_a), axis=1) / fixed_division(
         np.linalg.norm(line_ab, ord=2, axis=1), epsilon=0.1) # project AO to AB
     closest_point = point_a + (projection_length / edges_lengths)[:, np.newaxis] * line_ab # closest point from edge

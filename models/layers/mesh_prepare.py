@@ -280,7 +280,7 @@ def flip_edges(mesh, prct, faces):
             edge_info = edge_faces[edge_key]
             if edge_info[3] == -1: # only one adj face, no flip
                 continue
-            # 
+            # compute other two vertices
             new_edge = tuple(sorted(list(set(faces[edge_info[2]]) ^ set(faces[edge_info[3]]))))
             if new_edge in edges_dict:
                 continue

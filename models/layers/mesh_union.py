@@ -36,7 +36,7 @@ class MeshUnion:
         self.prepare_groups(features, mask) # self groups shaped matmul
         fe = torch.matmul(features.squeeze(-1), self.groups) # (B, C, E_new)
         occurrences = torch.sum(self.groups, 0).expand(fe.shape)
-        fe = fe / occurrences
+        fe = fe / occurrences # average (divide by member count)
         padding_b = target_edges - fe.shape[1]
         if padding_b > 0:
             padding_b = ConstantPad2d((0, padding_b, 0, 0), 0)

@@ -49,6 +49,10 @@ class MeshConv(nn.Module):
         """ gathers the edge features (x) with from the 1-ring indices (Gi)
         applys symmetric functions to handle order invariance
         returns a 'fake image' which can use 2d convolution on
+
+        Args:
+            x : edge features
+            Gi: 1-ring indices
         
         Returns:
             output dimensions: Batch x Channels x Edges x 5

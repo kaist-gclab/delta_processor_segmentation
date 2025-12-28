@@ -294,10 +294,11 @@ def flip_edges(mesh, prct, faces):
                 # two neighboring faces (change into inverted edge vertex)
                 rebuild_face(faces[edge_info[2]], new_faces[0])
                 rebuild_face(faces[edge_info[3]], new_faces[1])
+                # inverted edge가 포함된 모든 face에 대하여
                 for i, face_id in enumerate([edge_info[2], edge_info[3]]):
-                    cur_face = faces[face_id]
+                    cur_face = faces[face_id] # get the face
                     for j in range(3):
-                        cur_edge = tuple(sorted((cur_face[j], cur_face[(j + 1) % 3])))
+                        cur_edge = tuple(sorted((cur_face[j], cur_face[(j + 1) % 3]))) # tuple of edge in sorted order
                         if cur_edge != new_edge:
                             cur_edge_key = edges_dict[cur_edge]
                             for idx, face_nb in enumerate(

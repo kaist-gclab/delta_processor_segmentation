@@ -317,6 +317,15 @@ def rebuild_face(face, new_face):
     return face
 
 def check_area(mesh, faces):
+    """_summary_: checks if triangle is not too skinny, degenerate, inverted
+
+    Args:
+        mesh (_type_): _description_
+        faces (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     face_normals = np.cross(mesh.vs[faces[:, 1]] - mesh.vs[faces[:, 0]],
                             mesh.vs[faces[:, 2]] - mesh.vs[faces[:, 1]])
     face_areas = np.sqrt((face_normals ** 2).sum(axis=1))

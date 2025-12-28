@@ -117,7 +117,7 @@ def calculate_entropy(np_array):
         entropy: _description_
     """
     entropy = 0
-    np_array /= np.sum(np_array) # normalize into prob
+    np_array /= np.sum(np_array) # convert into prob (<1)
     for a in np_array:
         if a != 0:
             entropy -= a * np.log(a)

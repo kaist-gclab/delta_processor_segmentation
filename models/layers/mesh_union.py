@@ -3,7 +3,7 @@ from torch.nn import ConstantPad2d
 
 
 class MeshUnion:
-    """_summary_: group of edge and its functions"""
+    """_summary_: tracks which edges belong to pooled edge"""
     def __init__(self, n, device=torch.device('cpu')):
         self.__size = n # n group - one per edge
         self.rebuild_features = self.rebuild_features_average

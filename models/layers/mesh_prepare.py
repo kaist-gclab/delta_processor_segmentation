@@ -398,10 +398,10 @@ def extract_features(mesh):
     """_summary_
 
     Args:
-        mesh (obj): _description_
+        mesh (obj): mesh obj with vertices
 
     Raises:
-        ValueError: _description_
+        ValueError: any error during extract and adding feature
 
     Returns:
         None: update feature information

@@ -250,6 +250,7 @@ def angles_from_faces(mesh, edge_faces, faces):
 
 
 def flip_edges(mesh, prct, faces):
+    """_summary_: data augmentation method"""
     edge_count, edge_faces, edges_dict = get_edge_faces(faces)
     dihedral = angles_from_faces(mesh, edge_faces[:, 2:], faces)
     edges2flip = np.random.permutation(edge_count)

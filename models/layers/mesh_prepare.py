@@ -102,6 +102,15 @@ def fill_from_file(mesh, file):
 
 
 def remove_non_manifolds(mesh, faces):
+    """_summary_
+
+    Args:
+        mesh (_type_): _description_
+        faces (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     mesh.ve = [[] for _ in mesh.vs]
     edges_set = set()
     mask = np.ones(len(faces), dtype=bool)
@@ -221,6 +230,7 @@ def slide_verts(mesh, prct):
 
 
 def scale_verts(mesh, mean=1, var=0.1):
+    """_summary_: data augmentation helper method"""
     for i in range(mesh.vs.shape[1]):
         mesh.vs[:, i] = mesh.vs[:, i] * np.random.normal(mean, var)
 

@@ -1,11 +1,11 @@
 import os
 import time
 
-try:
-    from tensorboardX import SummaryWriter
-except ImportError as error:
+# try:
+#     from tensorboardX import SummaryWriter
+# except ImportError as error:
     # print('tensorboard X not installed, visualizing wont be available')
-    SummaryWriter = None
+SummaryWriter = None
 
 class Writer:
     def __init__(self, opt):
@@ -18,10 +18,10 @@ class Writer:
         self.nexamples = 0
         self.ncorrect = 0
         #
-        if opt.is_train and not opt.no_vis and SummaryWriter is not None:
-            self.display = SummaryWriter(comment=opt.name)
-        else:
-            self.display = None
+        # if opt.is_train and not opt.no_vis and SummaryWriter is not None:
+        #     self.display = SummaryWriter(comment=opt.name)
+        # else:
+        self.display = None
 
     def start_logs(self):
         """ creates test / train log files """

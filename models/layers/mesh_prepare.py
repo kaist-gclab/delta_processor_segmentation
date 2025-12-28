@@ -387,6 +387,17 @@ def set_edge_lengths(mesh, edge_points=None):
 
 
 def extract_features(mesh):
+    """_summary_
+
+    Args:
+        mesh (obj): _description_
+
+    Raises:
+        ValueError: _description_
+
+    Returns:
+        None: update feature information
+    """
     features = []
     edge_points = get_edge_points(mesh)
     set_edge_lengths(mesh, edge_points)

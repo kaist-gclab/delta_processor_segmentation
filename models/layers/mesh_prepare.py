@@ -352,7 +352,7 @@ def get_edge_faces(faces):
     """_summary_
 
     Args:
-        faces (_type_): _description_
+        faces (ndarray): _description_
 
     Returns:
         _type_: _description_

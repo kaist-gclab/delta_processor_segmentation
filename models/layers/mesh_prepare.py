@@ -262,7 +262,7 @@ def flip_edges(mesh, prct, faces):
     randomly flips the edge, without influencing edge connectivity"""
     edge_count, edge_faces, edges_dict = get_edge_faces(faces)
     dihedral = angles_from_faces(mesh, edge_faces[:, 2:], faces)
-    edges2flip = np.random.permutation(edge_count)
+    edges2flip = np.random.permutation(edge_count) # randomly choose edge to flip
     # print(dihedral.min())
     # print(dihedral.max())
     target = int(prct * edge_count)

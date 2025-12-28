@@ -230,7 +230,7 @@ def slide_verts(mesh, prct):
                 vi_t = edge[1] if vi == edge[0] else edge[0]
                 # slide vertex towards target
                 nv = mesh.vs[vi] + np.random.uniform(0.2, 0.5) * (mesh.vs[vi_t] - mesh.vs[vi]) # new vertex
-                mesh.vs[vi] = nv
+                mesh.vs[vi] = nv # assign
                 shifted += 1 # count shifted vertices
         else:
             break
@@ -258,7 +258,8 @@ def angles_from_faces(mesh, edge_faces, faces):
 
 
 def flip_edges(mesh, prct, faces):
-    """_summary_: data augmentation method"""
+    """_summary_: data augmentation method
+    randomly flips the edge, without influencing edge connectivity"""
     edge_count, edge_faces, edges_dict = get_edge_faces(faces)
     dihedral = angles_from_faces(mesh, edge_faces[:, 2:], faces)
     edges2flip = np.random.permutation(edge_count)

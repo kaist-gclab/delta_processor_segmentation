@@ -10,6 +10,7 @@ class MeshUnion:
         self.groups = torch.eye(n, device=device) # (n, n) membership matrix
 
     def union(self, source, target):
+        """_summary_: adds membership to target"""
         self.groups[target, :] += self.groups[source, :]
 
     def remove_group(self, index):

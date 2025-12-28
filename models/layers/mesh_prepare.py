@@ -312,13 +312,14 @@ def rebuild_face(face, new_face):
     """_summary_: re-write new_face (edge flipped)
     replace one vertex that changed during flip
     face and new face differ by one vertex
+    edge를 뒤집으면서 바뀐 vertex index를 이웃한 face에도 적용
 
     Args:
         face (ndarray): (3,) old face comp
         new_face (ndarray): (3,) new face component
 
     Returns:
-        _type_: _description_
+        face: face with new point
     """
     new_point = list(set(new_face) - set(face))[0] # finds face that is in new_face but not on old face
     for i in range(3):

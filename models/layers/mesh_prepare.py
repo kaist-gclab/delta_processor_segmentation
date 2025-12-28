@@ -259,13 +259,19 @@ def angles_from_faces(mesh, edge_faces, faces):
 
 def flip_edges(mesh, prct, faces):
     """_summary_: data augmentation method
-    randomly flips the edge, without influencing edge connectivity"""
+    randomly flips the edge, without influencing edge connectivity
+    
+    Args:
+        mesh ()
+        prce (fraction): percent
+        faces ()
+    """
     edge_count, edge_faces, edges_dict = get_edge_faces(faces)
     dihedral = angles_from_faces(mesh, edge_faces[:, 2:], faces)
     edges2flip = np.random.permutation(edge_count) # randomly choose edge to flip
     # print(dihedral.min())
     # print(dihedral.max())
-    target = int(prct * edge_count)
+    target = int(prct * edge_count) # target number of flip
     flipped = 0
     for edge_key in edges2flip:
         if flipped == target:

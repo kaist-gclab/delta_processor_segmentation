@@ -389,7 +389,7 @@ def set_edge_lengths(mesh, edge_points=None):
         None: calculates edge length and write i mesh.edge lengths
     """
     if edge_points is not None:
-        edge_points = get_edge_points(mesh)
+        edge_points = get_edge_points(mesh) # edge_points: (num_e, 2)
     edge_lengths = np.linalg.norm(mesh.vs[edge_points[:, 0]] - mesh.vs[edge_points[:, 1]], ord=2, axis=1)
     mesh.edge_lengths = edge_lengths # (num_e, ) each entry is Eucledian dist of edge
 

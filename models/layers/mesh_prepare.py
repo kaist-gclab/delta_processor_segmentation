@@ -407,8 +407,8 @@ def extract_features(mesh):
         None: update feature information
     """
     features = []
-    edge_points = get_edge_points(mesh)
-    set_edge_lengths(mesh, edge_points) # (num_e, 4) v0, v1, v2 and v3(adj face vert)
+    edge_points = get_edge_points(mesh) # (num_e, 4) v0, v1, v2 and v3(adj face vert)
+    set_edge_lengths(mesh, edge_points) # calculate inner angle according to edge point
     with np.errstate(divide='raise'):
         try:
             for extractor in [dihedral_angle, symmetric_opposite_angles, symmetric_ratios]:

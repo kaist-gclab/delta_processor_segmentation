@@ -515,11 +515,11 @@ def get_opposite_angles(mesh, edge_points, side):
 
     Args:
         mesh (obj): _description_
-        edge_points (ndarray): (num_e, 2)
+        edge_points (ndarray): (num_e, 4) e0, e1, e2, e3 (e2 and e3 is adjacent face vertex)
         side (_type_): _description_
 
     Returns:
-        _type_: _description_
+        angle: inner angle in radian
     """
     edges_a = mesh.vs[edge_points[:, side // 2]] - mesh.vs[edge_points[:, side // 2 + 2]]
     edges_b = mesh.vs[edge_points[:, 1 - side // 2]] - mesh.vs[edge_points[:, side // 2 + 2]]

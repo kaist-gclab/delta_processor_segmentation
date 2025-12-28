@@ -309,7 +309,18 @@ def flip_edges(mesh, prct, faces):
 
 
 def rebuild_face(face, new_face):
-    new_point = list(set(new_face) - set(face))[0]
+    """_summary_: re-write new_face (edge flipped)
+    replace one vertex that changed during flip
+    face and new face differ by one vertex
+
+    Args:
+        face (ndarray): (3,) old face comp
+        new_face (ndarray): (3,) new face component
+
+    Returns:
+        _type_: _description_
+    """
+    new_point = list(set(new_face) - set(face))[0] # finds face that is in new_face but not on old face
     for i in range(3):
         if face[i] not in new_face:
             face[i] = new_point

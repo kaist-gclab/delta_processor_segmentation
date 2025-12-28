@@ -516,7 +516,7 @@ def get_opposite_angles(mesh, edge_points, side):
     Args:
         mesh (obj): _description_
         edge_points (ndarray): (num_e, 4) e0, e1, e2, e3 (e2 and e3 is adjacent face vertex)
-        side (_type_): _description_
+        side (int): edge index selector
 
     Returns:
         angle: inner angle in radian

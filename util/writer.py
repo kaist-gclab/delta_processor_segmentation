@@ -42,16 +42,6 @@ class Writer:
         with open(self.log_name, "a") as log_file:
             log_file.write('%s\n' % message)
 
-    # def plot_loss(self, loss, epoch, i, n):
-    #     iters = i + (epoch - 1) * n
-    #     if self.display:
-    #         self.display.add_scalar('data/train_loss', loss, iters)
-
-    # def plot_model_wts(self, model, epoch):
-    #     if self.opt.is_train and self.display:
-    #         for name, param in model.net.named_parameters():
-    #             self.display.add_histogram(name, param.clone().cpu().data.numpy(), epoch)
-
     def print_acc(self, epoch, acc):
         """_summary_: prints test accuracy to terminal / file"""
         message = 'epoch: {}, TEST ACC: [{:.5} %]\n' \

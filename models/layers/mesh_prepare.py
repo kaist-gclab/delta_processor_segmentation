@@ -555,7 +555,7 @@ def get_ratios(mesh, edge_points, side):
         np.linalg.norm(line_ab, ord=2, axis=1), epsilon=0.1)
     closest_point = point_a + (projection_length / edges_lengths)[:, np.newaxis] * line_ab
     d = np.linalg.norm(point_o - closest_point, ord=2, axis=1) # perpendicular
-    return d / edges_lengths
+    return d / edges_lengths # normalize by edge length
 
 
 def fixed_division(to_div, epsilon):

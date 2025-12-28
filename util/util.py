@@ -108,7 +108,7 @@ def normalize_np_array(np_array):
 
 
 def calculate_entropy(np_array):
-    """_summary_
+    """_summary_: Shannon entropy
 
     Args:
         np_array (ndarray)
@@ -117,7 +117,7 @@ def calculate_entropy(np_array):
         entropy: _description_
     """
     entropy = 0
-    np_array /= np.sum(np_array)
+    np_array /= np.sum(np_array) # normalize into prob
     for a in np_array:
         if a != 0:
             entropy -= a * np.log(a)

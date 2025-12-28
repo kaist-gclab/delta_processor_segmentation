@@ -277,7 +277,7 @@ def flip_edges(mesh, prct, faces):
         if flipped == target:
             break
         if dihedral[edge_key] > 2.7: # threshold above 2.7
-            edge_info = edge_faces[edge_key]
+            edge_info = edge_faces[edge_key] # (edge_num, 4)
             if edge_info[3] == -1: # only one adj face, no flip
                 continue
             # compute other two vertices
@@ -288,9 +288,9 @@ def flip_edges(mesh, prct, faces):
             new_faces = np.array(
                 [[edge_info[1], new_edge[0], new_edge[1]], [edge_info[0], new_edge[0], new_edge[1]]])
             if check_area(mesh, new_faces):
-                del edges_dict[(edge_info[0], edge_info[1])]
-                edge_info[:2] = [new_edge[0], new_edge[1]]
-                edges_dict[new_edge] = edge_key
+                del edges_dict[(edge_info[0], edge_info[1])] # delete original edge
+                edge_info[:2] = [new_edge[0], new_edge[1]] # convert edge info to new edges
+                edges_dict[new_edge] = edge_key # add new edge to dictionary
                 rebuild_face(faces[edge_info[2]], new_faces[0])
                 rebuild_face(faces[edge_info[3]], new_faces[1])
                 for i, face_id in enumerate([edge_info[2], edge_info[3]]):

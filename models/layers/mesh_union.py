@@ -48,7 +48,7 @@ class MeshUnion:
     def prepare_groups(self, features, mask):
         """_summary_: reshape membership feature to match edge mask"""
         tensor_mask = torch.from_numpy(mask)
-        self.groups = torch.clamp(self.groups[tensor_mask, :], 0, 1).transpose_(1, 0)
+        self.groups = torch.clamp(self.groups[tensor_mask, :], 0, 1).transpose_(1, 0) # (e_new, n)
         padding_a = features.shape[1] - self.groups.shape[0]
         if padding_a > 0:
             padding_a = ConstantPad2d((0, 0, 0, padding_a), 0)

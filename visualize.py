@@ -163,11 +163,11 @@ def get_mesh(points, faces):
     """_summary_:
 
     Args:
-        points (ndarray): _description_
-        faces (ndarray): _description_
+        points (ndarray): (nump, 3)
+        faces (ndarray): (numf, 3)
 
     Returns:
-        o3d_mesh: _description_
+        o3d_mesh: open3d mesh
     """
     o3d_mesh = o3d.geometry.TriangleMesh()
     o3d_mesh.vertices = o3d.utility.Vector3dVector(points)

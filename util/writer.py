@@ -65,9 +65,7 @@ class Writer:
             log_file.write('%s\n' % message)
 
     def reset_counter(self):
-        """
-        counts # of correct examples
-        """
+        """_summary: counts # of correct examples"""
         self.ncorrect = 0
         self.nexamples = 0
 

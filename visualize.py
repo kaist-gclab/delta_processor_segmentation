@@ -177,6 +177,15 @@ def get_mesh(points, faces):
 
 
 def get_vert_color(labels, cmap='tab20'):
+    """_summary_
+
+    Args:
+        labels (ndarray): python ndarray
+        cmap (str, optional): color map type. Defaults to 'tab20'.
+
+    Returns:
+        colors: color mapping used for vis
+    """
     label_norm = labels.astype(float) / max(labels.max(), 1)
     color_map = plt.get_cmap(cmap)
     colors = color_map(label_norm)[:, :3]

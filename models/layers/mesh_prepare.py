@@ -378,6 +378,7 @@ def get_edge_faces(faces):
 # -----------------------------------------------------
 
 
+# Helper function of extract features
 def set_edge_lengths(mesh, edge_points=None):
     if edge_points is not None:
         edge_points = get_edge_points(mesh)

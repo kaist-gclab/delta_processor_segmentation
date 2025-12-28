@@ -231,7 +231,7 @@ def slide_verts(mesh, prct):
                 # slide vertex towards target
                 nv = mesh.vs[vi] + np.random.uniform(0.2, 0.5) * (mesh.vs[vi_t] - mesh.vs[vi]) # new vertex
                 mesh.vs[vi] = nv
-                shifted += 1
+                shifted += 1 # count shifted vertices
         else:
             break
     mesh.shifted = shifted / len(mesh.ve)

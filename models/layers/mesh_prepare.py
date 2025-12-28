@@ -554,7 +554,7 @@ def get_ratios(mesh, edge_points, side):
     projection_length = np.sum(line_ab * (point_o - point_a), axis=1) / fixed_division(
         np.linalg.norm(line_ab, ord=2, axis=1), epsilon=0.1)
     closest_point = point_a + (projection_length / edges_lengths)[:, np.newaxis] * line_ab
-    d = np.linalg.norm(point_o - closest_point, ord=2, axis=1)
+    d = np.linalg.norm(point_o - closest_point, ord=2, axis=1) # perpendicular
     return d / edges_lengths
 
 

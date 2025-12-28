@@ -160,6 +160,15 @@ def vis_init_patch(points, faces, labels):
 
 
 def get_mesh(points, faces):
+    """_summary_:
+
+    Args:
+        points (ndarray): _description_
+        faces (ndarray): _description_
+
+    Returns:
+        o3d_mesh: _description_
+    """
     o3d_mesh = o3d.geometry.TriangleMesh()
     o3d_mesh.vertices = o3d.utility.Vector3dVector(points)
     o3d_mesh.triangles = o3d.utility.Vector3iVector(faces)

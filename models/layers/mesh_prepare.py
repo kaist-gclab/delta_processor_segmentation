@@ -209,6 +209,13 @@ def post_augmentation(mesh, opt):
 
 
 def slide_verts(mesh, prct):
+    """_summary_: vertex sliding
+    randomly moves bit along to the incident edges
+
+    Args:
+        mesh (_type_): _description_
+        prct (_type_): _description_
+    """
     edge_points = get_edge_points(mesh)
     dihedral = dihedral_angle(mesh, edge_points).squeeze() #todo make fixed_division epsilon=0
     # thr = np.mean(dihedral) + np.std(dihedral) # threshold

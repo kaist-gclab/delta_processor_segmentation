@@ -32,8 +32,9 @@ class MeshUnion:
 
     def rebuild_features_average(self, features, mask, target_edges):
         """_summary_: re-build pooled edge features"""
+        # feature: (B, C, E, 1), mask (E,)
         self.prepare_groups(features, mask)
-        fe = torch.matmul(features.squeeze(-1), self.groups) # (B, C, E, 1)
+        fe = torch.matmul(features.squeeze(-1), self.groups)
         occurrences = torch.sum(self.groups, 0).expand(fe.shape)
         fe = fe / occurrences
         padding_b = target_edges - fe.shape[1]

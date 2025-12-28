@@ -352,10 +352,12 @@ def get_edge_faces(faces):
     """_summary_
 
     Args:
-        faces (ndarray): _description_
+        faces (ndarray): (num_f, 3)
 
     Returns:
-        _type_: _description_
+        edge_count: _description_
+        edge_faces (ndarray):
+        edge2keys (dict): 
     """
     edge_count = 0
     edge_faces = []

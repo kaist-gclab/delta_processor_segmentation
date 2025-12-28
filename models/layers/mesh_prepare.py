@@ -320,11 +320,11 @@ def check_area(mesh, faces):
     """_summary_: checks if triangle is not too skinny, degenerate, inverted
 
     Args:
-        mesh (_type_): _description_
-        faces (_type_): _description_
+        mesh (object that consists ndarray): uses vertex
+        faces (ndarray): (num_f, 3)
 
     Returns:
-        _type_: _description_
+        bool: if area is okay
     """
     face_normals = np.cross(mesh.vs[faces[:, 1]] - mesh.vs[faces[:, 0]],
                             mesh.vs[faces[:, 2]] - mesh.vs[faces[:, 1]])

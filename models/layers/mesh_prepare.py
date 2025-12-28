@@ -526,6 +526,7 @@ def get_opposite_angles(mesh, edge_points, side):
     # if side = 0 or 1: edges_a = v0-v2, edges_b = v1-v2
     # if side = 1 or 2: edges_a = v1-v3, edges_b = v0-v3
 
+    # L2 normalization
     edges_a /= fixed_division(np.linalg.norm(edges_a, ord=2, axis=1), epsilon=0.1)[:, np.newaxis]
     edges_b /= fixed_division(np.linalg.norm(edges_b, ord=2, axis=1), epsilon=0.1)[:, np.newaxis]
     dot = np.sum(edges_a * edges_b, axis=1).clip(-1, 1)

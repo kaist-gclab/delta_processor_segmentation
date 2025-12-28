@@ -291,6 +291,7 @@ def flip_edges(mesh, prct, faces):
                 del edges_dict[(edge_info[0], edge_info[1])] # delete original edge
                 edge_info[:2] = [new_edge[0], new_edge[1]] # convert edge info to new edges
                 edges_dict[new_edge] = edge_key # add new edge to dictionary
+                # two neighboring faces (change into inverted edge vertex)
                 rebuild_face(faces[edge_info[2]], new_faces[0])
                 rebuild_face(faces[edge_info[3]], new_faces[1])
                 for i, face_id in enumerate([edge_info[2], edge_info[3]]):

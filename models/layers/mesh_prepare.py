@@ -236,6 +236,7 @@ def scale_verts(mesh, mean=1, var=0.1):
 
 
 def angles_from_faces(mesh, edge_faces, faces):
+    """_summary_: computes dihedral angle"""
     normals = [None, None]
     for i in range(2):
         edge_a = mesh.vs[faces[edge_faces[:, i], 2]] - mesh.vs[faces[edge_faces[:, i], 1]]

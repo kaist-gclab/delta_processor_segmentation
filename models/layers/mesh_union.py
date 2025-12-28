@@ -3,6 +3,8 @@ from torch.nn import ConstantPad2d
 
 
 class MeshUnion:
+    """_summary_: group of edge and its functions
+    """
     def __init__(self, n, device=torch.device('cpu')):
         self.__size = n
         self.rebuild_features = self.rebuild_features_average

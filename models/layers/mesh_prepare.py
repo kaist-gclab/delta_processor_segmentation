@@ -408,7 +408,7 @@ def extract_features(mesh):
     """
     features = []
     edge_points = get_edge_points(mesh) # (num_e, 4) v0, v1, v2 and v3(adj face vert)
-    set_edge_lengths(mesh, edge_points) # calculate inner angle according to edge point
+    set_edge_lengths(mesh, edge_points) # calculate edge length
     with np.errstate(divide='raise'):
         try:
             for extractor in [dihedral_angle, symmetric_opposite_angles, symmetric_ratios]:
@@ -442,8 +442,8 @@ def symmetric_opposite_angles(mesh, edge_points):
         the angle is in each face opposite the edge
         sort handles order ambiguity
     """
-    angles_a = get_opposite_angles(mesh, edge_points, 0)
-    angles_b = get_opposite_angles(mesh, edge_points, 3)
+    angles_a = get_opposite_angles(mesh, edge_points, 0) # angle in face A
+    angles_b = get_opposite_angles(mesh, edge_points, 3) # angle in face B
     angles = np.concatenate((np.expand_dims(angles_a, 0), np.expand_dims(angles_b, 0)), axis=0)
     angles = np.sort(angles, axis=0)
     return angles

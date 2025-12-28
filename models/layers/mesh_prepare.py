@@ -356,7 +356,7 @@ def get_edge_faces(faces):
 
     Returns:
         edge_count (int): number of edges
-        edge_faces (ndarray):
+        edge_faces (ndarray): per edge, write two adjacen face (num_e, 4)
         edge2keys (dict): 
     """
     edge_count = 0

@@ -420,6 +420,7 @@ def extract_features(mesh):
             raise ValueError(mesh.filename, 'bad features')
 
 
+# ------ Helper function of extract features ------
 def dihedral_angle(mesh, edge_points):
     """_summary_
 
@@ -445,7 +446,7 @@ def symmetric_opposite_angles(mesh, edge_points):
     angles_a = get_opposite_angles(mesh, edge_points, 0) # angle in face A
     angles_b = get_opposite_angles(mesh, edge_points, 3) # angle in face B
     angles = np.concatenate((np.expand_dims(angles_a, 0), np.expand_dims(angles_b, 0)), axis=0)
-    angles = np.sort(angles, axis=0)
+    angles = np.sort(angles, axis=0) # sort in ascending order
     return angles
 
 
@@ -546,9 +547,11 @@ def get_ratios(mesh, edge_points, side):
     d = np.linalg.norm(point_o - closest_point, ord=2, axis=1)
     return d / edges_lengths
 
+
 def fixed_division(to_div, epsilon):
     if epsilon == 0:
         to_div[to_div == 0] = 0.1
     else:
         to_div += epsilon
     return to_div
+# -----------------------------------------------------

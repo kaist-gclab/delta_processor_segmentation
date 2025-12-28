@@ -220,7 +220,7 @@ def slide_verts(mesh, prct):
     dihedral = dihedral_angle(mesh, edge_points).squeeze() #todo make fixed_division epsilon=0
     # thr = np.mean(dihedral) + np.std(dihedral) # threshold
     vids = np.random.permutation(len(mesh.ve)) # process in randomized order
-    target = int(prct * len(vids))
+    target = int(prct * len(vids)) # how many vertex to move
     shifted = 0
     for vi in vids:
         if shifted < target:

@@ -550,9 +550,9 @@ def get_ratios(mesh, edge_points, side):
     point_o = mesh.vs[edge_points[:, side // 2 + 2]]
     point_a = mesh.vs[edge_points[:, side // 2]]
     point_b = mesh.vs[edge_points[:, 1 - side // 2]]
-    line_ab = point_b - point_a
+    line_ab = point_b - point_a # direction vector
     projection_length = np.sum(line_ab * (point_o - point_a), axis=1) / fixed_division(
-        np.linalg.norm(line_ab, ord=2, axis=1), epsilon=0.1)
+        np.linalg.norm(line_ab, ord=2, axis=1), epsilon=0.1) # project AO to AB
     closest_point = point_a + (projection_length / edges_lengths)[:, np.newaxis] * line_ab # closest point from edge
     d = np.linalg.norm(point_o - closest_point, ord=2, axis=1) # perpendicular
     return d / edges_lengths # normalize by edge length

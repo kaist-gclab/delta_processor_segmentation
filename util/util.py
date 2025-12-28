@@ -121,5 +121,5 @@ def calculate_entropy(np_array):
     for a in np_array:
         if a != 0:
             entropy -= a * np.log(a)
-    entropy /= np.log(np_array.shape[0])
+    entropy /= np.log(np_array.shape[0]) # range [0,1]
     return entropy

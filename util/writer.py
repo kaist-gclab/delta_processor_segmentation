@@ -78,9 +78,9 @@ class Writer:
     #     if self.display:
     #         self.display.add_scalar('data/test_acc', f1, epoch)
 
-    def plot_acc(self, acc, epoch):
-        if self.display:
-            self.display.add_scalar('data/test_acc', acc, epoch)
+    # def plot_acc(self, acc, epoch):
+    #     if self.display:
+    #         self.display.add_scalar('data/test_acc', acc, epoch)
 
     def reset_counter(self):
         """

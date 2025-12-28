@@ -304,7 +304,7 @@ def flip_edges(mesh, prct, faces):
                             for idx, face_nb in enumerate(
                                     [edge_faces[cur_edge_key, 2], edge_faces[cur_edge_key, 3]]):
                                 if face_nb == edge_info[2 + (i + 1) % 2]: # pick up according faces
-                                    edge_faces[cur_edge_key, 2 + idx] = face_id
+                                    edge_faces[cur_edge_key, 2 + idx] = face_id # update adjacency of face
                 flipped += 1
     # print(flipped)
     return faces

@@ -17,6 +17,7 @@ class MeshUnion:
         return
 
     def get_group(self, edge_key):
+        """_summary_: returns membership group"""
         return self.groups[edge_key, :]
 
     def get_occurrences(self):

@@ -277,7 +277,7 @@ def flip_edges(mesh, prct, faces):
         if flipped == target:
             break
         if dihedral[edge_key] > 2.7: # threshold above 2.7
-            edge_info = edge_faces[edge_key] # (edge_num, 4)
+            edge_info = edge_faces[edge_key] # (edge_num, 4) - v0, v1, fA, fB
             if edge_info[3] == -1: # only one adj face, no flip
                 continue
             # compute other two vertices
@@ -297,10 +297,10 @@ def flip_edges(mesh, prct, faces):
                 # inverted edge가 포함된 모든 face에 대하여
                 for i, face_id in enumerate([edge_info[2], edge_info[3]]):
                     cur_face = faces[face_id] # get the face
-                    for j in range(3):
+                    for j in range(3): # update edge neighbor information
                         cur_edge = tuple(sorted((cur_face[j], cur_face[(j + 1) % 3]))) # tuple of edge in sorted order
-                        if cur_edge != new_edge:
-                            cur_edge_key = edges_dict[cur_edge]
+                        if cur_edge != new_edge: # updated edge
+                            cur_edge_key = edges_dict[cur_edge] # lookup entry
                             for idx, face_nb in enumerate(
                                     [edge_faces[cur_edge_key, 2], edge_faces[cur_edge_key, 3]]):
                                 if face_nb == edge_info[2 + (i + 1) % 2]:

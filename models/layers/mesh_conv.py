@@ -27,10 +27,18 @@ class MeshConv(nn.Module):
         return x
 
     def flatten_gemm_inds(self, Gi):
+        """_summary_
+
+        Args:
+            Gi (batch, num_edge, num_neigh): one-ring indices
+
+        Returns:
+            Gi (batch, num_edge, num_neigh): values shifted with batch offset. No change on shape
+        """
         (b, ne, nn) = Gi.shape
         ne += 1
         batch_n = torch.floor(torch.arange(b * ne, device=Gi.device).float() / ne).view(b, ne)
-        add_fac = batch_n * ne
+        add_fac = batch_n * ne # offset < from dif batch, not collide
         add_fac = add_fac.view(b, ne, 1)
         add_fac = add_fac.repeat(1, 1, nn)
         # flatten Gi

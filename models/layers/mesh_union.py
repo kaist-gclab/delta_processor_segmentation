@@ -31,6 +31,7 @@ class MeshUnion:
         return self.groups[tensor_mask, :] # (m, n)
 
     def rebuild_features_average(self, features, mask, target_edges):
+        """_summary_: re-build pooled edge features"""
         self.prepare_groups(features, mask)
         fe = torch.matmul(features.squeeze(-1), self.groups)
         occurrences = torch.sum(self.groups, 0).expand(fe.shape)

@@ -262,9 +262,9 @@ def flip_edges(mesh, prct, faces):
     randomly flips the edge, without influencing edge connectivity
     
     Args:
-        mesh ()
+        mesh (obj): object with vertices
         prce (fraction): percent
-        faces ()
+        faces (ndarray): (num_face, 3)
     """
     edge_count, edge_faces, edges_dict = get_edge_faces(faces)
     dihedral = angles_from_faces(mesh, edge_faces[:, 2:], faces)

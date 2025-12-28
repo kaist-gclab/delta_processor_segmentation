@@ -272,11 +272,11 @@ def flip_edges(mesh, prct, faces):
     # print(dihedral.min())
     # print(dihedral.max())
     target = int(prct * edge_count) # target number of flip
-    flipped = 0
+    flipped = 0 # coutner
     for edge_key in edges2flip:
         if flipped == target:
             break
-        if dihedral[edge_key] > 2.7:
+        if dihedral[edge_key] > 2.7: # threshold above 2.7
             edge_info = edge_faces[edge_key]
             if edge_info[3] == -1:
                 continue

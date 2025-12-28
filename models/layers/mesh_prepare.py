@@ -380,6 +380,14 @@ def get_edge_faces(faces):
 
 # Helper function of extract features
 def set_edge_lengths(mesh, edge_points=None):
+    """_summary_
+
+    Args:
+        mesh (_type_): _description_
+        edge_points (_type_, optional): _description_. Defaults to None.
+    Returns:
+        None: calculates edge length and write i mesh.edge lengths
+    """
     if edge_points is not None:
         edge_points = get_edge_points(mesh)
     edge_lengths = np.linalg.norm(mesh.vs[edge_points[:, 0]] - mesh.vs[edge_points[:, 1]], ord=2, axis=1)

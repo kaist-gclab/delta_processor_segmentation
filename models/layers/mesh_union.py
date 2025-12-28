@@ -41,7 +41,7 @@ class MeshUnion:
         if padding_b > 0:
             padding_b = ConstantPad2d((0, padding_b, 0, 0), 0)
             fe = padding_b(fe)
-        return fe
+        return fe # (B, C, target_edge)
 
     def prepare_groups(self, features, mask):
         tensor_mask = torch.from_numpy(mask)

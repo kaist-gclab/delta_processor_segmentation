@@ -535,6 +535,16 @@ def get_opposite_angles(mesh, edge_points, side):
 
 
 def get_ratios(mesh, edge_points, side):
+    """_summary_
+
+    Args:
+        mesh (obj): mesh object
+        edge_points (ndarray): (e_num, 4)
+        side (0-3 int): similar to get opposite angles func
+
+    Returns:
+        ratio (float): _description_
+    """
     edges_lengths = np.linalg.norm(mesh.vs[edge_points[:, side // 2]] - mesh.vs[edge_points[:, 1 - side // 2]],
                                    ord=2, axis=1)
     point_o = mesh.vs[edge_points[:, side // 2 + 2]]

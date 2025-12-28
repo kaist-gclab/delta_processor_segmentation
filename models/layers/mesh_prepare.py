@@ -278,8 +278,9 @@ def flip_edges(mesh, prct, faces):
             break
         if dihedral[edge_key] > 2.7: # threshold above 2.7
             edge_info = edge_faces[edge_key]
-            if edge_info[3] == -1:
+            if edge_info[3] == -1: # only one adj face, no flip
                 continue
+            # 
             new_edge = tuple(sorted(list(set(faces[edge_info[2]]) ^ set(faces[edge_info[3]]))))
             if new_edge in edges_dict:
                 continue

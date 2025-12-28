@@ -310,6 +310,7 @@ def flip_edges(mesh, prct, faces):
     return faces
 
 
+# ------Helper function for flip_edges------
 def rebuild_face(face, new_face):
     """_summary_: re-write new_face (edge flipped)
     replace one vertex that changed during flip
@@ -348,6 +349,14 @@ def check_area(mesh, faces):
 
 
 def get_edge_faces(faces):
+    """_summary_
+
+    Args:
+        faces (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     edge_count = 0
     edge_faces = []
     edge2keys = dict()
@@ -364,6 +373,7 @@ def get_edge_faces(faces):
             else:
                 edge_faces[edge_key][3] = face_id
     return edge_count, np.array(edge_faces), edge2keys
+# -----------------------------------------------------
 
 
 def set_edge_lengths(mesh, edge_points=None):

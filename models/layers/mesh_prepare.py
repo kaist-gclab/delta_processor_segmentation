@@ -511,6 +511,16 @@ def get_normals(mesh, edge_points, side):
     return normals
 
 def get_opposite_angles(mesh, edge_points, side):
+    """_summary_
+
+    Args:
+        mesh (obj): _description_
+        edge_points (ndarray): (num_e, 2)
+        side (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     edges_a = mesh.vs[edge_points[:, side // 2]] - mesh.vs[edge_points[:, side // 2 + 2]]
     edges_b = mesh.vs[edge_points[:, 1 - side // 2]] - mesh.vs[edge_points[:, side // 2 + 2]]
 

@@ -421,6 +421,15 @@ def extract_features(mesh):
 
 
 def dihedral_angle(mesh, edge_points):
+    """_summary_
+
+    Args:
+        mesh (obj): mesh object. vertices can be retrieved
+        edge_points (nearray): ndarray of index of two vertex
+
+    Returns:
+        _type_: _description_
+    """
     normals_a = get_normals(mesh, edge_points, 0)
     normals_b = get_normals(mesh, edge_points, 3)
     dot = np.sum(normals_a * normals_b, axis=1).clip(-1, 1)

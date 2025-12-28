@@ -228,7 +228,8 @@ def slide_verts(mesh, prct):
             if min(dihedral[edges]) > 2.65: # fixed threshold aroung 152 deg
                 edge = mesh.edges[np.random.choice(edges)]
                 vi_t = edge[1] if vi == edge[0] else edge[0]
-                nv = mesh.vs[vi] + np.random.uniform(0.2, 0.5) * (mesh.vs[vi_t] - mesh.vs[vi])
+                # slide vertex towards target
+                nv = mesh.vs[vi] + np.random.uniform(0.2, 0.5) * (mesh.vs[vi_t] - mesh.vs[vi]) # new vertex
                 mesh.vs[vi] = nv
                 shifted += 1
         else:

@@ -282,7 +282,7 @@ def flip_edges(mesh, prct, faces):
                 continue
             # compute other two vertices
             new_edge = tuple(sorted(list(set(faces[edge_info[2]]) ^ set(faces[edge_info[3]])))) # faces sharing the edge
-            if new_edge in edges_dict:
+            if new_edge in edges_dict: # if new diag already exists, duplicate connectivity -> don't flip
                 continue
             new_faces = np.array(
                 [[edge_info[1], new_edge[0], new_edge[1]], [edge_info[0], new_edge[0], new_edge[1]]])

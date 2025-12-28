@@ -53,7 +53,7 @@ class Writer:
     #             self.display.add_histogram(name, param.clone().cpu().data.numpy(), epoch)
 
     def print_acc(self, epoch, acc):
-        """ prints test accuracy to terminal / file """
+        """_summary_: prints test accuracy to terminal / file"""
         message = 'epoch: {}, TEST ACC: [{:.5} %]\n' \
             .format(epoch, acc * 100)
         if epoch == -1:
@@ -64,6 +64,7 @@ class Writer:
             log_file.write('%s\n' % message)
 
     def print_f1(self, epoch, f1):
+        """_summary_: prints test f1 to terminal"""
         message = 'epoch: {}, TEST F1: [{:.5} %]\n' \
             .format(epoch, f1 * 100)
         if epoch == -1:
@@ -73,9 +74,9 @@ class Writer:
         with open(self.testacc_log, "a") as log_file:
             log_file.write('%s\n' % message)
 
-    def plot_f1(self, f1, epoch):
-        if self.display:
-            self.display.add_scalar('data/test_acc', f1, epoch)
+    # def plot_f1(self, f1, epoch):
+    #     if self.display:
+    #         self.display.add_scalar('data/test_acc', f1, epoch)
 
     def plot_acc(self, acc, epoch):
         if self.display:

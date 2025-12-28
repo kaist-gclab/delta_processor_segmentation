@@ -428,7 +428,7 @@ def dihedral_angle(mesh, edge_points):
         edge_points (nearray): ndarray of index of two vertex
 
     Returns:
-        _type_: _description_
+        angles (ndarray): list of dihedral angles
     """
     normals_a = get_normals(mesh, edge_points, 0)
     normals_b = get_normals(mesh, edge_points, 3)

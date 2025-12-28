@@ -27,7 +27,8 @@ class MeshUnion:
     def get_groups(self, tensor_mask):
         """_summary_: membership value to binary 0/1"""
         self.groups = torch.clamp(self.groups, 0, 1)
-        return self.groups[tensor_mask, :] # 
+        # tensor mask selects m group
+        return self.groups[tensor_mask, :] # (m, n)
 
     def rebuild_features_average(self, features, mask, target_edges):
         self.prepare_groups(features, mask)

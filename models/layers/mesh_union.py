@@ -21,6 +21,7 @@ class MeshUnion:
         return self.groups[edge_key, :]
 
     def get_occurrences(self):
+        """_summary_: for each edge, how many groups"""
         return torch.sum(self.groups, 0)
 
     def get_groups(self, tensor_mask):

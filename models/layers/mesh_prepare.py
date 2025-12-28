@@ -211,8 +211,8 @@ def post_augmentation(mesh, opt):
 def slide_verts(mesh, prct):
     edge_points = get_edge_points(mesh)
     dihedral = dihedral_angle(mesh, edge_points).squeeze() #todo make fixed_division epsilon=0
-    thr = np.mean(dihedral) + np.std(dihedral)
-    vids = np.random.permutation(len(mesh.ve))
+    # thr = np.mean(dihedral) + np.std(dihedral) # threshold
+    vids = np.random.permutation(len(mesh.ve)) # process in randomized order
     target = int(prct * len(vids))
     shifted = 0
     for vi in vids:

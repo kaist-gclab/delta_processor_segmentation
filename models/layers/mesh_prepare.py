@@ -319,7 +319,7 @@ def rebuild_face(face, new_face):
         new_face (ndarray): (3,) new face component
 
     Returns:
-        face: face with new point
+        face: face with flipped edge vertex inserted
     """
     new_point = list(set(new_face) - set(face))[0] # finds face that is in new_face but not on old face
     for i in range(3):

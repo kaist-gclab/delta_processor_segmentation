@@ -5,7 +5,7 @@ import time
 #     from tensorboardX import SummaryWriter
 # except ImportError as error:
     # print('tensorboard X not installed, visualizing wont be available')
-SummaryWriter = None
+# SummaryWriter = None
 
 class Writer:
     def __init__(self, opt):
@@ -21,7 +21,7 @@ class Writer:
         # if opt.is_train and not opt.no_vis and SummaryWriter is not None:
         #     self.display = SummaryWriter(comment=opt.name)
         # else:
-        self.display = None
+        # self.display = None
 
     def start_logs(self):
         """_summary_: creates test / train log files"""
@@ -73,14 +73,6 @@ class Writer:
         print(message)
         with open(self.testacc_log, "a") as log_file:
             log_file.write('%s\n' % message)
-
-    # def plot_f1(self, f1, epoch):
-    #     if self.display:
-    #         self.display.add_scalar('data/test_acc', f1, epoch)
-
-    # def plot_acc(self, acc, epoch):
-    #     if self.display:
-    #         self.display.add_scalar('data/test_acc', acc, epoch)
 
     def reset_counter(self):
         """

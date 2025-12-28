@@ -37,7 +37,7 @@ if __name__ == '__main__':
                 loss = model.loss
                 t = (time.time() - iter_start_time) / opt.batch_size
                 writer.print_current_losses(epoch, epoch_iter, loss, t, t_data)
-                writer.plot_loss(loss, epoch, epoch_iter, dataset_size)
+                # writer.plot_loss(loss, epoch, epoch_iter, dataset_size)
 
             if i % opt.save_latest_freq == 0:
                 tqdm.write('saving the latest model (epoch %d, total_steps %d)' %

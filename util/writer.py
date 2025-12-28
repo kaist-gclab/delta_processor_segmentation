@@ -24,7 +24,7 @@ class Writer:
         self.display = None
 
     def start_logs(self):
-        """ creates test / train log files """
+        """_summary_: creates test / train log files"""
         if self.opt.is_train:
             with open(self.log_name, "a") as log_file:
                 now = time.strftime("%c")
@@ -35,17 +35,17 @@ class Writer:
                 log_file.write('================ Testing Acc (%s) ================\n' % now)
 
     def print_current_losses(self, epoch, i, losses, t, t_data):
-        """ prints train loss to terminal / file """
+        """_summary_: prints train loss to terminal / file"""
         message = '(epoch: %d, iters: %d, time: %.3f, data: %.3f) loss: %.3f ' \
                   % (epoch, i, t, t_data, losses.item())
         print(message)
         with open(self.log_name, "a") as log_file:
             log_file.write('%s\n' % message)
 
-    def plot_loss(self, loss, epoch, i, n):
-        iters = i + (epoch - 1) * n
-        if self.display:
-            self.display.add_scalar('data/train_loss', loss, iters)
+    # def plot_loss(self, loss, epoch, i, n):
+    #     iters = i + (epoch - 1) * n
+    #     if self.display:
+    #         self.display.add_scalar('data/train_loss', loss, iters)
 
     def plot_model_wts(self, model, epoch):
         if self.opt.is_train and self.display:

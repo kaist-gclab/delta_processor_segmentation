@@ -380,7 +380,7 @@ def get_edge_faces(faces):
 
 # Helper function of extract features
 def set_edge_lengths(mesh, edge_points=None):
-    """_summary_
+    """_summary_: calculates all edge length per each edge and save into mesh.edge_length info
 
     Args:
         mesh (_type_): _description_

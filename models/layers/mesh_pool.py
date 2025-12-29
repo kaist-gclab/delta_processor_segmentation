@@ -99,7 +99,7 @@ class MeshPool(nn.Module):
             return False # 부르는 call을 보면 두개를 동시에 확인해서 상관 X
         invalid_edges = MeshPool.__get_invalids(mesh, edge_id, edge_groups, side) # list, find invalid local sets of edge_id around side
         while len(invalid_edges) != 0 and mesh.edges_count > self.__out_target: # invalid edge exist, not target yet
-            # triplet: three edge that makes a face
+            # triplet: three edge that shares common vertex
             self.__remove_triplete(mesh, mask, edge_groups, invalid_edges) # remove invalid triplet
             # after removing, check few cond
             if mesh.edges_count <= self.__out_target: # reach target num
@@ -217,7 +217,7 @@ class MeshPool(nn.Module):
 
     @staticmethod
     def __remove_triplete(mesh, mask, edge_groups, invalid_edges):
-        """_summary_: remove triplet"""
+        """_summary_: remove triplet - three edge share single vertex"""
         vertex = set(mesh.edges[invalid_edges[0]])
         for edge_key in invalid_edges:
             vertex &= set(mesh.edges[edge_key])

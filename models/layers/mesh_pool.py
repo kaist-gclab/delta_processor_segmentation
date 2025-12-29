@@ -149,7 +149,7 @@ class MeshPool(nn.Module):
         MeshPool.__union_groups(mesh, edge_groups, edge_id, key_a) # merge edge_id into key_a: feature of edge_id will contribute to key_a
         mask[key_b] = False # update mask
         MeshPool.__remove_group(mesh, edge_groups, key_b) # update mesh history, old2current map etc
-        mesh.remove_edge(key_b)
+        mesh.remove_edge(key_b) # safely remove key_b from edges, gemm_edges
         mesh.edges_count -= 1
         return key_a
 

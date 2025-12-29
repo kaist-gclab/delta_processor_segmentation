@@ -96,8 +96,8 @@ class MeshPool(nn.Module):
     def __clean_side(self, mesh, edge_id, mask, edge_groups, side):
         """_summary_: ensure collapsing edge on one face side is safe"""
         if mesh.edges_count <= self.__out_target: # target num meet - return
-            return False
-        invalid_edges = MeshPool.__get_invalids(mesh, edge_id, edge_groups, side)
+            return False # 부르는 call을 보면 두개를 동시에 확인해서 상관 X
+        invalid_edges = MeshPool.__get_invalids(mesh, edge_id, edge_groups, side) # list, find invalid local sets of edge_id around side
         while len(invalid_edges) != 0 and mesh.edges_count > self.__out_target:
             self.__remove_triplete(mesh, mask, edge_groups, invalid_edges)
             if mesh.edges_count <= self.__out_target:

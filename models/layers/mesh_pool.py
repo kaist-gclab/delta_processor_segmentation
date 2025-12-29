@@ -65,7 +65,7 @@ class MeshPool(nn.Module):
                 self.__pool_edge(mesh, edge_id, mask, edge_groups) # call pool_edge (edge collapse)
         mesh.clean(mask, edge_groups) # call clean: remap neighbor ref, update edge count, save history
         fe = edge_groups.rebuild_features(self.__fe[mesh_index], mask, self.__out_target) # rebuild feature (1, C, e_out)
-        self.__updated_fe[mesh_index] = fe
+        self.__updated_fe[mesh_index] = fe # assign updated fe
 
     def __pool_edge(self, mesh, edge_id, mask, edge_groups):
         if self.has_boundaries(mesh, edge_id):

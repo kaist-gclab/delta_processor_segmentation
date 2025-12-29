@@ -127,7 +127,7 @@ class MeshPool(nn.Module):
         # mesh.edges[mesh.ve[v0]]: (deg(v0), 2) > reshape (deg(v0)*2,)
         v_a = set(mesh.edges[mesh.ve[mesh.edges[edge_id, 0]]].reshape(-1))
         v_b = set(mesh.edges[mesh.ve[mesh.edges[edge_id, 1]]].reshape(-1))
-        shared = v_a & v_b - set(mesh.edges[edge_id])
+        shared = v_a & v_b - set(mesh.edges[edge_id]) # from intersection of v0, v1 incident edges - exclude v0 and v1
         return len(shared) == 2
 
     def __pool_side(self, mesh, edge_id, mask, edge_groups, side):

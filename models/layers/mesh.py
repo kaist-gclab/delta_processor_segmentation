@@ -151,6 +151,7 @@ class Mesh:
                 cur_segments = cur_segments[self.history_data['edges_mask'][i]]
 
     def __get_cycle(self, gemm, edge_id):
+        """_summary_: calculate cycle upon gemm"""
         cycles = []
         for j in range(2):
             next_side = start_point = j * 2

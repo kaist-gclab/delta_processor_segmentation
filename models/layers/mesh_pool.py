@@ -36,10 +36,11 @@ class MeshPool(nn.Module):
         # iterate over batch
         for mesh_index in range(len(meshes)):
             if self.__multi_thread:
+                # assign thread to one mesh
                 pool_threads.append(Thread(target=self.__pool_main, args=(mesh_index,)))
                 pool_threads[-1].start()
             else:
-                self.__pool_main(mesh_index)
+                self.__pool_main(mesh_index) #
         if self.__multi_thread:
             for mesh_index in range(len(meshes)):
                 pool_threads[mesh_index].join()

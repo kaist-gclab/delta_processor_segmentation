@@ -192,7 +192,8 @@ class MeshPool(nn.Module):
     @staticmethod
     def __redirect_edges(mesh, edge_a_key, side_a, edge_b_key, side_b):
         """_summary_: rewire edge-neighborhood adjacency between two edges"""
-        mesh.gemm_edges[edge_a_key, side_a] = edge_b_key
+        # link: (edge_a_key, side_a)  <-->  (edge_b_key, side_b)
+        mesh.gemm_edges[edge_a_key, side_a] = edge_b_key # 
         mesh.gemm_edges[edge_b_key, side_b] = edge_a_key
         mesh.sides[edge_a_key, side_a] = side_b
         mesh.sides[edge_b_key, side_b] = side_a

@@ -75,8 +75,8 @@ class MeshPool(nn.Module):
         # edge_groups (MeshUnion): merge trasking structure (for feature rebuild)
         if self.has_boundaries(mesh, edge_id): # check if edge is boundary feature
             return False
-        # check side 0 (one incident face)
-        # 
+        # check and cleanup side 0 (one incident face)
+        # check and cleanup side 2 (another incident face)
         elif self.__clean_side(mesh, edge_id, mask, edge_groups, 0)\
             and self.__clean_side(mesh, edge_id, mask, edge_groups, 2) \
             and self.__is_one_ring_valid(mesh, edge_id):

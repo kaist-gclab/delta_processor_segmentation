@@ -180,7 +180,7 @@ class Mesh:
         # occurrences: occurrences saved at pooling step (e_new,)
         # old2current: map original edge id to current edge id (e_num,)
         # -1 if X exist
-        # current2old: map current edge id to old edge id ()
+        # current2old: map current edge id to old edge id (e_num,)
         self.history_data = {
                                'groups': [],
                                'gemm_edges': [self.gemm_edges.copy()],

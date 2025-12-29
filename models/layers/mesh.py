@@ -172,6 +172,7 @@ class Mesh:
         return cycles # up to 2 cycle, each - list of edge id
 
     def __cycle_to_face(self, cycle, v_indices):
+        """_summary_: calculate face (vertex idx) from three edge"""
         face = []
         for i in range(3):
             v = list(set(self.edges[cycle[i]]) & set(self.edges[cycle[(i + 1) % 3]]))[0]

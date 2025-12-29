@@ -149,7 +149,7 @@ class Mesh:
                                 edge_key += 1
                                 new_file.write('\n') # add newline
                         else:
-                            new_file.write(line)
+                            new_file.write(line) # no newline for end elem
             os.remove(file)
             move(abs_path, file)
             if i < len(self.history_data['edges_mask']):

@@ -12,7 +12,8 @@ class MeshUnpool(nn.Module):
         return self.forward(features, meshes)
 
     def pad_groups(self, group, unroll_start):
-        """_summary_: pad group dim to unroll_start"""
+        """_summary_: pad group dim to unroll_start
+        so batching works"""
         start, end = group.shape
         padding_rows =  unroll_start - start
         padding_cols = self.unroll_target - end

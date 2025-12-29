@@ -92,7 +92,7 @@ class Mesh:
                 update_ve.append(new_indices[e]) # add newly assigned edge idx to edge neighbor
             new_ve.append(update_ve)
         self.ve = new_ve # assign new mapping
-        self.__clean_history(groups, torch_mask)
+        self.__clean_history(groups, torch_mask) # record variable edge-related arguments
         self.pool_count += 1
         self.export()
 

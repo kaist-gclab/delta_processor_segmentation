@@ -10,6 +10,7 @@ from tqdm import tqdm
 class MeshPool(nn.Module):
     def __init__(self, target, multi_thread=False):
         """_summary_: edge collapse operator"""
+        # target: target edge num
         super(MeshPool, self).__init__()
         self.__out_target = target # output edge dim (int)
         self.__multi_thread = multi_thread # whether or not to use multi-thread (bool)

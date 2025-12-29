@@ -230,7 +230,7 @@ class Mesh:
         return self.history_data['groups'].pop()
 
     def get_occurrences(self):
-        """_summary_:"""
+        """_summary_: return occurance matrix"""
         return self.history_data['occurrences'].pop()
     
     def __clean_history(self, groups, pool_mask):
@@ -253,4 +253,5 @@ class Mesh:
         self.edges_count = self.history_data['edges_count'][-1]
 
     def get_edge_areas(self):
+        """_summary_: return edge area"""
         return self.edge_areas

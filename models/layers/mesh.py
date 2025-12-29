@@ -101,7 +101,7 @@ class Mesh:
         """_summary_: export info to dir"""
         if file is None:
             if self.export_folder:
-                filename, file_extension = os.path.splitext(self.filename)
+                filename, file_extension = os.path.splitext(self.filename) # split basename, extension
                 file = '%s/%s_%d%s' % (self.export_folder, filename, self.pool_count, file_extension)
             else:
                 return

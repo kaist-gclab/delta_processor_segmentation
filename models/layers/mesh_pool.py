@@ -174,7 +174,7 @@ class MeshPool(nn.Module):
             middle_edge = other_keys_a[shared_items[0]] # invalid edge - called middle edge | shared edge that lies between both sides of neighbor
             update_key_a = other_keys_a[1 - shared_items[0]] # choose neighbor edge to update
             update_key_b = other_keys_b[1 - shared_items[1]] # same thing for keys_b
-            update_side_a = mesh.sides[key_a, other_side_a + 1 - shared_items[0]]
+            update_side_a = mesh.sides[key_a, other_side_a + 1 - shared_items[0]] # determine corresponding slot idx
             update_side_b = mesh.sides[key_b, other_side_b + 1 - shared_items[1]]
             MeshPool.__redirect_edges(mesh, edge_id, side, update_key_a, update_side_a)
             MeshPool.__redirect_edges(mesh, edge_id, side + 1, update_key_b, update_side_b)

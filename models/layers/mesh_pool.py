@@ -14,7 +14,7 @@ class MeshPool(nn.Module):
         self.__multi_thread = multi_thread # whether or not to use multi-thread (bool)
         self.__fe = None # feature tensor (B, C, e_in, 1)
         self.__updated_fe = None # B, C, e_out, 1)
-        self.__meshes = None
+        self.__meshes = None # list[Mesh] obj
         self.__merge_edges = [-1, -1]
 
     def __call__(self, fe, meshes):

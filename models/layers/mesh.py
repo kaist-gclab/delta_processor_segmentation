@@ -176,7 +176,7 @@ class Mesh:
         return face
 
     def init_history(self):
-        # groups: matrices produced at pooling 
+        # groups: matrices produced at pooling (e_in, unroll_target)
         # occurrences: occurrences saved at pooling step (e_new,)
         # 
         self.history_data = {

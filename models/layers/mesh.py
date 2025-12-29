@@ -177,7 +177,8 @@ class Mesh:
 
     def init_history(self):
         # groups: matrices produced at pooling 
-        # occurrences: occurrences saved at pooling step
+        # occurrences: occurrences saved at pooling step (e_new,)
+        # 
         self.history_data = {
                                'groups': [],
                                'gemm_edges': [self.gemm_edges.copy()],

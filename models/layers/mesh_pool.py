@@ -225,7 +225,7 @@ class MeshPool(nn.Module):
         side_b = mesh.sides[edge_id, side + 1] # backtracking idx key_b to edge id
         other_side_a = (side_a - (side_a % 2) + 2) % 4 # 0 or 2 (other side)
         other_side_b = (side_b - (side_b % 2) + 2) % 4 # 1 or 3 (other side)
-        other_keys_a = [mesh.gemm_edges[key_a, other_side_a], mesh.gemm_edges[key_a, other_side_a + 1]]
+        other_keys_a = [mesh.gemm_edges[key_a, other_side_a], mesh.gemm_edges[key_a, other_side_a + 1]] # two neighbor edges of key_a on other face pair
         other_keys_b = [mesh.gemm_edges[key_b, other_side_b], mesh.gemm_edges[key_b, other_side_b + 1]]
         return key_a, key_b, side_a, side_b, other_side_a, other_side_b, other_keys_a, other_keys_b
 

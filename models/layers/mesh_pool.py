@@ -202,11 +202,12 @@ class MeshPool(nn.Module):
     @staticmethod
     def __get_shared_items(list_a, list_b):
         """_summary_: matching item from two lists"""
+        # 
         shared_items = []
         for i in range(len(list_a)):
             for j in range(len(list_b)):
-                if list_a[i] == list_b[j]:
-                    shared_items.extend([i, j])
+                if list_a[i] == list_b[j]: # same comp
+                    shared_items.extend([i, j]) # extend idx
         return shared_items
 
     @staticmethod

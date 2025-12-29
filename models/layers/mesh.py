@@ -173,6 +173,7 @@ class Mesh:
 
     def __cycle_to_face(self, cycle, v_indices):
         """_summary_: calculate face (vertex idx) from three edge"""
+        # cycle (3,): e0, e1, e2
         face = []
         for i in range(3):
             v = list(set(self.edges[cycle[i]]) & set(self.edges[cycle[(i + 1) % 3]]))[0]

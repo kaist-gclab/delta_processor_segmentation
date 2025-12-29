@@ -48,6 +48,7 @@ class MeshPool(nn.Module):
         return out_features
 
     def __pool_main(self, mesh_index):
+        """_summary_: pool one mesh"""
         mesh = self.__meshes[mesh_index]
         queue = self.__build_queue(self.__fe[mesh_index, :, :mesh.edges_count], mesh.edges_count)
         last_count = mesh.edges_count + 1

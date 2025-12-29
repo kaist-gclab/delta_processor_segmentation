@@ -58,7 +58,7 @@ class MeshPool(nn.Module):
         # last_count = mesh.edges_count + 1
         mask = np.ones(mesh.edges_count, dtype=np.bool) # mask in current edge (e_cur,)
         edge_groups = MeshUnion(mesh.edges_count, self.__fe.device) # MeshUnion: trasks merge and group
-        while mesh.edges_count > self.__out_target:
+        while mesh.edges_count > self.__out_target: # while edge count bigger
             value, edge_id = heappop(queue)
             edge_id = int(edge_id)
             if mask[edge_id]:

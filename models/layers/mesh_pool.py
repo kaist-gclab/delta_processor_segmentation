@@ -247,6 +247,6 @@ class MeshPool(nn.Module):
     @staticmethod
     def __remove_group(mesh, edge_groups, index):
         """_summary_: remove edge from current level feature and history"""
-        edge_groups.remove_group(index)
+        edge_groups.remove_group(index) # update group: call MeshUnion remove group
         mesh.remove_group(index)
 

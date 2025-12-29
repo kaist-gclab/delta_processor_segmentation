@@ -54,6 +54,7 @@ class MeshUnpool(nn.Module):
         occurrences = occurrences.expand(unroll_mat.shape) # (B, E_in, unroll_target) > match unroll_mat
         unroll_mat = unroll_mat / occurrences # make column average-like: pooled edge contribution / count
         unroll_mat = unroll_mat.to(features.device)
+        # update mesh connectivity
         for mesh in meshes:
             mesh.unroll_gemm()
         return torch.matmul(features, unroll_mat)

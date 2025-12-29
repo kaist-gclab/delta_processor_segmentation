@@ -211,6 +211,7 @@ class Mesh:
             self.history_data['collapses'] = MeshUnion(self.edges_count)
 
     def union_groups(self, source, target):
+        """_summary_: """
         if self.export_folder and self.history_data:
             self.history_data['collapses'].union(self.history_data['current2old'][source], self.history_data['current2old'][target])
         return

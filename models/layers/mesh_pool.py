@@ -12,8 +12,8 @@ class MeshPool(nn.Module):
         super(MeshPool, self).__init__()
         self.__out_target = target # output edge dim (int)
         self.__multi_thread = multi_thread # whether or not to use multi-thread (bool)
-        self.__fe = None # feature tensor (B, C, num_e, 1)
-        self.__updated_fe = None
+        self.__fe = None # feature tensor (B, C, e_in, 1)
+        self.__updated_fe = None # B, C, e_out, 1)
         self.__meshes = None
         self.__merge_edges = [-1, -1]
 

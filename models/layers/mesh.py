@@ -28,7 +28,8 @@ class Mesh:
         self.export_folder = export_folder # export(), export_segments(), history_data['collapses']
         self.history_data = None # enable init_history() to store pool/unpool info
         # IO-related
-        # 
+        # filename: mesh filename
+        
         if hold_history: # bool
             self.init_history()
         self.export()

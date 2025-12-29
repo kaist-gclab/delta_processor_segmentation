@@ -94,6 +94,7 @@ class MeshPool(nn.Module):
             return False
 
     def __clean_side(self, mesh, edge_id, mask, edge_groups, side):
+        """_summary_: ensure collapsing edge on one face side is safe"""
         if mesh.edges_count <= self.__out_target:
             return False
         invalid_edges = MeshPool.__get_invalids(mesh, edge_id, edge_groups, side)

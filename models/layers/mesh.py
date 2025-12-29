@@ -154,7 +154,7 @@ class Mesh:
             move(abs_path, file) # add temp file
             if i < len(self.history_data['edges_mask']): # length of alive edges
                 cur_segments = segments[:len(self.history_data['edges_mask'][i])] # check label length matches mask length
-                cur_segments = cur_segments[self.history_data['edges_mask'][i]]
+                cur_segments = cur_segments[self.history_data['edges_mask'][i]] # select label for mask=1
 
     def __get_cycle(self, gemm, edge_id):
         """_summary_: walks upon gemm and creates two cycle"""

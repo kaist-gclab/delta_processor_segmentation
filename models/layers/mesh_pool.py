@@ -246,7 +246,7 @@ class MeshPool(nn.Module):
         """_summary_: build priority queue over edge"""
         # delete edges with smallest norm
         # l2 norm of feature magnitude: prior key
-        squared_magnitude = torch.sum(features * features, 0) # 
+        squared_magnitude = torch.sum(features * features, 0) # L2 norm per edge
         if squared_magnitude.shape[-1] != 1:
             squared_magnitude = squared_magnitude.unsqueeze(-1)
         edge_ids = torch.arange(edges_count, device=squared_magnitude.device, dtype=torch.float32).unsqueeze(-1)

@@ -27,6 +27,7 @@ class MeshUnpool(nn.Module):
     def pad_occurrences(self, occurrences):
         """_summary_: pad member count(occurences) vector to unroll target"""
         padding = self.unroll_target - occurrences.shape[0] # padding dim
+        # padding
         if padding != 0:
             padding = nn.ConstantPad1d((0, padding), 1)
             occurrences = padding(occurrences)

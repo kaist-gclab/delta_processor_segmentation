@@ -155,7 +155,7 @@ class Mesh:
         # gemm (e_num,4), edge_id (int)
         cycles = []
         for j in range(2):
-            next_side = start_point = j * 2
+            next_side = start_point = j * 2 # either 0 or 2
             next_key = edge_id
             if gemm[edge_id, start_point] == -1:
                 continue

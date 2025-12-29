@@ -241,7 +241,7 @@ class MeshPool(nn.Module):
     @staticmethod
     def __union_groups(mesh, edge_groups, source, target):
         """_summary_: get and update union groups"""
-        edge_groups.union(source, target) # get union group
+        edge_groups.union(source, target) # get union group | update current level pooling
         mesh.union_groups(source, target)
 
     @staticmethod

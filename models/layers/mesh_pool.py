@@ -52,6 +52,7 @@ class MeshPool(nn.Module):
         # mesh_index: idx in batch
         # self.__meshes, self.__fe, self.__out_target
         mesh = self.__meshes[mesh_index] # edges_count = e_cur
+        # build priority queue: which edge to collapse first
         queue = self.__build_queue(self.__fe[mesh_index, :, :mesh.edges_count], mesh.edges_count)
         last_count = mesh.edges_count + 1
         mask = np.ones(mesh.edges_count, dtype=np.bool)

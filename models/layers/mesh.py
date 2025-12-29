@@ -107,8 +107,8 @@ class Mesh:
             else:
                 return
         faces = []
-        vs = self.vs[self.v_mask]
-        gemm = np.array(self.gemm_edges)
+        vs = self.vs[self.v_mask] # alive vertices (mask applied)
+        gemm = np.array(self.gemm_edges) # gather
         new_indices = np.zeros(self.v_mask.shape[0], dtype=np.int32)
         new_indices[self.v_mask] = np.arange(0, np.ma.where(self.v_mask)[0].shape[0])
         for edge_index in range(len(gemm)):

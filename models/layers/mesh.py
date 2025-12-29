@@ -84,7 +84,7 @@ class Mesh:
         new_indices = np.zeros(edges_mask.shape[0], dtype=np.int32) # remapping edge idx
         new_indices[-1] = -1 # set dummy idx as -1
         new_indices[edges_mask] = np.arange(0, np.ma.where(edges_mask)[0].shape[0]) # assign new id (for alive edges)
-        self.gemm_edges[:, :] = new_indices[self.gemm_edges[:, :]]
+        self.gemm_edges[:, :] = new_indices[self.gemm_edges[:, :]] # remaps edge neighbors
         for v_index, ve in enumerate(self.ve):
             update_ve = []
             # if self.v_mask[v_index]:

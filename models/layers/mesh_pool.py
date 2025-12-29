@@ -168,7 +168,7 @@ class MeshPool(nn.Module):
         key_a, key_b, side_a, side_b, other_side_a, other_side_b, other_keys_a, other_keys_b = info # unpack
         shared_items = MeshPool.__get_shared_items(other_keys_a, other_keys_b) # find overlap from other neighbor list (index pairs)
         if len(shared_items) == 0: # if no shared item
-            return []
+            return [] # return empty list
         else:
             assert (len(shared_items) == 2)
             middle_edge = other_keys_a[shared_items[0]]

@@ -18,7 +18,7 @@ class Mesh:
         self.pool_count = 0
         # initialized by fill_mesh
         # edge_count (int)
-        # 
+        # ve (dict): key - vertex, val - incident edge
         fill_mesh(self, file, opt) # file: mesh file path
         self.export_folder = export_folder # export(), export_segments(), history_data['collapses']
         self.history_data = None # enable init_history() to store pool/unpool info

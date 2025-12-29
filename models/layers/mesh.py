@@ -179,7 +179,7 @@ class Mesh:
             # 두 개의 edge에 포함된 하나의 vertex를 구함
             v = list(set(self.edges[cycle[i]]) & set(self.edges[cycle[(i + 1) % 3]]))[0]
             face.append(v_indices[v])
-        return face
+        return face # (3,)
 
     def init_history(self):
         # exist per mesh instance / updated when pool/unpool

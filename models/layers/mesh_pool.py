@@ -27,6 +27,8 @@ class MeshPool(nn.Module):
         return self.forward(fe, meshes) # log before forward
 
     def forward(self, fe, meshes):
+        """_summary_: pool edge feature to meet self.__out_target edges
+        rebuild features"""
         self.__updated_fe = [[] for _ in range(len(meshes))]
         pool_threads = []
         self.__fe = fe

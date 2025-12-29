@@ -219,7 +219,7 @@ class MeshPool(nn.Module):
     def __remove_triplete(mesh, mask, edge_groups, invalid_edges):
         """_summary_: remove triplet - three edge share single vertex"""
         vertex = set(mesh.edges[invalid_edges[0]]) # first edge's vertex
-        for edge_key in invalid_edges:
+        for edge_key in invalid_edges: # for each edge in triplet
             vertex &= set(mesh.edges[edge_key])
             mask[edge_key] = False
             MeshPool.__remove_group(mesh, edge_groups, edge_key)

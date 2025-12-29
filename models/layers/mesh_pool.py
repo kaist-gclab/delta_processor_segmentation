@@ -207,7 +207,7 @@ class MeshPool(nn.Module):
         for i in range(len(list_a)):
             for j in range(len(list_b)):
                 if list_a[i] == list_b[j]: # same comp
-                    shared_items.extend([i, j]) # extend idx
+                    shared_items.extend([i, j]) # extend pair of index map to same comp
         return shared_items
 
     @staticmethod

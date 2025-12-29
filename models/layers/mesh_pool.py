@@ -68,6 +68,7 @@ class MeshPool(nn.Module):
         self.__updated_fe[mesh_index] = fe # assign updated fe
 
     def __pool_edge(self, mesh, edge_id, mask, edge_groups):
+        """_summary_:"""
         if self.has_boundaries(mesh, edge_id):
             return False
         elif self.__clean_side(mesh, edge_id, mask, edge_groups, 0)\

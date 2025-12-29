@@ -169,7 +169,7 @@ class Mesh:
                 next_key = tmp_next_key
                 next_side = tmp_next_side
                 cycles[-1].append(next_key) # append the current edge
-        return cycles
+        return cycles # up to 2 cycle, each - list of edge id
 
     def __cycle_to_face(self, cycle, v_indices):
         face = []

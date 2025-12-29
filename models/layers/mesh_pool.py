@@ -150,7 +150,7 @@ class MeshPool(nn.Module):
         mask[key_b] = False # update mask
         MeshPool.__remove_group(mesh, edge_groups, key_b) # update mesh history, old2current map etc
         mesh.remove_edge(key_b) # safely remove key_b from edges, gemm_edges
-        mesh.edges_count -= 1
+        mesh.edges_count -= 1 # decrease count
         return key_a
 
     @staticmethod

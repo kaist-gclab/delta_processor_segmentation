@@ -127,6 +127,7 @@ class MeshPool(nn.Module):
 
     def __pool_side(self, mesh, edge_id, mask, edge_groups, side):
         """_summary_: collapse one face side adjacent to edge_id"""
+        # mesh: mesh being pooled
         info = MeshPool.__get_face_info(mesh, edge_id, side)
         key_a, key_b, side_a, side_b, _, other_side_b, _, other_keys_b = info
         self.__redirect_edges(mesh, key_a, side_a - side_a % 2, other_keys_b[0], mesh.sides[key_b, other_side_b])

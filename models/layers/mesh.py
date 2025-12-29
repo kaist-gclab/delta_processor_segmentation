@@ -72,6 +72,7 @@ class Mesh:
             # self.ve[v].remove(edge_id)
 
     def clean(self, edges_mask, groups):
+        # edge_mask: bool array, current edge b4 cleaning (e_old,)
         edges_mask = edges_mask.astype(bool)
         torch_mask = torch.from_numpy(edges_mask.copy())
         self.gemm_edges = self.gemm_edges[edges_mask]

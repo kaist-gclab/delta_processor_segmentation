@@ -30,6 +30,7 @@ class Mesh:
         # IO-related
         # filename: mesh filename
         # export_folder: output dir string / None-return early
+        # initialized by init_history
         # history_data: dict stores pool/unpool history
         if hold_history: # bool
             self.init_history()

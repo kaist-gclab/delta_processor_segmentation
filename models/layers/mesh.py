@@ -75,11 +75,11 @@ class Mesh:
         # edge_mask: bool array, current edge b4 cleaning (e_old,)
         # groups: MeshUnion instance (update occurrences, groups)
         edges_mask = edges_mask.astype(bool)
-        torch_mask = torch.from_numpy(edges_mask.copy())
+        torch_mask = torch.from_numpy(edges_mask.copy()) # convert mask
         self.gemm_edges = self.gemm_edges[edges_mask]
         self.edges = self.edges[edges_mask]
         self.sides = self.sides[edges_mask]
-        new_ve = []
+        new_ve = [] # using vertex idx, find incident edge (nested list, ragged)
         edges_mask = np.concatenate([edges_mask, [False]])
         new_indices = np.zeros(edges_mask.shape[0], dtype=np.int32)
         new_indices[-1] = -1

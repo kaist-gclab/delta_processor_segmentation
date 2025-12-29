@@ -226,10 +226,11 @@ class Mesh:
                 self.history_data['collapses'].remove_group(self.history_data['current2old'][index]) # update MeshUnion
 
     def get_groups(self):
-        """_summary_: return latest saved grouping matrix"""
+        """_summary_: return latest saved grouping matrix (unpool)"""
         return self.history_data['groups'].pop()
 
     def get_occurrences(self):
+        """_summary_:"""
         return self.history_data['occurrences'].pop()
     
     def __clean_history(self, groups, pool_mask):

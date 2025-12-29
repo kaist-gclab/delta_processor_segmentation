@@ -221,7 +221,7 @@ class MeshPool(nn.Module):
         vertex = set(mesh.edges[invalid_edges[0]]) # first edge's vertex
         for edge_key in invalid_edges: # for each edge in triplet
             vertex &= set(mesh.edges[edge_key]) # get intersection with set - with all edges vertex set
-            mask[edge_key] = False
+            mask[edge_key] = False # mark edge as removed
             MeshPool.__remove_group(mesh, edge_groups, edge_key)
         mesh.edges_count -= 3
         vertex = list(vertex)

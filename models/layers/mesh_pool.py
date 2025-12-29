@@ -69,7 +69,7 @@ class MeshPool(nn.Module):
 
     def __pool_edge(self, mesh, edge_id, mask, edge_groups):
         """_summary_: collapse single edge"""
-        if self.has_boundaries(mesh, edge_id):
+        if self.has_boundaries(mesh, edge_id): # check if edge is boundary feature
             return False
         elif self.__clean_side(mesh, edge_id, mask, edge_groups, 0)\
             and self.__clean_side(mesh, edge_id, mask, edge_groups, 2) \

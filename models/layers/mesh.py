@@ -15,6 +15,7 @@ class Mesh:
         self.vs = self.v_mask = self.filename = self.features = self.edge_areas = None
         # edges: vertex idx of edge (e_num, 2)
         # gemm_edges: 1-ring neighbor (e_num, 4)
+        # sides: 
         self.edges = self.gemm_edges = self.sides = None
         self.pool_count = 0
         # initialized by fill_mesh

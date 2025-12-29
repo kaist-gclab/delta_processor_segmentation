@@ -14,8 +14,6 @@ class Mesh:
         self.edges = self.gemm_edges = self.sides = None
         self.pool_count = 0
         fill_mesh(self, file, opt)
-        # if type(self.ve) != list:
-        #     self.ve = self.ve.tolist() # inserted
         self.export_folder = export_folder
         self.history_data = None
         if hold_history:

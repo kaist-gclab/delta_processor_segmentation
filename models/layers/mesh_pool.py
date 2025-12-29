@@ -77,6 +77,7 @@ class MeshPool(nn.Module):
             return False
         # check and cleanup side 0 (one incident face)
         # check and cleanup side 2 (another incident face)
+        # one-ring valid - non-manifold(실제 존제 X 경우) / no degeneracy(ill-formed)
         elif self.__clean_side(mesh, edge_id, mask, edge_groups, 0)\
             and self.__clean_side(mesh, edge_id, mask, edge_groups, 2) \
             and self.__is_one_ring_valid(mesh, edge_id):

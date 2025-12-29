@@ -55,7 +55,7 @@ class MeshPool(nn.Module):
         # build priority queue: which edge to collapse first
         # heap list of priority val, edge_id
         queue = self.__build_queue(self.__fe[mesh_index, :, :mesh.edges_count], mesh.edges_count)
-        last_count = mesh.edges_count + 1
+        # last_count = mesh.edges_count + 1
         mask = np.ones(mesh.edges_count, dtype=np.bool)
         edge_groups = MeshUnion(mesh.edges_count, self.__fe.device)
         while mesh.edges_count > self.__out_target:

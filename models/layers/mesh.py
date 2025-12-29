@@ -21,6 +21,7 @@ class Mesh:
         self.export()
 
     def extract_features(self):
+        """_summary_: returns features"""
         return self.features
 
     def merge_vertices(self, edge_id):

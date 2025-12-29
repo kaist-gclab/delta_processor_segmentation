@@ -112,7 +112,7 @@ class Mesh:
         new_indices = np.zeros(self.v_mask.shape[0], dtype=np.int32) # initialize new vertex indices
         new_indices[self.v_mask] = np.arange(0, np.ma.where(self.v_mask)[0].shape[0]) # save alive vidx
         for edge_index in range(len(gemm)):
-            cycles = self.__get_cycle(gemm, edge_index)
+            cycles = self.__get_cycle(gemm, edge_index) # (num_cycle (at most 2), 3)
             for cycle in cycles:
                 faces.append(self.__cycle_to_face(cycle, new_indices))
         with open(file, 'w+') as f:

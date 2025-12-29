@@ -13,7 +13,7 @@ class Mesh:
         # vs: vertex position (v_num, 3)
         # v_mask: vertex mask (v_num)
         # features: edge features (C, num_e) or (C, num_e, 1)
-        # edge_areas: per-edge area weight ()
+        # edge_areas: per-edge area weight (num_e,)
         self.vs = self.v_mask = self.filename = self.features = self.edge_areas = None
         # membership / neighbor related
         # edges: vertex idx of edge (e_num, 2)

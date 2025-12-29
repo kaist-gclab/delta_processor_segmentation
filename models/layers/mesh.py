@@ -226,6 +226,7 @@ class Mesh:
                 self.history_data['collapses'].remove_group(self.history_data['current2old'][index]) # update MeshUnion
 
     def get_groups(self):
+        """_summary_: return latest saved grouping matrix"""
         return self.history_data['groups'].pop()
 
     def get_occurrences(self):

@@ -75,6 +75,7 @@ class MeshPool(nn.Module):
         # edge_groups (MeshUnion): merge trasking structure (for feature rebuild)
         if self.has_boundaries(mesh, edge_id): # check if edge is boundary feature
             return False
+        # check side 0 (one incident face)
         # 
         elif self.__clean_side(mesh, edge_id, mask, edge_groups, 0)\
             and self.__clean_side(mesh, edge_id, mask, edge_groups, 2) \

@@ -134,7 +134,7 @@ class Mesh:
         if not self.export_folder:
             return
         cur_segments = segments
-        for i in range(self.pool_count + 1):
+        for i in range(self.pool_count + 1): # for all pooling level
             # set file: saving path
             filename, file_extension = os.path.splitext(self.filename)
             file = '%s/%s_%d%s' % (self.export_folder, filename, i, file_extension)

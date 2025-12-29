@@ -161,8 +161,8 @@ class Mesh:
                 continue # skip
             cycles.append([]) # append empty lst
             for i in range(3):
-                tmp_next_key = gemm[next_key, next_side] # get neighbor
-                tmp_next_side = self.sides[next_key, next_side]
+                tmp_next_key = gemm[next_key, next_side] # get next neighbor to visit
+                tmp_next_side = self.sides[next_key, next_side] # calculate side(of current move) corresponds to neighbor
                 tmp_next_side = tmp_next_side + 1 - 2 * (tmp_next_side % 2)
                 gemm[next_key, next_side] = -1 # mask visited
                 gemm[next_key, next_side + 1 - 2 * (next_side % 2)] = -1

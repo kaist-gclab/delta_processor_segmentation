@@ -15,7 +15,7 @@ class MeshPool(nn.Module):
         self.__fe = None # feature tensor (B, C, e_in, 1)
         self.__updated_fe = None # B, C, e_out, 1)
         self.__meshes = None # list[Mesh] obj
-        self.__merge_edges = [-1, -1]
+        self.__merge_edges = [-1, -1] # [source edge id, target edge id]: current unset
 
     def __call__(self, fe, meshes):
         # tqdm.write("DEBUG: gemm_edges shape: {}".format(meshes[0].gemm_edges.shape)) # comment out

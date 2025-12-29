@@ -29,7 +29,7 @@ class MeshPool(nn.Module):
     def forward(self, fe, meshes):
         """_summary_: pool edge feature to meet self.__out_target edges
         rebuild features"""
-        self.__updated_fe = [[] for _ in range(len(meshes))]
+        self.__updated_fe = [[] for _ in range(len(meshes))] # gather per mesh output
         pool_threads = []
         self.__fe = fe
         self.__meshes = meshes

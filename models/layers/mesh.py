@@ -221,7 +221,7 @@ class Mesh:
         """_summary_: remove edge group (after pooling)"""
         if self.history_data is not None:
             self.history_data['edges_mask'][-1][self.history_data['current2old'][index]] = 0 # original edge = removed
-            self.history_data['old2current'][self.history_data['current2old'][index]] = -1
+            self.history_data['old2current'][self.history_data['current2old'][index]] = -1 # update old2current
             if self.export_folder:
                 self.history_data['collapses'].remove_group(self.history_data['current2old'][index])
 

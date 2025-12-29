@@ -221,8 +221,8 @@ class MeshPool(nn.Module):
         # side (int): side idx
         key_a = mesh.gemm_edges[edge_id, side] # neighbor edge id (side)
         key_b = mesh.gemm_edges[edge_id, side + 1] # neighbor edge id (side+1)
-        side_a = mesh.sides[edge_id, side] # back idx key_a to edge id
-        side_b = mesh.sides[edge_id, side + 1]
+        side_a = mesh.sides[edge_id, side] # backtracking idx key_a to edge id
+        side_b = mesh.sides[edge_id, side + 1] # backtracking idx key_b to edge id
         other_side_a = (side_a - (side_a % 2) + 2) % 4
         other_side_b = (side_b - (side_b % 2) + 2) % 4
         other_keys_a = [mesh.gemm_edges[key_a, other_side_a], mesh.gemm_edges[key_a, other_side_a + 1]]

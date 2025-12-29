@@ -81,8 +81,9 @@ class MeshPool(nn.Module):
         elif self.__clean_side(mesh, edge_id, mask, edge_groups, 0)\
             and self.__clean_side(mesh, edge_id, mask, edge_groups, 2) \
             and self.__is_one_ring_valid(mesh, edge_id):
-
+            # pool face A, get merged edge id | -1 depend on cond
             self.__merge_edges[0] = self.__pool_side(mesh, edge_id, mask, edge_groups, 0)
+            # pool face B, get merged
             self.__merge_edges[1] = self.__pool_side(mesh, edge_id, mask, edge_groups, 2)
             mesh.merge_vertices(edge_id)
             mask[edge_id] = False

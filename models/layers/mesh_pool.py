@@ -250,7 +250,7 @@ class MeshPool(nn.Module):
         if squared_magnitude.shape[-1] != 1:
             squared_magnitude = squared_magnitude.unsqueeze(-1) # (e_num, 1,)
         edge_ids = torch.arange(edges_count, device=squared_magnitude.device, dtype=torch.float32).unsqueeze(-1) # convert type, heapq > cast edge id back to int
-        heap = torch.cat((squared_magnitude, edge_ids), dim=-1).tolist()
+        heap = torch.cat((squared_magnitude, edge_ids), dim=-1).tolist() # list of lists (to use heapq structure)
         heapify(heap)
         return heap
 

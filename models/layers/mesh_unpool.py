@@ -51,7 +51,7 @@ class MeshUnpool(nn.Module):
         # pad occurances
         occurrences = [self.pad_occurrences(mesh.get_occurrences()) for mesh in meshes] # mesh.get_occ (unroll_target)
         occurrences = torch.cat(occurrences, dim=0).view(batch_size, 1, -1) # (B, 1, unroll_target)
-        occurrences = occurrences.expand(unroll_mat.shape)
+        occurrences = occurrences.expand(unroll_mat.shape) # (B, E_in, unroll_target) > match unroll_mat
         unroll_mat = unroll_mat / occurrences
         unroll_mat = unroll_mat.to(features.device)
         for mesh in meshes:

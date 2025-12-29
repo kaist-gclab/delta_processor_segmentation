@@ -143,7 +143,7 @@ class Mesh:
             with os.fdopen(fh, 'w') as new_file:
                 with open(file) as old_file: # existing mesh file
                     for line in old_file:
-                        if line[0] == 'e':
+                        if line[0] == 'e': # edge line
                             new_file.write('%s %d' % (line.strip(), cur_segments[edge_key]))
                             if edge_key < len(cur_segments):
                                 edge_key += 1

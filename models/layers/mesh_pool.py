@@ -170,7 +170,7 @@ class MeshPool(nn.Module):
         if len(shared_items) == 0: # if no shared item
             return [] # return empty list
         else:
-            assert (len(shared_items) == 2)
+            assert (len(shared_items) == 2) # two list share two item
             middle_edge = other_keys_a[shared_items[0]]
             update_key_a = other_keys_a[1 - shared_items[0]]
             update_key_b = other_keys_b[1 - shared_items[1]]

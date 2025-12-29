@@ -32,7 +32,7 @@ class MeshPool(nn.Module):
         self.__updated_fe = [[] for _ in range(len(meshes))] # gather per mesh output
         pool_threads = [] # thread handling
         self.__fe = fe # (B, C, e_in, 1)
-        self.__meshes = meshes # 
+        self.__meshes = meshes # assign meshes (B,)
         # iterate over batch
         for mesh_index in range(len(meshes)):
             if self.__multi_thread:

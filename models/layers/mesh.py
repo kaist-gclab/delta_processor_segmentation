@@ -89,7 +89,7 @@ class Mesh:
             update_ve = []
             # if self.v_mask[v_index]:
             for e in ve:
-                update_ve.append(new_indices[e])
+                update_ve.append(new_indices[e]) # add newly assigned edge idx to edge neighbor
             new_ve.append(update_ve)
         self.ve = new_ve
         self.__clean_history(groups, torch_mask)

@@ -15,7 +15,7 @@ class Mesh:
         self.pool_count = 0
         fill_mesh(self, file, opt)
         self.export_folder = export_folder # export(), export_segments(), history_data['collapses']
-        self.history_data = None
+        self.history_data = None # enable init_history() to store pool/unpool info
         if hold_history:
             self.init_history()
         self.export()

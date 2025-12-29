@@ -35,6 +35,15 @@ class MeshUnpool(nn.Module):
         return occurrences # (unroll_target)
 
     def forward(self, features, meshes):
+        """_summary_
+
+        Args:
+            features (_type_): _description_
+            meshes (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         batch_size, nf, edges = features.shape
         groups = [self.pad_groups(mesh.get_groups(), edges) for mesh in meshes]
         unroll_mat = torch.cat(groups, dim=0).view(batch_size, edges, -1)

@@ -16,7 +16,10 @@ class Mesh:
         self.vs = self.v_mask = self.filename = self.features = self.edge_areas = None
         self.edges = self.gemm_edges = self.sides = None
         self.pool_count = 0
-        fill_mesh(self, file, opt) # file: mesh file path - # edge_count (int)
+        # initialized by fill_mesh
+        # edge_count (int)
+        # 
+        fill_mesh(self, file, opt) # file: mesh file path
         self.export_folder = export_folder # export(), export_segments(), history_data['collapses']
         self.history_data = None # enable init_history() to store pool/unpool info
         if hold_history: # bool

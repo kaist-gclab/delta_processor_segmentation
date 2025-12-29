@@ -116,6 +116,7 @@ class Mesh:
             for cycle in cycles:
                 faces.append(self.__cycle_to_face(cycle, new_indices)) # append according face per cycle
         with open(file, 'w+') as f:
+            # append vertex position and color
             for vi, v in enumerate(vs):
                 vcol = ' %f %f %f' % (vcolor[vi, 0], vcolor[vi, 1], vcolor[vi, 2]) if vcolor is not None else ''
                 f.write("v %f %f %f%s\n" % (v[0], v[1], v[2], vcol))

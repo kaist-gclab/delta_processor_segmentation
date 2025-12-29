@@ -72,6 +72,7 @@ class MeshPool(nn.Module):
         # mesh: mesh being pooled
         # edge_id (int): int edge idx
         # mask (ndarray): current edge mask
+        # edge_groups (MeshUnion): merge trasking structure (for feature rebuild)
         if self.has_boundaries(mesh, edge_id): # check if edge is boundary feature
             return False
         # 

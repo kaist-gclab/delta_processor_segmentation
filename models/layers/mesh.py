@@ -163,7 +163,7 @@ class Mesh:
             for i in range(3):
                 tmp_next_key = gemm[next_key, next_side] # get next neighbor to visit
                 tmp_next_side = self.sides[next_key, next_side] # calculate side(of current move) corresponds to neighbor
-                tmp_next_side = tmp_next_side + 1 - 2 * (tmp_next_side % 2)
+                tmp_next_side = tmp_next_side + 1 - 2 * (tmp_next_side % 2) # even: add 1, odd: subtrace 1
                 gemm[next_key, next_side] = -1 # mask visited
                 gemm[next_key, next_side + 1 - 2 * (next_side % 2)] = -1
                 next_key = tmp_next_key

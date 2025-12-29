@@ -9,15 +9,17 @@ from tqdm import tqdm
 
 class MeshPool(nn.Module):
     def __init__(self, target, multi_thread=False):
+        """_summary_: edge collapse operator"""
         super(MeshPool, self).__init__()
         self.__out_target = target # output edge dim (int)
         self.__multi_thread = multi_thread # whether or not to use multi-thread (bool)
         self.__fe = None # feature tensor (B, C, e_in, 1)
         self.__updated_fe = None # B, C, e_out, 1)
         self.__meshes = None # list[Mesh] obj
-        self.__merge_edges = [-1, -1] # [source edge id, target edge id]: current unset
+        self.__merge_edges = [-1, -1] # Buffer:[source edge id, target edge id]: current unset
 
     def __call__(self, fe, meshes):
+        # prints log
         # tqdm.write("DEBUG: gemm_edges shape: {}".format(meshes[0].gemm_edges.shape)) # comment out
         # tqdm.write("DEBUG: gemm_edges dtype:".format(meshes[0].gemm_edges.dtype))
         # tqdm.write("DEBUG: gemm_edges[0]:".format(meshes[0].gemm_edges[0]))

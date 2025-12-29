@@ -48,6 +48,7 @@ class MeshUnpool(nn.Module):
         groups = [self.pad_groups(mesh.get_groups(), edges) for mesh in meshes] # (E_in, unroll_target)
         # unroll_mat: maps current edges to unrolled edges
         unroll_mat = torch.cat(groups, dim=0).view(batch_size, edges, -1) # (B, E_in, unroll_target)
+        # pad occurances
         occurrences = [self.pad_occurrences(mesh.get_occurrences()) for mesh in meshes]
         occurrences = torch.cat(occurrences, dim=0).view(batch_size, 1, -1)
         occurrences = occurrences.expand(unroll_mat.shape)

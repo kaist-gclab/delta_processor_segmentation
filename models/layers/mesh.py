@@ -160,7 +160,7 @@ class Mesh:
             if gemm[edge_id, start_point] == -1: # no neighbor
                 continue # skip
             cycles.append([]) # append empty lst
-            for i in range(3):
+            for i in range(3): # three edge
                 tmp_next_key = gemm[next_key, next_side] # get next neighbor to visit
                 tmp_next_side = self.sides[next_key, next_side] # calculate side(of current move) corresponds to neighbor
                 tmp_next_side = tmp_next_side + 1 - 2 * (tmp_next_side % 2) # even: add 1, odd: subtrace 1 | 0<>1, 2<>3
@@ -169,7 +169,7 @@ class Mesh:
                 next_key = tmp_next_key
                 next_side = tmp_next_side
                 cycles[-1].append(next_key) # append the current edge
-        return cycles # up to 2 cycle, each - list of edge id
+        return cycles # up to 2 cycle, each - list of edge id (three)
 
     def __cycle_to_face(self, cycle, v_indices):
         """_summary_: calculate face (vertex idx) from three edge"""

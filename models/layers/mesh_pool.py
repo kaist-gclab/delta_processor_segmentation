@@ -69,11 +69,15 @@ class MeshPool(nn.Module):
 
     def __pool_edge(self, mesh, edge_id, mask, edge_groups):
         """_summary_: collapse single edge"""
+        # mesh: mesh being pooled
+        
         if self.has_boundaries(mesh, edge_id): # check if edge is boundary feature
             return False
+        # 
         elif self.__clean_side(mesh, edge_id, mask, edge_groups, 0)\
             and self.__clean_side(mesh, edge_id, mask, edge_groups, 2) \
             and self.__is_one_ring_valid(mesh, edge_id):
+
             self.__merge_edges[0] = self.__pool_side(mesh, edge_id, mask, edge_groups, 0)
             self.__merge_edges[1] = self.__pool_side(mesh, edge_id, mask, edge_groups, 2)
             mesh.merge_vertices(edge_id)

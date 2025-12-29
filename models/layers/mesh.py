@@ -31,6 +31,7 @@ class Mesh:
 
     def extract_features(self):
         """_summary_: returns features"""
+        # features: edge features (B, C, num_e, 1) / (C, num_e) here
         return self.features
 
     def merge_vertices(self, edge_id):

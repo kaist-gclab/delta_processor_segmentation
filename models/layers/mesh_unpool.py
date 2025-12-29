@@ -20,7 +20,7 @@ class MeshUnpool(nn.Module):
         if padding_rows != 0 or padding_cols !=0:
             padding = nn.ConstantPad2d((0, padding_cols, 0, padding_rows), 0)
             group = padding(group)
-        return group
+        return group # (unroll_start, unroll_target)
 
     def pad_occurrences(self, occurrences):
         padding = self.unroll_target - occurrences.shape[0]

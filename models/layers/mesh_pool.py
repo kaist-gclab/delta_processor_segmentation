@@ -85,8 +85,8 @@ class MeshPool(nn.Module):
             self.__merge_edges[0] = self.__pool_side(mesh, edge_id, mask, edge_groups, 0)
             # pool face B, get merged edge id | -1 depend on cond
             self.__merge_edges[1] = self.__pool_side(mesh, edge_id, mask, edge_groups, 2)
-            mesh.merge_vertices(edge_id)
-            mask[edge_id] = False
+            mesh.merge_vertices(edge_id) # collapse two vertex of edge id into one vertex
+            mask[edge_id] = False # 
             MeshPool.__remove_group(mesh, edge_groups, edge_id)
             mesh.edges_count -= 1
             return True

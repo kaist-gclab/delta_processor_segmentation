@@ -15,8 +15,8 @@ class MeshUnpool(nn.Module):
         """_summary_: pad group dim to unroll_start
         so batching works"""
         start, end = group.shape
-        padding_rows =  unroll_start - start # padding dim
-        padding_cols = self.unroll_target - end
+        padding_rows =  unroll_start - start # padding row dim
+        padding_cols = self.unroll_target - end # padding col dim
         if padding_rows != 0 or padding_cols !=0:
             padding = nn.ConstantPad2d((0, padding_cols, 0, padding_rows), 0)
             group = padding(group)

@@ -114,7 +114,7 @@ class Mesh:
         for edge_index in range(len(gemm)):
             cycles = self.__get_cycle(gemm, edge_index) # (num_cycle (at most 2), 3)
             for cycle in cycles:
-                faces.append(self.__cycle_to_face(cycle, new_indices))
+                faces.append(self.__cycle_to_face(cycle, new_indices)) # append according face per cycle
         with open(file, 'w+') as f:
             for vi, v in enumerate(vs):
                 vcol = ' %f %f %f' % (vcolor[vi, 0], vcolor[vi, 1], vcolor[vi, 2]) if vcolor is not None else ''

@@ -219,6 +219,7 @@ class Mesh:
         return self.history_data['occurrences'].pop()
     
     def __clean_history(self, groups, pool_mask):
+        """_summary_: update edge-rel features"""
         if self.history_data is not None:
             mask = self.history_data['old2current'] != -1
             self.history_data['old2current'][mask] = np.arange(self.edges_count, dtype=np.int32)

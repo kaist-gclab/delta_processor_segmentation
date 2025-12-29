@@ -88,7 +88,7 @@ class MeshPool(nn.Module):
             mesh.merge_vertices(edge_id) # collapse two vertex of edge id into one vertex
             mask[edge_id] = False # update mask
             MeshPool.__remove_group(mesh, edge_groups, edge_id) # remove edge from edge group
-            mesh.edges_count -= 1 #
+            mesh.edges_count -= 1 # subtract edge count
             return True
         else:
             return False

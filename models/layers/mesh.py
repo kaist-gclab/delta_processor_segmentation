@@ -129,6 +129,7 @@ class Mesh:
                 f.write("\ne %d %d" % (new_indices[edge[0]] + 1, new_indices[edge[1]] + 1))
 
     def export_segments(self, segments):
+        """_summary_: """
         if not self.export_folder:
             return
         cur_segments = segments

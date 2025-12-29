@@ -83,7 +83,7 @@ class Mesh:
         edges_mask = np.concatenate([edges_mask, [False]]) # (e_old + 1, ) False slot never kept - padding
         new_indices = np.zeros(edges_mask.shape[0], dtype=np.int32) # remapping edge idx
         new_indices[-1] = -1 # set dummy idx as -1
-        new_indices[edges_mask] = np.arange(0, np.ma.where(edges_mask)[0].shape[0])
+        new_indices[edges_mask] = np.arange(0, np.ma.where(edges_mask)[0].shape[0]) # assign new id (for alive edges)
         self.gemm_edges[:, :] = new_indices[self.gemm_edges[:, :]]
         for v_index, ve in enumerate(self.ve):
             update_ve = []

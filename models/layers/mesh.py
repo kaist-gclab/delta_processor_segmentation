@@ -176,6 +176,7 @@ class Mesh:
         return face
 
     def init_history(self):
+        # exist per mesh instance / updated when pool/unpool
         # groups: matrices produced at pooling (e_in, unroll_target)
         # gemm_edges: snapshot of gemm_edges(neighbor) per pooling lvl
         # occurrences: occurrences saved at pooling step (e_new,)

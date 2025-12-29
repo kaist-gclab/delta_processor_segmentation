@@ -56,7 +56,7 @@ class MeshPool(nn.Module):
         # heap list of priority val, edge_id
         queue = self.__build_queue(self.__fe[mesh_index, :, :mesh.edges_count], mesh.edges_count)
         # last_count = mesh.edges_count + 1
-        mask = np.ones(mesh.edges_count, dtype=np.bool) # mask in current edge
+        mask = np.ones(mesh.edges_count, dtype=np.bool) # mask in current edge (e_cur,)
         edge_groups = MeshUnion(mesh.edges_count, self.__fe.device)
         while mesh.edges_count > self.__out_target:
             value, edge_id = heappop(queue)

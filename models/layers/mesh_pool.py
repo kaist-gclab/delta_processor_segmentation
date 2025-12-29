@@ -226,7 +226,7 @@ class MeshPool(nn.Module):
         mesh.edges_count -= 3 # update counter
         vertex = list(vertex) # convert into list: this would contain exactly one vertex
         assert(len(vertex) == 1) # check if the intersection is one vertex
-        mesh.remove_vertex(vertex[0])
+        mesh.remove_vertex(vertex[0]) # remove common vertex from Mesh
 
     def __build_queue(self, features, edges_count):
         # delete edges with smallest norm

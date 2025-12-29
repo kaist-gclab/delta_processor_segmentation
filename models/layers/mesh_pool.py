@@ -240,6 +240,7 @@ class MeshPool(nn.Module):
 
     @staticmethod
     def __union_groups(mesh, edge_groups, source, target):
+        """_summary_:"""
         edge_groups.union(source, target)
         mesh.union_groups(source, target)
 

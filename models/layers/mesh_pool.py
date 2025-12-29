@@ -140,8 +140,9 @@ class MeshPool(nn.Module):
         # other_side_b: pair of two edge id connected to key_b
         # other_keys_b: another pair of two edge id connected to key_b
         self.__redirect_edges(mesh, key_a, side_a - side_a % 2, other_keys_b[0], mesh.sides[key_b, other_side_b])
-        # redirect key_a two slot to point key_b's other neighbor (other_keys_b)
+        # redirect key_a even slot(0 or 2) to point key_b's other neighbor (other_keys_b[0])
         self.__redirect_edges(mesh, key_a, side_a - side_a % 2 + 1, other_keys_b[1], mesh.sides[key_b, other_side_b + 1])
+        # redirect key_a odd slot(1 or 3) to point key_b's other neighbor (other_keys_b[0])
         MeshPool.__union_groups(mesh, edge_groups, key_b, key_a)
         MeshPool.__union_groups(mesh, edge_groups, edge_id, key_a)
         mask[key_b] = False

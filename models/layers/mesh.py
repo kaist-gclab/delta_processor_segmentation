@@ -14,7 +14,7 @@ class Mesh:
         self.edges = self.gemm_edges = self.sides = None
         self.pool_count = 0
         fill_mesh(self, file, opt)
-        self.export_folder = export_folder
+        self.export_folder = export_folder # export(), export_segments(), history_data['collapses']
         self.history_data = None
         if hold_history:
             self.init_history()

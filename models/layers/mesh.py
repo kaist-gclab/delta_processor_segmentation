@@ -182,7 +182,7 @@ class Mesh:
             # -1 if X exist
         # current2old: map current edge id to old edge id (e_num,)
         # edges_mask: bool val, trace if edge still exist on current pooling level (e_num,)
-        # edges_count: int val, 
+        # edges_count: int val, scalar edge count per level
         self.history_data = {
                                'groups': [],
                                'gemm_edges': [self.gemm_edges.copy()],
@@ -192,6 +192,7 @@ class Mesh:
                                'edges_mask': [torch.ones(self.edges_count,dtype=torch.bool)],
                                'edges_count': [self.edges_count],
                               }
+        # collapses: MeshUnion obj - track union / if export folder exists
         if self.export_folder:
             self.history_data['collapses'] = MeshUnion(self.edges_count)
 

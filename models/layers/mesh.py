@@ -12,6 +12,8 @@ class Mesh:
     def __init__(self, file=None, opt=None, hold_history=False, export_folder=''):
         # vs: vertex position (v_num, 3)
         # v_mask: vertex mask (v_num)
+        # features: edge features (C, num_e) or (C, num_e, 1)
+        
         self.vs = self.v_mask = self.filename = self.features = self.edge_areas = None
         # membership / neighbor related
         # edges: vertex idx of edge (e_num, 2)
@@ -31,7 +33,6 @@ class Mesh:
 
     def extract_features(self):
         """_summary_: returns features"""
-        # features: edge features (B, C, num_e, 1) / (C, num_e) here
         return self.features
 
     def merge_vertices(self, edge_id):

@@ -62,8 +62,8 @@ class MeshPool(nn.Module):
             value, edge_id = heappop(queue) # call edge idx
             edge_id = int(edge_id) # conv to int
             if mask[edge_id]: # if edge alive
-                self.__pool_edge(mesh, edge_id, mask, edge_groups)
-        mesh.clean(mask, edge_groups)
+                self.__pool_edge(mesh, edge_id, mask, edge_groups) # call pool_edge (edge collapse)
+        mesh.clean(mask, edge_groups) #
         fe = edge_groups.rebuild_features(self.__fe[mesh_index], mask, self.__out_target)
         self.__updated_fe[mesh_index] = fe
 

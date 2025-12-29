@@ -147,7 +147,7 @@ class Mesh:
                             new_file.write('%s %d' % (line.strip(), cur_segments[edge_key])) # existing line + label
                             if edge_key < len(cur_segments): # manave edge_key counter
                                 edge_key += 1
-                                new_file.write('\n')
+                                new_file.write('\n') # add newline
                         else:
                             new_file.write(line)
             os.remove(file)

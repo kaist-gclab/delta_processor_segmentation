@@ -152,6 +152,7 @@ class Mesh:
 
     def __get_cycle(self, gemm, edge_id):
         """_summary_: walks upon gemm and creates two cycle"""
+        # gemm (e_num,4), edge_id (int)
         cycles = []
         for j in range(2):
             next_side = start_point = j * 2

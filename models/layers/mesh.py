@@ -103,6 +103,7 @@ class Mesh:
             if self.export_folder:
                 filename, file_extension = os.path.splitext(self.filename) # split basename, extension
                 file = '%s/%s_%d%s' % (self.export_folder, filename, self.pool_count, file_extension)
+                # export_folder/fname_poolcnt.extension
             else:
                 return
         faces = []

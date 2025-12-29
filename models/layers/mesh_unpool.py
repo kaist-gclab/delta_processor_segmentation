@@ -30,7 +30,7 @@ class MeshUnpool(nn.Module):
         if padding != 0:
             padding = nn.ConstantPad1d((0, padding), 1)
             occurrences = padding(occurrences)
-        return occurrences
+        return occurrences # (unroll_target)
 
     def forward(self, features, meshes):
         batch_size, nf, edges = features.shape

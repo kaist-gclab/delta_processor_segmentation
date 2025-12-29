@@ -166,7 +166,7 @@ class MeshPool(nn.Module):
         # side (int): side to collapse
         info = MeshPool.__get_face_info(mesh, edge_id, side) # get face info
         key_a, key_b, side_a, side_b, other_side_a, other_side_b, other_keys_a, other_keys_b = info # unpack
-        shared_items = MeshPool.__get_shared_items(other_keys_a, other_keys_b)
+        shared_items = MeshPool.__get_shared_items(other_keys_a, other_keys_b) # find overlap from other neighbor list (index pairs)
         if len(shared_items) == 0:
             return []
         else:

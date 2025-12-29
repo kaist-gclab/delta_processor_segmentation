@@ -80,7 +80,7 @@ class Mesh:
         self.edges = self.edges[edges_mask]
         self.sides = self.sides[edges_mask]
         new_ve = [] # using vertex idx, find incident edge (nested list, ragged)
-        edges_mask = np.concatenate([edges_mask, [False]])
+        edges_mask = np.concatenate([edges_mask, [False]]) # (e_old + 1, ) False slot never kept - padding
         new_indices = np.zeros(edges_mask.shape[0], dtype=np.int32)
         new_indices[-1] = -1
         new_indices[edges_mask] = np.arange(0, np.ma.where(edges_mask)[0].shape[0])

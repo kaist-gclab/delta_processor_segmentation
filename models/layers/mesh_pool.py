@@ -11,7 +11,7 @@ class MeshPool(nn.Module):
     def __init__(self, target, multi_thread=False):
         super(MeshPool, self).__init__()
         self.__out_target = target # output edge dim (int)
-        self.__multi_thread = multi_thread
+        self.__multi_thread = multi_thread # whether or not to use multi-thread (bool)
         self.__fe = None
         self.__updated_fe = None
         self.__meshes = None

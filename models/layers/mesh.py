@@ -29,7 +29,7 @@ class Mesh:
         self.history_data = None # enable init_history() to store pool/unpool info
         # IO-related
         # filename: mesh filename
-        
+        # export_folder: output dir string / None-return early
         if hold_history: # bool
             self.init_history()
         self.export()

@@ -144,7 +144,7 @@ class Mesh:
                 with open(file) as old_file: # existing mesh file
                     for line in old_file:
                         if line[0] == 'e': # edge line
-                            new_file.write('%s %d' % (line.strip(), cur_segments[edge_key]))
+                            new_file.write('%s %d' % (line.strip(), cur_segments[edge_key])) # existing line + label
                             if edge_key < len(cur_segments):
                                 edge_key += 1
                                 new_file.write('\n')

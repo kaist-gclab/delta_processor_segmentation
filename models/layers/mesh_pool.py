@@ -243,6 +243,7 @@ class MeshPool(nn.Module):
         mesh.remove_vertex(vertex[0]) # remove common vertex from Mesh
 
     def __build_queue(self, features, edges_count):
+        """_summary_: build priority queue over edge"""
         # delete edges with smallest norm
         squared_magnitude = torch.sum(features * features, 0)
         if squared_magnitude.shape[-1] != 1:

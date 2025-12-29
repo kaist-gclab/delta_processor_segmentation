@@ -136,7 +136,8 @@ class MeshPool(nn.Module):
         key_a, key_b, side_a, side_b, _, other_side_b, _, other_keys_b = info # unpack into tuple
         # key_a: edge id to keep, key_b: edge id to remove
         # side_a and side_b: which neighbor slot is involved for current face (side = neighbor edge idx)
-        # 
+        # key_a는 살아있기 때문에 other_side_a, other_key_a는 따로 variable로 안둠 (업뎃 필요 X)
+        # other_side_b:
         self.__redirect_edges(mesh, key_a, side_a - side_a % 2, other_keys_b[0], mesh.sides[key_b, other_side_b])
         self.__redirect_edges(mesh, key_a, side_a - side_a % 2 + 1, other_keys_b[1], mesh.sides[key_b, other_side_b + 1])
         MeshPool.__union_groups(mesh, edge_groups, key_b, key_a)

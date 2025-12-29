@@ -109,7 +109,7 @@ class Mesh:
         faces = []
         vs = self.vs[self.v_mask] # alive vertices (mask applied)
         gemm = np.array(self.gemm_edges) # gather 1-ring neighbor
-        new_indices = np.zeros(self.v_mask.shape[0], dtype=np.int32)
+        new_indices = np.zeros(self.v_mask.shape[0], dtype=np.int32) # initialize new indices
         new_indices[self.v_mask] = np.arange(0, np.ma.where(self.v_mask)[0].shape[0])
         for edge_index in range(len(gemm)):
             cycles = self.__get_cycle(gemm, edge_index)

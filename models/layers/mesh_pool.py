@@ -160,7 +160,7 @@ class MeshPool(nn.Module):
 
     @staticmethod
     def __get_invalids(mesh, edge_id, edge_groups, side):
-        """_summary_:"""
+        """_summary_: get invalid local configuration around edge_id"""
         info = MeshPool.__get_face_info(mesh, edge_id, side)
         key_a, key_b, side_a, side_b, other_side_a, other_side_b, other_keys_a, other_keys_b = info
         shared_items = MeshPool.__get_shared_items(other_keys_a, other_keys_b)

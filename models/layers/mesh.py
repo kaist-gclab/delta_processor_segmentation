@@ -152,7 +152,7 @@ class Mesh:
                             new_file.write(line) # no newline for end elem
             os.remove(file) # remove old file
             move(abs_path, file) # add temp file
-            if i < len(self.history_data['edges_mask']):
+            if i < len(self.history_data['edges_mask']): # length of alive edges
                 cur_segments = segments[:len(self.history_data['edges_mask'][i])]
                 cur_segments = cur_segments[self.history_data['edges_mask'][i]]
 

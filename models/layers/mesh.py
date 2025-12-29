@@ -98,6 +98,7 @@ class Mesh:
 
 
     def export(self, file=None, vcolor=None):
+        """_summary_: export info to dir"""
         if file is None:
             if self.export_folder:
                 filename, file_extension = os.path.splitext(self.filename)

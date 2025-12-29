@@ -224,8 +224,8 @@ class MeshPool(nn.Module):
             mask[edge_key] = False # mark edge as removed
             MeshPool.__remove_group(mesh, edge_groups, edge_key) # remove group from MeshUnion / Mesh
         mesh.edges_count -= 3 # update counter
-        vertex = list(vertex) # this would contain exactly one vertex
-        assert(len(vertex) == 1)
+        vertex = list(vertex) # convert into list: this would contain exactly one vertex
+        assert(len(vertex) == 1) # check if the intersection is one vertex
         mesh.remove_vertex(vertex[0])
 
     def __build_queue(self, features, edges_count):

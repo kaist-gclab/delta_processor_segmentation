@@ -177,6 +177,7 @@ class Mesh:
 
     def init_history(self):
         # groups: matrices produced at pooling (e_in, unroll_target)
+        # gemm_edges: snapshot of gemm_edges per pooling lvl
         # occurrences: occurrences saved at pooling step (e_new,)
         # old2current: map original edge id to current edge id (e_num,)
             # -1 if X exist

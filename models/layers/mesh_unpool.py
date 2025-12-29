@@ -35,7 +35,7 @@ class MeshUnpool(nn.Module):
         return occurrences # (unroll_target)
 
     def forward(self, features, meshes):
-        """_summary_
+        """_summary_: build padded group matrix for the batch
 
         Args:
             features (_type_): _description_

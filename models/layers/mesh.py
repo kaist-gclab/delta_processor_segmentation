@@ -139,7 +139,7 @@ class Mesh:
             filename, file_extension = os.path.splitext(self.filename)
             file = '%s/%s_%d%s' % (self.export_folder, filename, i, file_extension)
             fh, abs_path = mkstemp()
-            edge_key = 0
+            edge_key = 0 # edge idx that writes label
             with os.fdopen(fh, 'w') as new_file:
                 with open(file) as old_file:
                     for line in old_file:

@@ -31,8 +31,8 @@ class MeshPool(nn.Module):
         rebuild features"""
         self.__updated_fe = [[] for _ in range(len(meshes))] # gather per mesh output
         pool_threads = [] # thread handling
-        self.__fe = fe
-        self.__meshes = meshes
+        self.__fe = fe # (B, C, e_in, 1)
+        self.__meshes = meshes # 
         # iterate over batch
         for mesh_index in range(len(meshes)):
             if self.__multi_thread:

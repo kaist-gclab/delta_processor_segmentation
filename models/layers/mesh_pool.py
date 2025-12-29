@@ -151,7 +151,7 @@ class MeshPool(nn.Module):
         MeshPool.__remove_group(mesh, edge_groups, key_b) # update mesh history, old2current map etc
         mesh.remove_edge(key_b) # safely remove key_b from edges, gemm_edges
         mesh.edges_count -= 1 # decrease count
-        return key_a
+        return key_a # return surviving edge
 
     @staticmethod
     def __get_invalids(mesh, edge_id, edge_groups, side):

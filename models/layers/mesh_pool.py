@@ -70,7 +70,8 @@ class MeshPool(nn.Module):
     def __pool_edge(self, mesh, edge_id, mask, edge_groups):
         """_summary_: collapse single edge"""
         # mesh: mesh being pooled
-        # edge_id: int edge idx
+        # edge_id (int): int edge idx
+        # mask (ndarray): current edge mask
         if self.has_boundaries(mesh, edge_id): # check if edge is boundary feature
             return False
         # 

@@ -130,6 +130,7 @@ class Mesh:
 
     def export_segments(self, segments):
         """_summary_: """
+        # segments: per-edge segmentation label
         if not self.export_folder:
             return
         cur_segments = segments

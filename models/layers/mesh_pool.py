@@ -223,7 +223,7 @@ class MeshPool(nn.Module):
             vertex &= set(mesh.edges[edge_key]) # get intersection with set - with all edges vertex set
             mask[edge_key] = False # mark edge as removed
             MeshPool.__remove_group(mesh, edge_groups, edge_key) # remove group from MeshUnion / Mesh
-        mesh.edges_count -= 3
+        mesh.edges_count -= 3 # update counter
         vertex = list(vertex)
         assert(len(vertex) == 1)
         mesh.remove_vertex(vertex[0])

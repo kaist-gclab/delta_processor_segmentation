@@ -219,7 +219,7 @@ class MeshPool(nn.Module):
         """_summary_: local edge-neighborhood info afound face"""
         # edge_id (int): int edge idx
         # side (int): side idx
-        key_a = mesh.gemm_edges[edge_id, side]
+        key_a = mesh.gemm_edges[edge_id, side] # neighbor edge id (side)
         key_b = mesh.gemm_edges[edge_id, side + 1]
         side_a = mesh.sides[edge_id, side]
         side_b = mesh.sides[edge_id, side + 1]

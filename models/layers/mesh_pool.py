@@ -24,7 +24,7 @@ class MeshPool(nn.Module):
         # tqdm.write("DEBUG: gemm_edges shape: {}".format(meshes[0].gemm_edges.shape)) # comment out
         # tqdm.write("DEBUG: gemm_edges dtype:".format(meshes[0].gemm_edges.dtype))
         # tqdm.write("DEBUG: gemm_edges[0]:".format(meshes[0].gemm_edges[0]))
-        return self.forward(fe, meshes)
+        return self.forward(fe, meshes) # log before forward
 
     def forward(self, fe, meshes):
         self.__updated_fe = [[] for _ in range(len(meshes))]

@@ -12,8 +12,9 @@ class Mesh:
     def __init__(self, file=None, opt=None, hold_history=False, export_folder=''):
         # vs: vertex position (v_num, 3)
         # v_mask: vertex mask (v_num)
-        # edges: vertex idx of edge (e_num, 2)
         self.vs = self.v_mask = self.filename = self.features = self.edge_areas = None
+        # edges: vertex idx of edge (e_num, 2)
+        # gemm_edges
         self.edges = self.gemm_edges = self.sides = None
         self.pool_count = 0
         # initialized by fill_mesh

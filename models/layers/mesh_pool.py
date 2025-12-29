@@ -147,7 +147,7 @@ class MeshPool(nn.Module):
         # redirect key_a odd slot(1 or 3) to point key_b's other neighbor (other_keys_b[0])
         MeshPool.__union_groups(mesh, edge_groups, key_b, key_a) # merge key_b into key_a
         MeshPool.__union_groups(mesh, edge_groups, edge_id, key_a) # merge edge_id into key_a: feature of edge_id will contribute to key_a
-        mask[key_b] = False
+        mask[key_b] = False # update mask
         MeshPool.__remove_group(mesh, edge_groups, key_b)
         mesh.remove_edge(key_b)
         mesh.edges_count -= 1

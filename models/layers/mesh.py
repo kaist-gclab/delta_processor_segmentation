@@ -213,6 +213,7 @@ class Mesh:
     def union_groups(self, source, target):
         """_summary_: merge source and target (after pooling) into MeshUnion obj"""
         if self.export_folder and self.history_data: # if folder exist and history_data = True
+            # collapses: MeshUnion Obj | uses current2old bc both idx is current idx
             self.history_data['collapses'].union(self.history_data['current2old'][source], self.history_data['current2old'][target])
         return
 

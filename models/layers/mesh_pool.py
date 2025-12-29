@@ -122,6 +122,8 @@ class MeshPool(nn.Module):
     @staticmethod
     def __is_one_ring_valid(mesh, edge_id):
         """_summary_: validate one-ring connectivity condition for collapsing edge"""
+        # mesh.edges[edge_id, 0]: read v0 | similar for v1
+        # mesh.ve[v0]: arrays of incident edges
         v_a = set(mesh.edges[mesh.ve[mesh.edges[edge_id, 0]]].reshape(-1))
         v_b = set(mesh.edges[mesh.ve[mesh.edges[edge_id, 1]]].reshape(-1))
         shared = v_a & v_b - set(mesh.edges[edge_id])

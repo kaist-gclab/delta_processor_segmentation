@@ -57,5 +57,5 @@ class MeshUnpool(nn.Module):
         # update mesh connectivity
         for mesh in meshes:
             mesh.unroll_gemm()
-        # features (B, C, E_in)
+        # features (B, C, E_in), unroll_mat (B, C, unroll_target)
         return torch.matmul(features, unroll_mat)

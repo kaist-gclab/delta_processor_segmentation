@@ -58,4 +58,4 @@ class MeshUnpool(nn.Module):
         for mesh in meshes:
             mesh.unroll_gemm()
         # features (B, C, E_in), unroll_mat (B, C, unroll_target)
-        return torch.matmul(features, unroll_mat)
+        return torch.matmul(features, unroll_mat) # (B, C, unroll_target)

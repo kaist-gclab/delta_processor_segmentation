@@ -164,7 +164,7 @@ class MeshPool(nn.Module):
         # edge_id (int): int edge idx
         # edge_groups (MeshUnion): union tracker
         # side (int): side to collapse
-        info = MeshPool.__get_face_info(mesh, edge_id, side)
+        info = MeshPool.__get_face_info(mesh, edge_id, side) # get face info
         key_a, key_b, side_a, side_b, other_side_a, other_side_b, other_keys_a, other_keys_b = info
         shared_items = MeshPool.__get_shared_items(other_keys_a, other_keys_b)
         if len(shared_items) == 0:

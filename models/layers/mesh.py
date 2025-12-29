@@ -88,7 +88,7 @@ class Mesh:
         for v_index, ve in enumerate(self.ve):
             update_ve = [] # stores new edge idx
             # if self.v_mask[v_index]:
-            for e in ve:
+            for e in ve: # all prev edge idx
                 update_ve.append(new_indices[e]) # add newly assigned edge idx to edge neighbor
             new_ve.append(update_ve)
         self.ve = new_ve

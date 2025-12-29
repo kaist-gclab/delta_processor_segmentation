@@ -2,8 +2,8 @@ import torch
 import torch.nn as nn
 
 
-
 class MeshUnpool(nn.Module):
+    """_summary_: undo pooling in feature space"""
     def __init__(self, unroll_target):
         super(MeshUnpool, self).__init__()
         self.unroll_target = unroll_target

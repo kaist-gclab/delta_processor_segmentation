@@ -13,6 +13,7 @@ class Mesh:
         # vs: vertex position (v_num, 3)
         # v_mask: vertex mask (v_num)
         self.vs = self.v_mask = self.filename = self.features = self.edge_areas = None
+        # membership / neighbor related
         # edges: vertex idx of edge (e_num, 2)
         # gemm_edges: 1-ring neighbor (e_num, 4)
         # sides: opposite / neighbor reading dir - idx (e_num, 4)

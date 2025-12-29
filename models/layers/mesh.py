@@ -159,7 +159,7 @@ class Mesh:
             next_key = edge_id
             if gemm[edge_id, start_point] == -1: # no neighbor
                 continue # skip
-            cycles.append([])
+            cycles.append([]) # append empty lst
             for i in range(3):
                 tmp_next_key = gemm[next_key, next_side]
                 tmp_next_side = self.sides[next_key, next_side]

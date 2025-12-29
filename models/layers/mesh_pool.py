@@ -104,8 +104,8 @@ class MeshPool(nn.Module):
             # after removing, check few cond
             if mesh.edges_count <= self.__out_target: # reach target num
                 return False
-            if self.has_boundaries(mesh, edge_id):
-                return False
+            if self.has_boundaries(mesh, edge_id): # cleaning caused edge id to become a boundary
+                return False # cannot remove
             invalid_edges = self.__get_invalids(mesh, edge_id, edge_groups, side)
         return True
 

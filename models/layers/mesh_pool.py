@@ -112,7 +112,7 @@ class MeshPool(nn.Module):
     @staticmethod
     def has_boundaries(mesh, edge_id):
         """_summary_: checks if the edge_id is a boundary edge"""
-        for edge in mesh.gemm_edges[edge_id]:
+        for edge in mesh.gemm_edges[edge_id]: # edge exists
             # print("1: gemm_edge: {}, type: {}".format(mesh.gemm_edges[0], mesh.gemm_edges.dtype))
             if edge == -1 or -1 in mesh.gemm_edges[edge]:
                 return True

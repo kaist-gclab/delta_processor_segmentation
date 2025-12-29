@@ -227,7 +227,7 @@ class MeshPool(nn.Module):
         other_side_b = (side_b - (side_b % 2) + 2) % 4 # 1 or 3 (other side)
         other_keys_a = [mesh.gemm_edges[key_a, other_side_a], mesh.gemm_edges[key_a, other_side_a + 1]] # two neighbor edges of key_a on other face pair
         other_keys_b = [mesh.gemm_edges[key_b, other_side_b], mesh.gemm_edges[key_b, other_side_b + 1]] # two neighbor edges of key_b on other face pair
-        return key_a, key_b, side_a, side_b, other_side_a, other_side_b, other_keys_a, other_keys_b
+        return key_a, key_b, side_a, side_b, other_side_a, other_side_b, other_keys_a, other_keys_b # return all retrieved info
 
     @staticmethod
     def __remove_triplete(mesh, mask, edge_groups, invalid_edges):

@@ -185,7 +185,7 @@ class MeshPool(nn.Module):
             MeshPool.__union_groups(mesh, edge_groups, key_b, edge_id) # merge key_b and edge_id
             MeshPool.__union_groups(mesh, edge_groups, key_a, update_key_a) # merge key_a > update_key_a
             MeshPool.__union_groups(mesh, edge_groups, middle_edge, update_key_a) # then merge invalid edge > update_key_a
-            MeshPool.__union_groups(mesh, edge_groups, key_b, update_key_b)
+            MeshPool.__union_groups(mesh, edge_groups, key_b, update_key_b) # merge key_b > update_key_b
             MeshPool.__union_groups(mesh, edge_groups, middle_edge, update_key_b)
             return [key_a, key_b, middle_edge]
 

@@ -220,7 +220,7 @@ class MeshPool(nn.Module):
         # edge_id (int): int edge idx
         # side (int): side idx
         key_a = mesh.gemm_edges[edge_id, side] # neighbor edge id (side)
-        key_b = mesh.gemm_edges[edge_id, side + 1]
+        key_b = mesh.gemm_edges[edge_id, side + 1] # neighbor edge id (side+1)
         side_a = mesh.sides[edge_id, side]
         side_b = mesh.sides[edge_id, side + 1]
         other_side_a = (side_a - (side_a % 2) + 2) % 4

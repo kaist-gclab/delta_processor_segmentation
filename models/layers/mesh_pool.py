@@ -248,7 +248,7 @@ class MeshPool(nn.Module):
         # l2 norm of feature magnitude: prior key
         squared_magnitude = torch.sum(features * features, 0) # L2 norm per edge
         if squared_magnitude.shape[-1] != 1:
-            squared_magnitude = squared_magnitude.unsqueeze(-1)
+            squared_magnitude = squared_magnitude.unsqueeze(-1) # (e_num, 1,)
         edge_ids = torch.arange(edges_count, device=squared_magnitude.device, dtype=torch.float32).unsqueeze(-1)
         heap = torch.cat((squared_magnitude, edge_ids), dim=-1).tolist()
         heapify(heap)
